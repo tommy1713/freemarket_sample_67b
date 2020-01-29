@@ -4,7 +4,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|name|string|null: false|
+|product_name|string|null: false|
 |details|text|null: false|
 |category|string|null: false|
 |price|integer|null: false|
@@ -100,7 +100,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false,foreign_key:true|
-|card_number|integer|null:false|
+|customer_id|string|null: false|
+|card_number|integer|null: false|
 |effective_date|integer|null: false|
 |cvc|integer|null:false|
 
