@@ -1,0 +1,44 @@
+.user-container {
+  padding: 0 0 220px;
+  &__header {
+    height: 128px;
+    text-align: center;
+  }
+  &__main {
+    display: block;
+    &__section {
+      width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      &__head {
+        padding: 16px;
+        font-size: 18px;
+        line-height: 1.5;
+        text-align: center;
+      }
+      &__inner-form {
+        padding: 24px 16px 40px;
+        border-top: 1px solid #f5f5f5;
+        &__content {
+          max-width: 320px;
+          margin: 0 auto;
+          .jump-btn-mail{
+            color: #fff;
+            background-color: #ea352b;
+            border-radius: 4px;
+            position: relative;
+            background: #eee;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            border: 1px solid;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
