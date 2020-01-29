@@ -4,11 +4,11 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|product_name|string|null: false|
+|name|string|null: false|
 |details|text|null: false|
 |category|string|null: false|
 |price|integer|null: false|
-|status|text|null: false|
+|status|integer|null: false|
 |stuation|text|null: false|
 |shipping_area|string|null: false|
 |estimated_date|string|null: false|
@@ -18,47 +18,33 @@
 ### Association
 - has_many :pictures
 - has_many :comments
-- belongs_to :main_categories
-- belongs_to :users
+- belongs_to :main_category
+- belongs_to :user
 
-## picturesテーブル
+## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|picture|string|null: false|
+|image|string|null: false|
+|product_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :products
+- belongs_to :product
 
-## main_catgoriesテーブル
+## catgoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |main_categories|string|null: false|
+|ancestry|varchar|
 
 ### Association
-- belongs_to :products
-- has_many :sub_categories
-
-## sub_categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|sub_categories|string|null: false|
-
-### Association
-- belongs_to :main_categories
-- has_many :sub2_categories
-
-## sub2_categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|sub2_categories|string|null: false|
-
-### Association
--belongs_to :sub_categories
+- belongs_to :product
+- has_ancestry
 
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|comment|text|
+|comment|text|null: false|
+|user_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :users
@@ -70,8 +56,8 @@
 |email|string|null: false,unique: true|
 |password|string|null: false|
 |nickname|string|null: false|
-|f_name_kanji|string|null: false|
-|l_name_kanji|string|null: false|
+|f_name|string|null: false|
+|l_name|string|null: false|
 |f_name_kana|string|null: false|
 |l_name_kana|string|null: false|
 |birthday|integer|null: false|
@@ -79,8 +65,8 @@
 
 ### Association
 - has_many :products
-- belongs_to :address
-- belongs_to :credit_card
+- has_many :address
+- has_many :credit_cards
 - has_many :comments
 
 ## addressテーブル
