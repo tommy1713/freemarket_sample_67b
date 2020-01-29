@@ -16,9 +16,9 @@
 |method|string|null: false|
 
 ### Association
-- has_many :pictures
+- has_many :images
 - has_many :comments
-- belongs_to :main_category
+- belongs_to :category
 - belongs_to :user
 
 ## imagesテーブル
@@ -33,7 +33,7 @@
 ## catgoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|main_categories|string|null: false|
+|name|string|null: false|
 |ancestry|varchar|
 
 ### Association
@@ -45,10 +45,11 @@
 |------|----|-------|
 |comment|text|null: false|
 |user_id|references|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :users
-- belongs_to :products
+- belongs_to :user
+- belongs_to :product
 
 ## usersテーブル
 |Column|Type|Options|
