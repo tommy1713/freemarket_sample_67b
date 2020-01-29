@@ -1,6 +1,7 @@
 .contents
   .contents--top
     .name
+      #{@product.name}
     .images
       .image__big
       .image__small
@@ -8,44 +9,55 @@
         .image__small__2
         .image__small__3
     .price
+      ¥ #{@product.price}
+      (税込) #{@product.postage}
     .infomation
       %table
         %tr.detail
           %th.detail__title
             商品の説明
           %th.detail__content
+            #{@product.detail}
         %tr.nickname
           %th.nickname__title
             出品者
           %th.nickname__content
+
         %tr.category
           %th.category__title
             カテゴリー
           %th.category__content
+            #{@product.category}
         %tr.brand
           %th.brand__title
             ブランド
           %th.brand__content
+            #{@product.brand}
         %tr.size
           %th.size__title
             サイズ
           %th.size__content
+            #{@product.size}
         %tr.status
           %th.status__title
             商品の状態
           %th.status__content
+            #{@product.status}
         %tr.postage
           %th.postage__title
             配送料の負担
           %th.postage__content
+            #{@product.postage}
         %tr.area
           %th.area__title
             発送元の地域
           %th.area__content
+            #{@product.shipping_area}
         %tr.estimated
           %th.estimated__title
             発送日の目安
           %th.estimated__content
+            #{@product.estimated_date}
     .buy--btn
     .under--btn
       .top--btn__favorite
