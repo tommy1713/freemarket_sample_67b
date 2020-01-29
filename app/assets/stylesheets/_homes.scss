@@ -1,0 +1,82 @@
+.header{
+  padding: 0 60px;
+  &__inner{
+    max-width: 1040px;
+    width: 100%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 15px 0 0;
+    &-main{
+      position: relative;
+      display: flex;
+      align-items: center;
+      &__icon{
+        padding-bottom: 10px;
+        margin-right: 30px;
+        border-radius: 4px;
+      }
+      &__searchbox{
+        margin-left: auto;
+        width: 100%;
+        form{
+          width: 100%;
+          display: flex;
+          margin-bottom: 5px;
+          .search-form__input{
+          width: calc(100% - 26px);
+          height: 36px;
+          padding: 0 0 0 5px;
+          }
+          .btn-search{
+            width: 36px;
+            border: 0;
+            cursor: pointer;
+            background-color: #3CCACE;
+            padding: 8px;
+          }
+        }
+      }
+    }
+    &-nav{
+      font-size: 14px;
+      display: flex;
+      margin-bottom: 10px;
+      &__listleft{
+        position: relative;
+        display: flex;
+        &__category{
+          text-decoration: none;
+          padding: 0;
+          line-height: 38px;
+          .displaynone{
+            display: none;
+          }
+        }
+        &__brand{
+          display: flex;
+          line-height: 38px;
+          padding: 0 0 0 16px;
+          #brandbtn{
+            a{
+              background-image: url(icon_brand.svg);
+            }
+          }
+        }
+      }
+      &__listright{
+        margin-left: auto;
+        display: flex;
+        &__login{
+          color: #333;
+          line-height: 38px;
+          padding: 0 0 0 16px;
+        }
+        &__new{
+          color: #333;
+          line-height: 38px;
+          padding: 0 0 0 16px;
+        }
+      }
+    }
+  }
+}

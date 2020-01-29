@@ -1,28 +1,34 @@
 .header
-  .header_inner
-    .header_inner-main
-      %h1.header_inner-main_icon
-        = link_to "#" do
+  .header__inner
+    .header__inner-main
+      %h1.header__inner-main__icon
+        = link_to "/" do
           = image_tag "", size: "140x41"
-      .header_inner-main_searchbox
+      .header__inner-main__searchbox
         = form_tag('/search', method: :get, class: 'search-form') do
           %input.search-form__input{name: "keyword", placeholder: "キーワードから探す", type: "text", value: ""}
           %button.btn-search{title: "検索", type: "submit"}
-            = icon('fas', 'search', class: 'search-form__icon')
-    .header_inner-nav
-      .header_inner-nav_listleft
-        .header_inner-nav_listleft_category
+            = image_tag "", size: "20x20"
+            
+    .header__inner-nav
+      %ul.header__inner-nav__listleft
+        %li.header__inner-nav__listleft__category
           = link_to "#" do
             カテゴリー
           .displaynone
-            %ul
-              %li<
-        .header_inner-nav_listleft_brand
-          ブランド
-      .header_inner-nav_listright
-        .header_inner-nav_listright_login
+            %ul.categorytree
+              %li.categorytree__item
+                #1
+                  = link_to "#" do
+                    レディース
+        %li.header__inner-nav__listleft__brand
+          #brandbtn
+            = link_to "#" do
+              ブランド
+      %ul.header__inner-nav__listright
+        %li.header__inner-nav__listright__login
           = link_to "#" do
             ログイン
-        .header_inner-nav_listright_new
+        %li.header__inner-nav__listright__new
           = link_to "#" do
             新規会員登録
