@@ -1,14 +1,14 @@
 .header
   .header_inner
     .header_inner-main
-      .header_inner-main_icon
+      %h1.header_inner-main_icon
         = link_to "#" do
-        = image_tag "#", size: "140x41"
+          = image_tag "", size: "140x41"
       .header_inner-main_searchbox
         = form_tag('/search', method: :get, class: 'search-form') do
           %input.search-form__input{name: "keyword", placeholder: "キーワードから探す", type: "text", value: ""}
           %button.btn-search{title: "検索", type: "submit"}
-            = fa_icon "search",class: "search-form__icon"
+            = icon('fas', 'search', class: 'search-form__icon')
     .header_inner-nav
       .header_inner-nav_listleft
         .header_inner-nav_listleft_category
