@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root to: "users#index"
+  root to: "homes#index"
+  resources :users, only:[:index]
 end
