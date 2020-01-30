@@ -1,8 +1,33 @@
 .user-container {
-  padding: 0 0 220px;
+  background-color: #b3d4fc;
+  color: #fff;
+  text-shadow: none;
+  padding: 0 0 250px;
+  background-repeat: no-repeat;
+  margin: 0;
+  border-style: solid;
+  border-width: 0;
   &__header {
-    height: 128px;
     text-align: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    border-style: solid;
+    border-width: 0;
+    font-size: inherit;
+    line-height: inherit;
+    box-sizing: inherit;
+    display: block;
+    h1{
+      display: block;
+      font-size: 2em;
+      margin-block-start: 0px;
+      margin-inline-end: 0.67em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      font-weight: bold;
+      text-align: center;
+    }
   }
   &__main {
     display: block;
@@ -11,10 +36,18 @@
       margin: 0 auto;
       background: #fff;
       &__head {
+        display: block;
         padding: 16px;
         font-size: 18px;
         line-height: 1.5;
         text-align: center;
+        margin: 0;
+        border-style: solid;
+        border-width: 0;
+        background-repeat: no-repeat;
+        margin: 0;
+        border-style: solid;
+        border-width: 0;
       }
       &__inner-form {
         padding: 24px 16px 40px;
@@ -27,7 +60,6 @@
             background-color: #ea352b;
             border-radius: 4px;
             position: relative;
-            background: #eee;
             display: block;
             width: 100%;
             line-height: 48px;
@@ -37,6 +69,79 @@
             cursor: pointer;
             text-align: center;
           }
+          .jump-btn-facebook {
+            border-radius: 4px;
+            margin: 16px 0 0;
+            background: #385185;
+            color: #fff;
+            position: relative;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            border: 1px solid transparent;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            text-align: center;
+          }
+          .jump-btn-google{
+            border-radius: 4px;
+            margin: 16px 0 0;
+            background: #fff;
+            border: #979797 solid 1px;
+            color: #333;
+            position: relative;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  .main-footer{
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    height: 250px;
+    padding: 40px 0;
+    text-align: center;
+    nav{
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      border-style: solid;
+      border-width: 0;
+      font-size: inherit;
+      line-height: inherit;
+      box-sizing: inherit;
+      display: block;
+      text-decoration: inherit;
+      ul{
+        font-size: 0;
+        list-style: none;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+        border-style: solid;
+        border-width: 0;
+        line-height: inherit;
+        box-sizing: inherit;
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+        li{
+          margin: 0;
+          font-size: 12px;
+          background-repeat: no-repeat;
         }
       }
     }

@@ -1,28 +1,29 @@
 .user-container
   %header.user-container__header
+    %h1 FURIMA
   %main.user-container__main
     .user-container__main__section
       %h2.user-container__main__section__head 新規会員登録
       .user-container__main__section__inner-form
         .user-container__main__section__inner-form__content
           .jump-btn-mail
-            = link_to "#"
-            %i.icon-mail
-            メールアドレスで登録する
+            = link_to "#" do
+              %i.icon-mail
+                メールアドレスで登録する
           .jump-btn-facebook
-            = link_to "#"
-            %i.icon-facebook
-            Facebookで登録する
-          .jump-btn-gooogle
-            = link_to "#"
-            Googleで登録する</button>
+            = link_to "#" do
+              %i.icon-facebook
+                Facebookで登録する
+          .jump-btn-google
+            = link_to "#" do
+              Googleで登録する
   %footer.main-footer
     %nav
       %ul
         %li
-          = link_to "プライバシーポリシー",""
+          = link_to "プライバシーポリシー","#"
         %li
-          = link_to "Facebookで登録する",""
+          = link_to "FURIMA利用規約","#"
         %li
-          = link_to "Googleで登録する",""
+          = link_to "特定商取引に関する表記","#"
         
