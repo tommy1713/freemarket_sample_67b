@@ -41,6 +41,12 @@
             お知らせ
   .footer-logo
     = link_to "/" do
-      = image_tag "#", size: "160x46"
+      = image_tag "logo.svg", size: "160x46"
   %p
     ©️ FURIMA
+
+.purchasebtn
+  = link_to "#" do
+    %span.purchasebtn__text
+      出品する
+    = image_tag "icon_camera.svg", size: "54x54", class: "purchasebtn__icon"
