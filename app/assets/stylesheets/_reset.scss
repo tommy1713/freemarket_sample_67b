@@ -142,3 +142,21 @@ img{
   width: 180px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+.g__btn:hover{
+  cursor:pointer;
+  filter: alpha(opacity=60);
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity:0.5;
+}
+.a__btn:hover{
+  cursor:pointer;
+  filter: alpha(opacity=60);
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity:0.5;
+}

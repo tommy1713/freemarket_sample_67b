@@ -3,7 +3,7 @@
     .header__inner-main
       %h1.header__inner-main__icon
         = link_to "/" do
-          = image_tag "logo-furima.svg", size: "140x41"
+          = image_tag "logo-furima.svg"
       .header__inner-main__searchbox
         = form_tag('/search', method: :get, class: 'search-form') do
           %input.search-form__input{name: "keyword", placeholder: "キーワードから探す", type: "text", value: ""}
@@ -18,13 +18,11 @@
           .displaynone.tree
             %ul.categorytree
               %li.categorytree__item
-                #1
-                  = link_to "#" do
-                    レディース
+                = link_to "#", id:"1" do
+                  レディース
               %li.categorytree__item
-                #2
-                  = link_to "#" do
-                    aaaa
+                = link_to "#", id:"2" do
+                  aaaa
         %li.header__inner-nav__listleft__brand
           #brandbtn
             = link_to "#" do
