@@ -65,15 +65,18 @@
           text-decoration: none;
           padding: 0;
           line-height: 38px;
+          #catbtn{
+            a{
+              background-image: url(icon_category.pvg);
+            }
+          }
         }
         &__brand{
           display: flex;
           line-height: 38px;
           padding: 0 0 0 16px;
-          #brandbtn{
-            a{
-              background-image: url(icon_brand.svg);
-            }
+          a{
+            background-image: url(icon_brand.pvg);
           }
         }
       }
