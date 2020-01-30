@@ -10,7 +10,7 @@
         .image__small__3
     .price
       ¥ #{@product.price}
-      (税込) #{@product.postage}
+      (税込) #{@product.postage_i18n}
     .infomation
       %table
         %tr.detail
@@ -42,12 +42,12 @@
           %th.status__title
             商品の状態
           %th.status__content
-            #{@product.status}
+            #{@product.status_i18n}
         %tr.postage
           %th.postage__title
             配送料の負担
           %th.postage__content
-            #{@product.postage}
+            #{@product.postage_i18n}
         %tr.area
           %th.area__title
             発送元の地域
@@ -57,7 +57,7 @@
           %th.estimated__title
             発送日の目安
           %th.estimated__content
-            #{@product.estimated_date}
+            #{@product.estimated_date_i18n}
     .buy--btn
     .under--btn
       .top--btn__favorite
