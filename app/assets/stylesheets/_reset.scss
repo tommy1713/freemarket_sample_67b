@@ -117,6 +117,7 @@ input,
 textarea,
 select {
   *font-size:100%;
+ /*to enable resizing for IE*/
 }
 /*because legend doesn't inherit in IE */
 legend {
@@ -124,3 +125,39 @@ legend {
 }
 /* YUI CSS Detection Stamp */
 #yui3-css-stamp.cssreset { display: none; }
+
+a{
+  text-decoration: none;
+}
+
+img{
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.a__btn{
+  width: 180px;
+}
+
+.g__btn{
+  width: 180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.g__btn:hover{
+  cursor:pointer;
+  filter: alpha(opacity=60);
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity:0.5;
+}
+.a__btn:hover{
+  cursor:pointer;
+  filter: alpha(opacity=60);
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity:0.5;
+}

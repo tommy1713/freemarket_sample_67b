@@ -1,0 +1,203 @@
+.main
+  .main__visual
+    .main__visual-content
+      %h2.main__visual-content__subtitle
+        人生を変えるフリマアプリ
+      %p.main__visual-content__text
+        FURIMAは誰でもかんたんに出品・購入できる
+        %br
+        フリマアプリです
+      .main__visual-content__btn
+        .a__btn
+          = link_to "#" do
+            = image_tag "app-store.svg", size: "180x53"
+        .g__btn
+          = link_to "#" do
+            = image_tag "google-play.svg", size: "180x53"
+    .picture
+
+  .main__introduction
+    %h2.main__introduction-subtitle
+      FURIMAが選ばれる3つの理由
+    %ul.main__introduction-lists
+      %li.main__introduction-lists__list
+        .main__introduction-lists__list__pict
+          %span.number
+            1
+          = image_tag "int1.jpg", size: "263x263"
+        %h3.main__introduction-lists__list__text
+          %span
+            3分
+          ですぐに出品
+        %p.main__introduction-lists__list__description
+          スマホで入力するだけで簡単に出品できる!
+      %li.main__introduction-lists__list
+        .main__introduction-lists__list__pict
+          %span.number
+            ２
+          = image_tag "int2.jpg", size: "263x263"
+        %h3.main__introduction-lists__list__text
+          %span
+            シンプル
+          で使いやすい
+        %p.main__introduction-lists__list__description
+          めんどくさい入力は必要なく、検索も購入もスムーズ!
+      %li.main__introduction-lists__list-last
+        .main__introduction-lists__list__pict
+          %span.number
+            3
+          = image_tag "int3.jpg", size: "263x263"
+        %h3.main__introduction-lists__list__text
+          手数料
+          %span
+            業界最安
+        %p.main__introduction-lists__list__description
+          最大3％でお得に出品&購入!
+  
+  .main__middle
+    .main__middle-inner
+      %h2.main__middle-inner__subtitle
+        会員数日本一位
+      %p.main__middle-inner__text
+        FRIMAは、フリマアプリで最も人気。
+        %br
+        出品・購入回数も業界最多です!
+        %br
+        欲しかったあの商品に出会えるかもしれません。
+      .main__middle-inner__btn
+        .a__btn
+          = link_to "#" do
+            = image_tag "app-store.svg", size: "180x53"
+        .g__btn
+          = link_to "#" do
+            = image_tag "google-play.svg", size: "180x53"
+
+  .main__features
+    .main__features-head
+      FURIMAの特徴
+    .main__features-items
+      .main__features-items__item
+        .main__features-items__item__img
+          = image_tag "fea1.svg", size: "139x214"
+        %h3.main__features-items__item__subtitle
+          簡単に売り買いできる
+        %p.main__features-items__item__detail
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能!
+      .main__features-items__item
+        .main__features-items__item__img
+          = image_tag "fea2.svg", size: "139x214"
+        %h3.main__features-items__item__subtitle
+          売上金は即日振込みに対応
+        %p.main__features-items__item__detail
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+      .main__features-items__item
+        .main__features-items__item__img
+          = image_tag "fea3.svg", size: "139x214"
+        %h3.main__features-items__item__subtitle
+          様々な支払いに対応
+        %p.main__features-items__item__detail
+          お支払いは、クレジットカードだけではなく、ポイントや売上金など多彩な方法があります。
+
+  .main__pickup
+    %h2.main__pickup-head
+      ピックアップカテゴリー
+    .main__pickup-product
+      .main__pickup-product__head
+        = link_to "#" do
+          %h3.main__pickup-product__head__title
+            新規投稿商品
+      .main__pickup-product__lists
+        .main__pickup-product__lists__list
+          = link_to "#" do
+            .product__lists__list__img
+              = image_tag "", size: "220x150"
+            .product__lists__list__body
+              %h3.name
+                product3
+              .details
+                %ul
+                  %li 30000円
+                  %li
+                    = icon('fas', 'star', class: 'staricon')
+                    0
+                %p (税込)
+        .main__pickup-product__lists__list
+          = link_to "#" do
+            .product__lists__list__img
+              = image_tag "", size: "220x150"
+            .product__lists__list__body
+              %h3.name
+                product2
+              .details
+                %ul
+                  %li 20000円
+                  %li
+                    = icon('fas', 'star', class: 'staricon')
+                    0
+                %p (税込)
+        .main__pickup-product__lists__list
+          = link_to "#" do
+            .product__lists__list__img
+              = image_tag "", size: "220x150"
+            .product__lists__list__body
+              %h3.name
+                product1
+              .details
+                %ul
+                  %li 10000円
+                  %li
+                    = icon('fas', 'star', class: 'staricon')
+                    0
+                %p (税込)
+
+  .main__pickupbrand
+    %h2.main__pickup-head
+      ピックアップブランド
+    .main__pickup-product
+      .main__pickup-product__head
+        = link_to "#" do
+          %h3.main__pickup-product__head__title
+            アーカイバ
+      .main__pickup-product__lists
+        .main__pickup-product__lists__list
+          = link_to "#" do
+            .product__lists__list__img
+              = image_tag "", size: "220x150"
+            .product__lists__list__body
+              %h3.name
+                product3
+              .details
+                %ul
+                  %li 30000円
+                  %li
+                    = icon('fas', 'star', class: 'staricon')
+                    0
+                %p (税込)
+        .main__pickup-product__lists__list
+          = link_to "#" do
+            .product__lists__list__img
+              = image_tag "", size: "220x150"
+            .product__lists__list__body
+              %h3.name
+                product2
+              .details
+                %ul
+                  %li 20000円
+                  %li
+                    = icon('fas', 'star', class: 'staricon')
+                    0
+                %p (税込)
+        .main__pickup-product__lists__list
+          = link_to "#" do
+            .product__lists__list__img
+              = image_tag "", size: "220x150"
+            .product__lists__list__body
+              %h3.name
+                product1
+              .details
+                %ul
+                  %li 10000円
+                  %li
+                    = icon('fas', 'star', class: 'staricon')
+                    0
+                %p (税込)
