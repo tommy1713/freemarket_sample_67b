@@ -1,0 +1,45 @@
+.mypage-main
+  = render "mypage-side-menu"
+
+  .mypage-main__right-contents
+    %section.mypage-user-icon
+      = link_to "#" do
+        %figure
+        = image_tag "noimage_thumb.png", size: "40x40"
+      %h2.bold
+        username
+      .mypage-number
+        %div.kk
+          評価
+        %div.kk
+          出品数
+          %span.bold
+            0
+    %section.mypage-tab-container-notification-todo
+      %ul.mypage-tabs
+        %li.active
+          %h3 お知らせ
+        %li
+          %h3
+            やることリスト
+      .tab-content
+        %ul.mypage-item-list
+          %li.mypage-item-not-found
+            現在、お知らせはありません
+
+    .mypage-tab-container
+      %h2.mypage-tab-head
+        購入した商品
+      %ul.mypage-tabs
+        %li.active
+          %h3
+            取引中
+        %li
+          %h3
+            過去の取引
+      .tab-content
+        %ul.mypage-item-list
+          -# = image_tag "logo-white.png"
+          .mypage-item-not-found
+            取引中の商品はありません
+

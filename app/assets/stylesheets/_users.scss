@@ -1,0 +1,158 @@
+body {
+  background-color: rgba(250, 249, 249, 0.938);
+}
+.mypage-main {
+ 
+  height: 1300px;
+  margin: 40px auto 0;
+  width: 1020px;
+  padding: 0 0 40px;
+  font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+  margin:40px 210px 0px;
+  &__side-menu{
+    float: left;
+    width: 280px;
+    margin: 0 40px 0 0;
+    &__box{
+
+      li{
+        position: relative;
+        display: block;
+        padding: 16px;
+        background: #fff;
+        font-size: 14px;
+        color: #333;
+        border: 0;
+        border-top: 1px solid #eee;
+      }
+      h3{
+        margin: 32px 0 0;
+        font-size: 16px;
+      }
+    }
+  }
+&__right-contents {
+  float: right;
+  width: 700px;
+  .mypage-user-icon {
+    position: relative;
+    height: 155px;
+    padding: 20px;
+    background: url(mypg.jpeg);
+    background-size: cover;
+    text-align: center;
+
+    figure{
+      overflow: hidden;
+      width: 60px;
+      height: 60px;
+      margin: 0 auto;
+      border-radius: 50%;
+      }
+    }
+    .mypage-number {
+      margin: 8px 0 0;
+      .kk {
+        display: inline-block;
+        font-size: 14px;
+        .bold {
+          margin: 0 0 0 8px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .mypage-tab-container-notification-todo {
+    height: 310px;
+    margin: 0;
+    .mypage-tabs {
+      border: 0;
+      background: #eee;
+      font-size: 0;
+      .active {
+        background: #fff;
+        font-size: 16px;
+        border-top: 2px solid #ea352d;
+      }
+      li {
+        width: 50%;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        height: 72px;
+        position: relative;
+        color: #333;
+        h3 {
+          padding: 25px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .tab-content {
+    height: 236px;
+    background-color: #fff;
+    .mypage-item-list {
+      position: center 40px;
+      text-align: center;
+      font-weight: 600;
+      background-color: #fff;
+      
+      .mypage-item-not-found {
+        background-image: url(logo.png);
+        background-color: #80808014;
+        padding: 160px 0 60px;
+        background-repeat: no-repeat;
+        background-position: center 40px;
+        background-size: 240px 60px;
+        text-align: center;
+        font-size: 16px;
+        color: #ccc;
+      }
+    }
+  }
+  
+  .mypage-tab-container{
+    margin: 40px 0 0;
+    background: #fff;
+    font-size: 16px;
+    .mypage-tab-head{
+      padding: 0 16px;
+      padding-top: 3px;
+      line-height: 72px;
+    }
+    .mypage-tabs{
+      border: 0;
+      background: #eee;
+      font-size: 0;
+      .active {
+        background: #fff;
+        font-size: 16px;
+        border-top: 2px solid #ea352d;
+      }
+      li {
+        width: 50%;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        height: 72px;
+        position: relative;
+        color: #333;
+        h3 {
+          padding: 25px;
+          font-size: 16px;
+          }
+        }
+      }
+      
+      //  img{
+      //      width: 78px ;
+      //      height: 85px;
+      //      text-align: center;
+      //      padding-top: 40px;
+      //    }
+  }
+  a {
+    text-decoration: none;
+  }
+}
