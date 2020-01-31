@@ -13,6 +13,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer :estimated_date, null: false
       t.integer :postage, null: false
       t.integer :situation, null: false
+      t.integer :favorite, null: false
       t.timestamps
     end
   end

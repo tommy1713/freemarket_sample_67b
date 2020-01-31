@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2020_01_29_102525) do
     t.integer "estimated_date", null: false
     t.integer "postage", null: false
     t.integer "situation", null: false
+    t.integer "favorite", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_products_on_user_id"

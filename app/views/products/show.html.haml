@@ -1,70 +1,94 @@
 .contents
-  .contents--top
-    .name
-      #{@product.name}
-    .images
-      .image__big
-      .image__small
-        .image__small__1
-        .image__small__2
-        .image__small__3
-    .price
-      ¥ #{@product.price}
-      (税込) #{@product.postage_i18n}
-    .infomation
-      %table
-        %tr.detail
-          %th.detail__title
-            商品の説明
-          %th.detail__content
-            #{@product.detail}
-        %tr.nickname
-          %th.nickname__title
-            出品者
-          %th.nickname__content
-
-        %tr.category
-          %th.category__title
-            カテゴリー
-          %th.category__content
-            #{@product.category}
-        %tr.brand
-          %th.brand__title
-            ブランド
-          %th.brand__content
-            #{@product.brand}
-        %tr.size
-          %th.size__title
-            サイズ
-          %th.size__content
-            #{@product.size}
-        %tr.status
-          %th.status__title
-            商品の状態
-          %th.status__content
-            #{@product.status_i18n}
-        %tr.postage
-          %th.postage__title
-            配送料の負担
-          %th.postage__content
-            #{@product.postage_i18n}
-        %tr.area
-          %th.area__title
-            発送元の地域
-          %th.area__content
-            #{@product.shipping_area}
-        %tr.estimated
-          %th.estimated__title
-            発送日の目安
-          %th.estimated__content
-            #{@product.estimated_date_i18n}
-    .buy--btn
-    .under--btn
-      .top--btn__favorite
-      .top--btn__report
-  .contents--under
-    .comments
+  .contents--main
+    .contents--top
+      .name
+        = @product.name
+      .image
+        .image__big
+          = image_tag "inu2.jpeg", size: "560x440"
+        %ul.image__small
+          %li.image__small__1
+            = image_tag "inu2.jpeg"
+          %li.image__small__2
+            = image_tag "inu2.jpeg"
+          %li.image__small__3
+            = image_tag "inu2.jpeg"
+      .price
+        ¥ #{@product.price}
+        .price__detail
+          (税込) #{@product.postage_i18n}
+      .information
+        %table
+          %tr.detail
+            %th.detail__title
+              商品の説明
+            %td.detail__content
+              = @product.detail
+          %tr.nickname
+            %th.nickname__title
+              出品者
+            %td.nickname__content
+              田中
+          %tr.category
+            %th.category__title
+              カテゴリー
+            %td.category__content
+              = @product.category
+          %tr.brand
+            %th.brand__title
+              ブランド
+            %td.brand__content
+              = @product.brand
+          %tr.size
+            %th.size__title
+              サイズ
+            %td.size__content
+              = @product.size
+          %tr.status
+            %th.status__title
+              商品の状態
+            %td.status__content
+              = @product.status_i18n
+          %tr.postage
+            %th.postage__title
+              配送料の負担
+            %td.postage__content
+              = @product.postage_i18n
+          %tr.area
+            %th.area__title
+              発送元の地域
+            %td.area__content
+              = @product.shipping_area
+          %tr.estimated
+            %th.estimated__title
+              発送日の目安
+            %td.estimated__content
+              = @product.estimated_date_i18n
+      .buy--btn
+        = link_to "購入する", "#", class: "b-btn"
+      .under--btn
+        .under--btn__favorite
+          = icon("fa","star", class: "star-btn")
+          = link_to "お気に入り #{@product.favorite}", "#", class: "f-btn"
+        .under--btn__report
+          = icon("fa","flag", class: "flag-btn")
+          = link_to "不適切な商品の通報", "#", class: "r-btn"
+    .contents--under
+      .form
+        = form_for "#" do |f|
+          = f.text_field :content, class: 'textbox'
+        .notificate
+          相手のことを考え丁寧なコメントを心がけましょう。
+          %br
+          不快な言葉遣いなどは利用制限や退会処分となることがあります
+        .comments  
+          %button.comment--btn
+            = icon("fa", "comment", class:"submit--btn")
+            コメントする
     .move--btn
       .move--btn__forward
+        = link_to "< 前の商品", "#", class:"f--name"
       .move--btn__backward
+        = link_to "後ろの商品 >", "#",class:"b--name"
     .back--category
+      = link_to "#{@product.category}をもっと見る", "#", class:"c--name"

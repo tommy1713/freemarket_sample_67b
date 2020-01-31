@@ -15,6 +15,7 @@
 |estimated_date|integer|null: false|
 |postage|integer|null: false|
 |situation|integer|null: false|
+|favorite|integer|null: false|
 
 ### Association
 - has_many :images
