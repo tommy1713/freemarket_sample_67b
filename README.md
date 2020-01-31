@@ -5,15 +5,17 @@
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
 |name|string|null: false|
-|details|text|null: false|
-|category|string|null: false|
+|detail|text|null: false|
+|category|integer|null: false|
+|brand|string|
+|size|string|
 |price|integer|null: false|
 |status|integer|null: false|
-|stuation|text|null: false|
-|shipping_area|string|null: false|
-|estimated_date|string|null: false|
-|postage|string|null: false|
-|method|string|null: false|
+|shipping_area|integer|null: false|
+|estimated_date|integer|null: false|
+|postage|integer|null: false|
+|situation|integer|null: false|
+|favorite|integer|null: false|
 
 ### Association
 - has_many :images
