@@ -1,3 +1,24 @@
+= render "homes/header"
+.products--clums
+  %ul
+    %li
+      = link_to "FURIMA", root_path, class:"top--link"
+    %li
+      >
+    %li
+      = link_to "#{@product.category}", "#", class:"mc--link"
+    %li
+      >
+    %li
+      = link_to "子カテゴリー", "#", class:"cc--link"
+    %li
+      >
+    %li
+      = link_to "孫カテゴリー", "#", class:"gc--link"
+    %li
+      >
+    %li.clums--name
+      = @product.name
 .contents
   .contents--main
     .contents--top

@@ -1,3 +1,29 @@
+.products--clums {
+  height: 55px;
+  width: 100%;
+  padding: 0 60px;
+  border-top: 1px solid #eeeeee;
+  display: block;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  ul {
+    display: flex;
+    margin-left: 140px;
+    line-height: 55px;
+    .top--link {
+      font-weight: bold;
+    }
+    .clums--name {
+      font-weight: bold;
+    }
+    li {
+      margin-right: 10px;
+      a{
+        color: black;
+        font-size: 14px;
+      }
+    }
+  }
+}
 .contents {
   background-color: #f8f8f8;
   .contents--main {
