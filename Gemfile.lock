@@ -246,8 +246,8 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
-  fog-aws
   enum_help
+  fog-aws
   font-awesome-sass
   haml-rails
   jbuilder (~> 2.5)
