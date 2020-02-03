@@ -72,4 +72,6 @@ gem 'fog-aws'
 gem 'enum_help'
 gem 'rails-i18n', '~> 5.1'
 gem 'font-awesome-sass'
+gem 'carrierwave'
+gem 'mini_magick'
 
