@@ -1,9 +1,37 @@
 body {
   background-color: rgba(250, 249, 249, 0.938);
 }
+.bread-crumbs {
+  position: relative;
+  border-top: 1px solid #eee;
+  background: #f7f3f38c;
+  height: 48px;
+  ul {
+    width: 1020px;
+    position: absolute;
+    left: 200px;
+    top: 15px;
+    li {
+      display: inline-block;
+      font-size: 14px;
+      line-height: 1.2;
+      i {
+        margin: 0 8px;
+        font-size: 15px;
+        color: #888;
+      }
+    }
+    li.last-child {
+      font-weight: 600;
+    }
+  a {
+    color: #333;
+  }
+  }
+}
 .mypage-main {
  
-  height: 1300px;
+  height: 1355px;
   margin: 40px auto 0;
   width: 1020px;
   padding: 0 0 40px;
@@ -24,6 +52,7 @@ body {
         color: #333;
         border: 0;
         border-top: 1px solid #eee;
+        
       }
       h3{
         margin: 32px 0 0;
@@ -36,18 +65,17 @@ body {
   width: 700px;
   .mypage-user-icon {
     position: relative;
-    height: 155px;
-    padding: 20px;
+    padding: 40px;
     background: url(mypg.jpeg);
     background-size: cover;
     text-align: center;
 
     figure{
       overflow: hidden;
-      width: 60px;
-      height: 60px;
-      margin: 0 auto;
       border-radius: 50%;
+      img {
+        width: 50px;
+      }
       }
     }
     .mypage-number {
@@ -154,5 +182,6 @@ body {
   }
   a {
     text-decoration: none;
+    color: #333333;
   }
 }

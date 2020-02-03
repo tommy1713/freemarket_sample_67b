@@ -1,3 +1,14 @@
+.bread-crumbs
+  %ul
+    %li.itemscope
+      = link_to "メルカリ", "#"
+      %i.icon-arrow-right
+        %li 
+          >
+    %li.last-child
+      マイページ
+
+
 .mypage-main
   = render "mypage-side-menu"
 
@@ -5,7 +16,7 @@
     %section.mypage-user-icon
       = link_to "#" do
         %figure
-        = image_tag "noimage_thumb.png", size: "40x40"
+          = image_tag "noimage_thumb.png", size: "40x40"
       %h2.bold
         username
       .mypage-number
