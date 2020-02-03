@@ -1,0 +1,36 @@
+.header
+  .header__inner
+    .header__inner-main
+      %h1.header__inner-main__icon
+        = link_to "/" do
+          = image_tag "logo-furima.svg"
+      .header__inner-main__searchbox
+        = form_tag('/search', method: :get, class: 'search-form') do
+          %input.search-form__input{name: "keyword", placeholder: "キーワードから探す", type: "text", value: ""}
+          %button.btn-search{title: "検索", type: "submit"}
+            = image_tag "icon-search.svg", size: "20x20"
+            
+    .header__inner-nav
+      %ul.header__inner-nav__listleft
+        %li.header__inner-nav__listleft__category
+          = link_to "#", id:"catbtn" do
+            カテゴリー
+          .displaynone.tree
+            %ul.categorytree
+              %li.categorytree__item
+                = link_to "#", id:"1" do
+                  レディース
+              %li.categorytree__item
+                = link_to "#", id:"2" do
+                  aaaa
+        %li.header__inner-nav__listleft__brand
+          #brandbtn
+            = link_to "#" do
+              ブランド
+      %ul.header__inner-nav__listright
+        %li.header__inner-nav__listright__login
+          = link_to "#" do
+            ログイン
+        %li.header__inner-nav__listright__new
+          = link_to "#" do
+            新規会員登録

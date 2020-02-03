@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+  enums:
+    product:
+      status:
+        unused: "新品/未使用"
+        near_unused: "未使用に近い"
+        no_dirt: "目立った傷や汚れなし"
+        dirt_small: "やや傷や汚れあり"
+        dirt: "傷や汚れあり"
+        bad: "全体的に状態が悪い"
+      postage:
+        buyer: "着払い(購入者負担)"
+        vendor: "送料込み(出品者負担)"
+      estimated_date:
+        early: "1~2日で発送"
+        half: "2~3日で発送"
+        late: "4~7日で発送"
