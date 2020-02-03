@@ -73,4 +73,3 @@ gem 'font-awesome-sass'
 gem 'fog-aws'
 gem 'enum_help'
 gem 'rails-i18n', '~> 5.1'
-
