@@ -1,7 +1,10 @@
-@import "reset";
+@import "./reset";
+@import "font-awesome-sprockets";
 @import "font-awesome";
+@import "./login";
+@import "./registration";
+@import "./header-mini";
 @import "users";
 @import "./_homes";
-@import "font-awesome-sprockets";
 @import "./products";
 @import "./confirmations";
