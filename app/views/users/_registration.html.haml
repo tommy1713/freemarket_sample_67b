@@ -1,0 +1,20 @@
+.user-container
+  %main.user-container__main
+    .user-container__main__section
+      %h2.user-container__main__section__head 新規会員登録
+      .user-container__main__section__inner-form
+        .user-container__main__section__inner-form__content
+          .jump-btn
+            .jump-btn__mail
+              %i.fa.fa-envelope
+              = link_to "#" do
+                メールアドレスで登録する
+            .jump-btn__facebook
+              = icon('fab', 'facebook-square',class:'facebook-square')
+              = link_to "https://www.facebook.com/login.php?skip_api_login=1&api_key=466308336793848&kid_directed_site=0&app_id=466308336793848&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv2.5%2Fdialog%2Foauth%3Fapp_id%3D466308336793848%26cbt%3D1580383045711%26channel_url%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fconnect%252Fxd_arbiter.php%253Fversion%253D45%2523cb%253Df77b3b3e595938%2526domain%253Dwww.mercari.com%2526origin%253Dhttps%25253A%25252F%25252Fwww.mercari.com%25252Ff2d6b098511e738%2526relation%253Dopener%26client_id%3D466308336793848%26display%3Dpopup%26domain%3Dwww.mercari.com%26e2e%3D%257B%257D%26fallback_redirect_uri%3Dhttps%253A%252F%252Fwww.mercari.com%252Fjp%252Fsignup%252F%26locale%3Den_US%26logger_id%3Df22e646ae7e119c%26origin%3D1%26redirect_uri%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fconnect%252Fxd_arbiter.php%253Fversion%253D45%2523cb%253Df3ab1dd2f4dc82c%2526domain%253Dwww.mercari.com%2526origin%253Dhttps%25253A%25252F%25252Fwww.mercari.com%25252Ff2d6b098511e738%2526relation%253Dopener%2526frame%253Dff6889acde1e34%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26scope%3Dpublic_profile%252Cemail%252Cuser_friends%26sdk%3Djoey%26version%3Dv2.5%26ret%3Dlogin%26fbapp_pres%3D0&cancel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D45%23cb%3Df3ab1dd2f4dc82c%26domain%3Dwww.mercari.com%26origin%3Dhttps%253A%252F%252Fwww.mercari.com%252Ff2d6b098511e738%26relation%3Dopener%26frame%3Dff6889acde1e34%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied&display=popup&locale=en_US&pl_dbl=0" do
+                Facebookで登録する
+            .jump-btn__google
+              = icon('fab', 'fa-google',class:'fa-google')
+              = link_to "https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=238694260676-l0gp5j3hs9p8l2hjmnt126q0b4iin34r.apps.googleusercontent.com&as=unmplZyuL-wpD02F9JaP5w&destination=https%3A%2F%2Fwww.mercari.com&approval_state=!ChR1TXZ1bDY4Nkc3U2VXT2Z6OGkxVxIfRTNxWkRvQ1lpT3dRNEJxcmlYbTVkb2xDWnNsaV94WQ%E2%88%99AJDr988AAAAAXjQNCnVWKKVePZhwsvlCgQkhQozKhxQq&oauthgdpr=1&xsrfsig=ChkAeAh8T-EQX3QfmhgWWhSmgk83eMcuqysPEg5hcHByb3ZhbF9zdGF0ZRILZGVzdGluYXRpb24SBXNvYWN1Eg9vYXV0aHJpc2t5c2NvcGU&flowName=GeneralOAuthFlow" do
+                Googleで登録する
+ 

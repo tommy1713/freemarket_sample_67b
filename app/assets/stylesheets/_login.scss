@@ -1,0 +1,148 @@
+
+    *{
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      border: solid;
+      border-width: 0;
+      font-size: inherit;
+      line-height: inherit;
+      box-sizing: inherit;
+    }
+    .login-container {
+      padding: 0 0 220px;
+      &__main {
+        display: block;
+        &__section {
+          background: #fff;
+          width: 456px;
+          margin: 0 auto;
+          max-width: none;
+          &__accaunt{
+            text-align: center;
+            padding: 40px 64px;
+            p{
+              font-size: 14px;
+            }
+            .new{
+              display: block;
+              margin: 8px 0 0;
+              border: 1px solid #0099e8;
+              background: #0099e8;
+              color: #fff;
+              line-height: 40px;
+              text-decoration: none;
+            }
+          &__link {
+            padding: 32px 64px;
+            border-top: 1px solid #eee;
+            .link-btn_facebook {
+              background: #385185;
+              color: #fff;
+              position: relative;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              border: 1px solid transparent;
+              transition: all ease-out .3s;
+              cursor: pointer;
+              text-align: center; 
+              .facebook{
+                position: absolute;
+                top: 50%;
+                left: 16px;
+                transform: translate(0,-50%);
+                font-size: 26px;
+              }
+              a {
+                text-decoration: none;
+                color: white;
+              }
+            }
+            .link-btn_google{
+              border-radius: 4px;
+              margin: 16px 0 0;
+              background: #fff;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              transition: all ease-out .3s;
+              cursor: pointer;
+              text-align: center;
+              border: #979797 solid 1px;
+              color: #333;
+              position: relative;
+              .google{
+                position: absolute;
+                top: 50%;
+                left: 16px;
+                transform: translate(0, -50%);
+                font-size: 26px;
+              }
+              a {
+                text-decoration: none;
+                color: black;
+              }
+            }
+          }
+        }
+            .text-form__group{
+              padding: 24px 64px 32px;
+              border: 0;
+              &__mail{
+                margin: 0;
+                &__input{
+                  appearance: none;
+                  margin: 0;
+                  width: 90%;
+                  height: 28px;
+                  padding: 10px 16px 8px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: #fff;
+                  line-height: 1.5;
+                  font-size: 16px;
+                }
+              }
+              &__password{
+                margin: 24px 0 0;
+                &__input{
+                  margin: 0;
+                  width: 90%;
+                  height: 28px;
+                  padding: 10px 16px 8px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: #fff;
+                  line-height: 1.5;
+                  font-size: 16px;
+              }
+            }
+              &__robo{
+                margin: 24px 0 0;
+                &__recapcha{
+                  transform: none;
+                  &__inner{
+                    width: 304px;
+                    height: 78px;
+                    iframe{
+                      vertical-align: middle;
+                    }
+                  }
+                }
+              }
+              .login-btn{
+                display: block;
+                margin: 40px 0 0;
+               
+              }
+              a{
+                color: #0099e8;
+                text-decoration: none;
+                touch-action: manipulation;
+                font-size: 14px;
+              }
+          }
+        }    
+      }
+    }
