@@ -1,4 +1,30 @@
-.contents {
+.products--clums {
+  height: 55px;
+  width: 100%;
+  padding: 0 60px;
+  border-top: 1px solid #eeeeee;
+  display: block;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  ul {
+    display: flex;
+    margin-left: 140px;
+    line-height: 55px;
+    .top--link {
+      font-weight: bold;
+    }
+    .clums--name {
+      font-weight: bold;
+    }
+    li {
+      margin-right: 10px;
+      a{
+        color: black;
+        font-size: 14px;
+      }
+    }
+  }
+}
+.detail--contents {
   background-color: #f8f8f8;
   .contents--main {
     padding: 40px;
@@ -220,3 +246,315 @@
     text-decoration: none;
   }
 }
+
+.contents--background {
+  background-color: #f8f8f8;
+  width: 100%;
+  height: 100%;
+  .sell--contents {
+    margin: 0 auto;
+    width: 700px;
+    background-color: white;
+    height: 2100px;
+    .contents--title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      width: 100%;
+      height: 90px;
+      line-height: 90px;
+    }
+    .images {
+      border-top: 1px solid #eeeeee;
+      height: 300px;
+      padding: 40px;
+      .images--title {
+        font-weight: bold;
+      }
+      .images--info {
+        font-size: 12px;
+      }
+      .images--box {
+        height: 140px;
+        width: 620px;
+        border: 1px dashed #cccccc;
+        background-color: #f5f5f5;
+        margin-top: 20px;
+        position: relative;
+        &__file {
+          display: none;
+        }
+        &__text {
+          position: absolute;
+          top: 35%;
+          width: 100%;
+          line-height: 1.5;
+          text-align: center;
+          font-size: 14px;
+        }
+      }
+    }
+    .products--name {
+      padding: 40px;
+      border-top: 1px solid #eeeeee;
+      .products--name--title {
+        font-weight: bold;
+      }
+      .name--box {
+        height: 80px;
+        width: 620px;
+        &__area {
+          height: 40px;
+          width: 100%;
+          margin-top: 10px;
+          padding-left: 10px;
+        }
+      }
+    }
+    .info {
+      padding:0 40px 40px;
+      width: 700px;
+      .info--title {
+        font-weight: bold;
+      }
+    } .info--box {
+      width: 620px;
+      height: 150px;
+      &__area {
+        width: 100%;
+        height: 150px;
+        padding:10px 0 0 10px;
+      }
+    }
+    .sell--detail {
+      width: 100%;
+      height: 340px;
+      padding: 40px;
+      border-top: 1px solid #eeeeee;
+      .sell--detail--title {
+        font-weight: bold;
+        width: 200px;
+        float: left;
+        font-size: 14px;
+        color: #888888;
+      }
+      .sell--detail--box {
+        float: right;
+        height: 100%;
+        .category {
+          margin-bottom: 15px;
+          .category--title {
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+          .category--box {
+            width: 320px;
+            height: 48px;
+          }
+        }
+        .brand {
+          margin-bottom: 15px;
+          .brand--title {
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+          .brand--box {
+            &__area {
+              width: 400px;
+              height: 48px;
+              padding-left: 10px;
+            }
+          }
+        }
+        .status {
+          .status--title {
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+          .status--box{
+            width: 320px;
+            height: 48px;
+          }
+        }
+      }
+    }
+    .delivery--detail {
+      width: 100%;
+      height: 340px;
+      padding: 40px;
+      border-top: 1px solid #eeeeee;
+      .delivery--detail--title {
+        font-weight: bold;
+        width: 200px;
+        float: left;
+        font-size: 14px;
+        color: #888888;
+      }
+      .delivery--detail--box {
+        float: right;
+        height: 100%;
+        .postage {
+          margin-bottom: 15px;
+          .postage--title {
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+          .postage--box {
+            width: 300px;
+            height: 48px;
+          }
+        }
+        .shipping--area {
+          margin-bottom: 15px;
+          .shipping--area--title {
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+          .shipping--area--box {
+            &__area {
+              width: 400px;
+              height: 48px;
+            }
+          }
+        }
+        .estimated--date {
+          .estimated--date--title {
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+          .estimated--date--box{
+            width: 400px;
+            height: 48px;
+          }
+        }
+      }
+    }
+    .sell--price {
+      border-top: 1px solid #eeeeee;
+      padding: 40px;
+      height: 300px;
+      .sell--price--title {
+        float: left;
+        font-weight: bold;
+        font-size: 14px;
+        color: #888888;
+      }
+      .sell--price--box {
+        float: right;
+        width: 400px;
+        margin-left: 25px;
+        .products--price {
+          height: 50px;
+          line-height: 50px;
+          margin-bottom: 20px;
+          .price--title {
+            float: left;
+            font-weight: bold;
+            width: 50%;
+            
+          }
+          .price--form {
+            float: right;
+            width: 200px;
+            height: 100%;
+            .price--unit {
+              float: left;
+              margin-right: 5px;
+            }
+            .price--box {
+              float: right;
+              &__area {
+                width: 180px;
+                height: 50px;
+                text-align: right;
+                padding-right: 20px;
+                border-radius: 4px;
+                border: 1px solid #cccccc;
+              }
+            }
+          }
+        }
+        .fee {
+          width: 400px;
+          height: 74px;
+          padding: 25px 0;
+          border-top: 1px solid #cccccc;
+          .fee--title {
+            font-weight: bold;
+            width: 50%;
+            float: left;
+          }
+          .fee--box {
+            width: 50%;
+            float: right;
+            text-align: right;
+            padding-right: 20px;
+          }
+        }
+        .profit {
+          width: 400px;
+          height: 74px;
+          padding: 25px 0;
+          border-top: 1px solid #cccccc;
+          .profit--title {
+            font-weight: bold;
+            width: 50%;
+            float: left;
+          }
+          .profit--box {
+            width: 50%;
+            float: right;
+            text-align: right;
+            padding-right: 20px;
+          }
+        }
+      }
+    }
+    .under--box {
+      width: 700px;
+      height: 330px;
+      padding: 40px;
+      border-top: 1px solid #eeeeee;
+      .notification {
+        font-size: 14px;
+        line-height: 1.5;
+
+      }
+      .sell--btn {
+        width: 100%;
+        height: 50px;
+        background-color: #3ccace;
+        color: white;
+        border: 1px solid #3ccace;
+        // border-radius: 100px;
+        font-size: 18px;
+        margin-top: 30px;
+      }
+      .back--btn {
+        margin: 25px auto 0;
+        width: 280px;
+        height: 50px;
+        text-align: center;
+        border: 1px solid #aaaaaa;
+        line-height: 50px;
+        background-color: #aaaaaa;
+        .b--btn {
+          color: white;
+        }
+      }
+    }
+  }
+  select {
+    background: transparent;
+    z-index: 1;
+    padding: 0 40px 0 10px;
+    border: 1px solid #b4b3b3;
+    border-radius: 2px;
+    width: 400px;
+    height: 48px;
+  }
+  select::-ms-expand {
+    display: none;
+  }
+}
+
