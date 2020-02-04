@@ -50,7 +50,7 @@
             %th.nickname__title
               出品者
             %td.nickname__content
-              田中
+              = @product.user.nickname
           %tr.category
             %th.category__title
               カテゴリー
@@ -86,6 +86,7 @@
               発送日の目安
             %td.estimated__content
               = @product.estimated_date_i18n
+      
       .buy--btn
         = link_to "購入する", "#", class: "b-btn"
       .under--btn
