@@ -111,7 +111,7 @@
           .main__pickup-product__lists__list
             = link_to "#" do
               .product__lists__list__img
-                = image_tag "", size: "220x150"
+                = image_tag "/products/1", size: "220x150"
                 - if product.stock == 0
                   %figcaption
                     .sold__out
@@ -141,9 +141,9 @@
         - @product.each do |product|
           - if product.brand.first(3).present?
             .main__pickup-product__lists__list
-              = link_to "#" do
+              = link_to "/products/1" do
                 .product__lists__list__img
-                  = image_tag product.image.url if product.image.present?
+                  -# = image_tag product.images[1].image_path_url
                   - if product.stock == 0
                     %figcaption
                       .sold__out
