@@ -27,10 +27,20 @@
           #brandbtn
             = link_to "#" do
               ブランド
-      %ul.header__inner-nav__listrigh
-        %li.header__inner-nav__listright__login
-          = link_to "#" do
-            ログイン
-        %li.header__inner-nav__listright__new
-          = link_to "#" do
-            新規会員登録
+
+      %ul.header__inner-nav__listright
+        - if user_signed_in?
+          %li.header__inner-nav__listright__login
+            = link_to "/users/sign_out" do
+              ログアウト
+          %li.header__inner-nav__listright__new
+            = link_to "/users/:id" do
+              マイページ
+        - else
+          %li.header__inner-nav__listright__login
+            = link_to "/users/new" do
+              ログイン
+          %li.header__inner-nav__listright__new
+            = link_to "/users" do
+              新規会員登録
+
