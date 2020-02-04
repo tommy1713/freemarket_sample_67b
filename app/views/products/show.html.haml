@@ -19,7 +19,7 @@
       >
     %li.clums--name
       = @product.name
-.contents
+.detail--contents
   .contents--main
     .contents--top
       .name
@@ -97,7 +97,7 @@
     .contents--under
       .form
         = form_for "#" do |f|
-          = f.text_field :content, class: 'textbox'
+          = f.text_area :content, class: 'textbox'
         .notificate
           相手のことを考え丁寧なコメントを心がけましょう。
           %br
