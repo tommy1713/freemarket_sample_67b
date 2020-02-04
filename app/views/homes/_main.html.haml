@@ -143,7 +143,7 @@
             .main__pickup-product__lists__list
               = link_to "/products/1" do
                 .product__lists__list__img
-                  -# = image_tag product.images[1].image_path_url
+                  = image_tag ""
                   - if product.stock == 0
                     %figcaption
                       .sold__out
