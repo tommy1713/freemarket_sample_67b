@@ -1,0 +1,80 @@
+.conf
+  .conf-header
+  .conf-main
+    .conf-main__content
+      %h2.conf-main__content__head
+        購入内容の確認
+      .conf-main__content__item
+        .conf-main__content__item__inner
+          .item__box
+            %h3.item__box-image
+              = image_tag "", size: "80x80"
+            .item__box-detail
+              %p.item__box-detail__name
+                牛
+              %p.item__box-detail__price
+                %span ￥2400
+                %span.price__detail
+                  （税込）送料込み
+      .conf-main__content__information
+        .conf-main__content__information__inner
+          .conf-main__content__information__inner__form
+            %ul.content__price
+              %li.content__price-table
+                .content__price-table__left
+                  支払い金額
+                .content__price-table__right
+                  %span ￥2400
+            %ul.content__accordion
+              %li.content__accordion-parent
+                .content__accordion-parent__point
+                  %input{type: "checkbox", value: "1"}
+                  = icon('far', 'check-square', class: 'check-icon')
+                  %label.status__all
+                    ポイントを使用 (所持ポイント: P3000000)
+                %ul.content__accordion-parent__child{style: "display: block;"}
+                  %li.accordion__form
+                    .accordion__form__de
+                      %label
+                        %input{name: "consume_point_radio", type: "radio", value: "all"}
+                          すべてのポイントを使う
+                          %br
+                          (使用ポイント: P300)
+                    .accordion__form__default
+                      %label
+                        %input{name: "consume_point_radio", type: "radio", value: "partial"}
+                          一部のポイントを使う
+                    %input.input-default{placeholder: "使うポイントを入力", type: "number", value: ""}
+            .content__pay
+              .content__pay__inner
+                %h3
+                  支払方法
+                = link_to "#" do
+                  %p.content__pay__inner__text
+                    = icon('fas', 'plus-circle', class: 'plus_icon')
+                    %span.register-text
+                      登録してください
+            .content__info
+              .content__info__inner
+                .content__info__inner__top
+                  %h3 配送先
+                  = link_to "#", class:"change" do
+                    変更する
+                %address.content__info__inner__address
+                  %p
+                    〒000-000
+                    %br
+                    福岡県＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+                    %br
+                    田中　明彦
+            .content__buy
+              %button.content__buy__btn
+                購入する
+              %p.content__buy__text
+                アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
+              .content__buy__logo
+                = link_to "#" do
+                  = image_tag "app-store.svg", size: "135x40"
+                = link_to "#" do
+                  = image_tag "google-play.svg", size: "135x40"
+  .conf-footer

@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users
   root to: "homes#index"
+  resources :users, only:[:index, :show, :new, :detroy]
   resources :products, only:[:show, :new]
+  resources :confirmations, only: :index
+
+  resources "users",only: :logout, path: '' do
+    collection do
+      get 'logout'
+    end
+  end 
 end
