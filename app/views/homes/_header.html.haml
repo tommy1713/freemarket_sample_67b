@@ -27,6 +27,7 @@
           #brandbtn
             = link_to "#" do
               ブランド
+
       %ul.header__inner-nav__listright
         - if user_signed_in?
           %li.header__inner-nav__listright__login
@@ -42,3 +43,4 @@
           %li.header__inner-nav__listright__new
             = link_to "/users" do
               新規会員登録
+
