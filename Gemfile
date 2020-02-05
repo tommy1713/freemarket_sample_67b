@@ -76,6 +76,7 @@ gem 'rails-i18n', '~> 5.1'
 gem 'font-awesome-sass'
 gem 'carrierwave'
 gem 'mini_magick'
-
-
+gem 'payjp'
+gem 'dotenv-rails'
+gem "jquery-rails"
 

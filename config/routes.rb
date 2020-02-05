@@ -9,5 +9,12 @@ Rails.application.routes.draw do
     collection do
       get 'logout'
     end
-  end 
+  end
+
+  resources :card, only: [:index, :new, :show, :destroy] do
+    collection do
+      get 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+    end
+  end
 end
