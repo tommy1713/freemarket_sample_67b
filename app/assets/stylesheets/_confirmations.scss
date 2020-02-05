@@ -95,13 +95,13 @@
               input{
                 display: none;
               }
-              .check-icon{
+              .plus_icon{
                 border-color: transparent;
                 background: #0099e8;
                 opacity: 1;
-                .check__icon:before{
-                  content: '\e00f';
-                }
+              }
+              .icon-check:before{
+                content: '\e00f';
               }
               .status__all{
                 position: relative;
@@ -133,8 +133,8 @@
                       position: absolute;
                       top: 50%;
                       left: 0;
-                      width: 20px;
-                      height: 20px;
+                      width: 10px;
+                      height: 10px;
                       border-radius: 50%;
                       background: #fff;
                       transition: all ease-out .3s;
@@ -155,8 +155,8 @@
                       position: absolute;
                       top: 50%;
                       left: 0;
-                      width: 20px;
-                      height: 20px;
+                      width: 10px;
+                      height: 10px;
                       border-radius: 50%;
                       background: #fff;
                       transition: all ease-out .3s;
