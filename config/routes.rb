@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  resources :card, only: [:index]
-  get 'card/new'
-  get 'card/show'
   devise_for :users
   root to: "homes#index"
   resources :users, only:[:index, :show, :new, :detroy]
@@ -14,11 +11,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :card, only: [:new, :show] do
+  resources :card, only: [:index, :new, :show] do
     collection do
       post 'show', to: 'card#show'
       post 'pay', to: 'card#pay'
-      post 'delete', to: 'card#delete'
+      post 'delete', to: 'card#destoroy'
     end
   end
 end
