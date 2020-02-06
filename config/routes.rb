@@ -4,10 +4,21 @@ Rails.application.routes.draw do
   resources :users, only:[:index, :show, :new, :detroy]
   resources :products, only:[:show, :new]
   resources :confirmations, only: :index
+  resources :categories, only: :index
 
   resources "users",only: :logout, path: '' do
     collection do
       get 'logout'
     end
   end 
+
+  resources :homes do 
+    collection do
+      get 'category_children' 
+      get 'category_grandchildren'
+    end
+  end
+
+  
+
 end

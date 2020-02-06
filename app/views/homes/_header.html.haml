@@ -13,16 +13,15 @@
     .header__inner-nav
       %ul.header__inner-nav__listleft
         %li.header__inner-nav__listleft__category
-          = link_to "#", id:"catbtn" do
+          = link_to "/categories", class:"catbtn" do
             カテゴリー
           .displaynone.tree
-            %ul.categorytree
-              %li.categorytree__item
-                = link_to "#", id:"1" do
-                  レディース
-              %li.categorytree__item
-                = link_to "#", id:"2" do
-                  aaaa
+            .category_list
+              .parents_list
+                - @parents.each do |parent|
+                  = link_to "#{parent.name}", "category_path(parent)", class: "parent_category",id: "#{parent.id}"
+                  .children_list
+                  .grand_children_list
         %li.header__inner-nav__listleft__brand
           #brandbtn
             = link_to "#" do

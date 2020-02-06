@@ -1,0 +1,193 @@
+= render "homes/header"
+.category__contents
+  .category__parent
+    .category__parent__head
+      %h2 カテゴリー一覧
+    .category__parent__name
+      - @parents.each do |parent|
+        = link_to "#{parent.name}", "category_path(parent)", class: "parent__category__item"
+  .category__lists
+    .category__lists__list
+      .category__lists__list__head
+        %h2 レディース
+      .category__lists__list__content
+        .category__lists__list__content__all
+          = link_to "#" do
+            すべて
+        .category__lists__list__content__item
+          - @parents.find(1).children.each do |child|
+            = link_to "#{child.name}", "category_path(child)", class: "child__category__item"
+            .category__lists__list__content__item__grand
+              -child.children.each do |grandchild|
+                = link_to "#{grandchild.name}", "category_path(grandchild)", class: "grandchild__category__item"
+  .category__lists
+    .category__lists__list
+      .category__lists__list__head
+        %h2 メンズ
+      .category__lists__list__content
+        .category__lists__list__content__all
+          = link_to "#" do
+            すべて
+        .category__lists__list__content__item
+          - @parents.find(2).children.each do |child|
+            = link_to "#{child.name}", "category_path(child)", class: "child__category__item"
+            .category__lists__list__content__item__grand
+              -child.children.each do |grandchild|
+                = link_to "#{grandchild.name}", "category_path(grandchild)", class: "grandchild__category__item"
+  .category__lists
+    .category__lists__list
+      .category__lists__list__head
+        %h2 ベビー・キッズ
+      .category__lists__list__content
+        .category__lists__list__content__all
+          = link_to "#" do
+            すべて
+        .category__lists__list__content__item
+          - @parents.find(3).children.each do |child|
+            = link_to "#{child.name}", "category_path(child)", class: "child__category__item"
+            .category__lists__list__content__item__grand
+              -child.children.each do |grandchild|
+                = link_to "#{grandchild.name}", "category_path(grandchild)", class: "grandchild__category__item"
+  .category__lists
+    .category__lists__list
+      .category__lists__list__head
+        %h2 インテリア・住まい・小物
+      .category__lists__list__content
+        .category__lists__list__content__all
+          = link_to "#" do
+            すべて
+        .category__lists__list__content__item
+          - @parents.find(4).children.each do |child|
+            = link_to "#{child.name}", "category_path(child)", class: "child__category__item"
+            .category__lists__list__content__item__grand
+              -child.children.each do |grandchild|
+                = link_to "#{grandchild.name}", "category_path(grandchild)", class: "grandchild__category__item"
+  .category__lists
+    .category__lists__list
+      .category__lists__list__head
+        %h2 本・音楽・ゲーム
+      .category__lists__list__content
+        .category__lists__list__content__all
+          = link_to "#" do
+            すべて
+        .category__lists__list__content__item
+          - @parents.find(5).children.each do |child|
+            = link_to "#{child.name}", "category_path(child)", class: "child__category__item"
+            .category__lists__list__content__item__grand
+              -child.children.each do |grandchild|
+                = link_to "#{grandchild.name}", "category_path(grandchild)", class: "grandchild__category__item"
+  .category__lists
+    .category__lists__list
+      .category__lists__list__head
+        %h2 おもちゃ・ボビー・グッズ
+      .category__lists__list__content
+        .category__lists__list__content__all
+          = link_to "#" do
+            すべて
+        .category__lists__list__content__item
+          - @parents.find(6).children.each do |child|
+            = link_to "#{child.name}", "category_path(child)", class: "child__category__item"
+            .category__lists__list__content__item__grand
+              -child.children.each do |grandchild|
+                = link_to "#{grandchild.name}", "category_path(grandchild)", class: "grandchild__category__item"
+  .category__lists
+    .category__lists__list
+      .category__lists__list__head
+        %h2 コスメ・香水・美容
+      .category__lists__list__content
+        .category__lists__list__content__all
+          = link_to "#" do
+            すべて
+        .category__lists__list__content__item
+          - @parents.find(7).children.each do |child|
+            = link_to "#{child.name}", "category_path(child)", class: "child__category__item"
+            .category__lists__list__content__item__grand
+              -child.children.each do |grandchild|
+                = link_to "#{grandchild.name}", "category_path(grandchild)", class: "grandchild__category__item"
+  .category__lists
+    .category__lists__list
+      .category__lists__list__head
+        %h2 家電・スマホ・カメラ
+      .category__lists__list__content
+        .category__lists__list__content__all
+          = link_to "#" do
+            すべて
+        .category__lists__list__content__item
+          - @parents.find(8).children.each do |child|
+            = link_to "#{child.name}", "category_path(child)", class: "child__category__item"
+            .category__lists__list__content__item__grand
+              -child.children.each do |grandchild|
+                = link_to "#{grandchild.name}", "category_path(grandchild)", class: "grandchild__category__item"
+  .category__lists
+    .category__lists__list
+      .category__lists__list__head
+        %h2 スポーツ・レジャー
+      .category__lists__list__content
+        .category__lists__list__content__all
+          = link_to "#" do
+            すべて
+        .category__lists__list__content__item
+          - @parents.find(9).children.each do |child|
+            = link_to "#{child.name}", "category_path(child)", class: "child__category__item"
+            .category__lists__list__content__item__grand
+              -child.children.each do |grandchild|
+                = link_to "#{grandchild.name}", "category_path(grandchild)", class: "grandchild__category__item"
+  .category__lists
+    .category__lists__list
+      .category__lists__list__head
+        %h2 ハンドメイド
+      .category__lists__list__content
+        .category__lists__list__content__all
+          = link_to "#" do
+            すべて
+        .category__lists__list__content__item
+          - @parents.find(10).children.each do |child|
+            = link_to "#{child.name}", "category_path(child)", class: "child__category__item"
+            .category__lists__list__content__item__grand
+              -child.children.each do |grandchild|
+                = link_to "#{grandchild.name}", "category_path(grandchild)", class: "grandchild__category__item"
+  .category__lists
+    .category__lists__list
+      .category__lists__list__head
+        %h2 チケット
+      .category__lists__list__content
+        .category__lists__list__content__all
+          = link_to "#" do
+            すべて
+        .category__lists__list__content__item
+          - @parents.find(11).children.each do |child|
+            = link_to "#{child.name}", "category_path(child)", class: "child__category__item"
+            .category__lists__list__content__item__grand
+              -child.children.each do |grandchild|
+                = link_to "#{grandchild.name}", "category_path(grandchild)", class: "grandchild__category__item"
+  .category__lists
+    .category__lists__list
+      .category__lists__list__head
+        %h2 自動車・オートバイ
+      .category__lists__list__content
+        .category__lists__list__content__all
+          = link_to "#" do
+            すべて
+        .category__lists__list__content__item
+          - @parents.find(12).children.each do |child|
+            = link_to "#{child.name}", "category_path(child)", class: "child__category__item"
+            .category__lists__list__content__item__grand
+              -child.children.each do |grandchild|
+                = link_to "#{grandchild.name}", "category_path(grandchild)", class: "grandchild__category__item"
+  .category__lists
+    .category__lists__list
+      .category__lists__list__head
+        %h2 その他
+      .category__lists__list__content
+        .category__lists__list__content__all
+          = link_to "#" do
+            すべて
+        .category__lists__list__content__item
+          - @parents.find(13).children.each do |child|
+            = link_to "#{child.name}", "category_path(child)", class: "child__category__item"
+            .category__lists__list__content__item__grand
+              -child.children.each do |grandchild|
+                = link_to "#{grandchild.name}", "category_path(grandchild)", class: "grandchild__category__item"
+  
+
+
