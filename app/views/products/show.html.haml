@@ -1,4 +1,25 @@
-.contents
+= render "homes/header"
+.products--clums
+  %ul
+    %li
+      = link_to "FURIMA", root_path, class:"top--link"
+    %li
+      >
+    %li
+      = link_to "#{@product.category}", "#", class:"mc--link"
+    %li
+      >
+    %li
+      = link_to "子カテゴリー", "#", class:"cc--link"
+    %li
+      >
+    %li
+      = link_to "孫カテゴリー", "#", class:"gc--link"
+    %li
+      >
+    %li.clums--name
+      = @product.name
+.detail--contents
   .contents--main
     .contents--top
       .name
@@ -58,7 +79,7 @@
             %th.area__title
               発送元の地域
             %td.area__content
-              = @product.shipping_area
+              = @product.shipping_area_i18n
           %tr.estimated
             %th.estimated__title
               発送日の目安
@@ -76,7 +97,7 @@
     .contents--under
       .form
         = form_for "#" do |f|
-          = f.text_field :content, class: 'textbox'
+          = f.text_area :content, class: 'textbox'
         .notificate
           相手のことを考え丁寧なコメントを心がけましょう。
           %br
