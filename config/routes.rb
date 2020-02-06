@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "homes#index"
-  resources :users, only:[:index, :show, :new, :detroy]
+  resources :users, only:[:index, :show, :new, :destroy]
   resources :products, only:[:show, :new]
   resources :confirmations, only: :index
-  resources :categories, only: :index
-
+  resources :sign_up do
+      collection do
+        get 'information-first'
+        get 'information-second'
+        get 'done'
+      end
+    end
   resources "users",only: :logout, path: '' do
     collection do
       get 'logout'
@@ -28,5 +33,4 @@ Rails.application.routes.draw do
       post 'pay', to: 'card#pay'
     end
   end
-
 end
