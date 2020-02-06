@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :confirmations, only: :index
   resources :sign_up do
-    member do
-      get 'information'
+      collection do
+        get 'step1'
+        get 'step2'
+        get 'done'
+      end
     end
   end
-end
