@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "sign_up#information-first"
+  root to: "homes#index"
   resources :users, only:[:index, :show, :new, :destroy]
   resources :products, only:[:show, :new]
   resources :confirmations, only: :index
