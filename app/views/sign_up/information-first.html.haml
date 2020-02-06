@@ -22,15 +22,15 @@
         %input{name: "__csrf_value", type: "hidden", value: "c891d8e55985416cefa4a094c81b40d20d3504065ea24179e5b41da6dfe1a5454b528e76244c9c3b540c45e1788867eb7b5956469a43c21c5e7847bd1c87a8edd"}/
         .information-container__main__section__form__contents
           .form-group
-            %label{:for => "nickname"} ニックネーム
+            %label{for: "nickname"} ニックネーム
             %span.form-require 必須
             %input.input-nickname{name:"nickname", placeholder: "例) メルカリ太郎", type: "text", value: ""}/
           .form-group
-            %label{:for => "email"} メールアドレス
+            %label{for: "email"} メールアドレス
             %span.form-require 必須
             %input.input-email{name: "email", placeholder: "PC・携帯どちらでも可", type: "email", value: ""}/
           .form-group
-            %label{:for => "password"} パスワード
+            %label{for: "password"} パスワード
             %span.form-require 必須
             %input.input-password{name: "password", placeholder: "7文字以上の半角英数字", type: "password"}/
             %p.form-info-text
