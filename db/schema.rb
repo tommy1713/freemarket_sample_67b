@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 2020_02_05_081055) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id", null: false
     t.string "image", null: false
@@ -57,9 +65,6 @@ ActiveRecord::Schema.define(version: 2020_02_05_081055) do
     t.integer "favorite", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "image_id", null: false
-    t.integer "stock", null: false
-    t.index ["image_id"], name: "index_products_on_image_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
