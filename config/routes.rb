@@ -15,7 +15,17 @@ Rails.application.routes.draw do
     collection do
       get 'logout'
     end
+
+  end 
+
+  resources :homes do 
+    collection do
+      get 'category_children' 
+      get 'category_grandchildren'
+    end
   end
+
+  
   resources :card, only: [:index]
   resources :card, only: [:new, :show, :destroy] do
     collection do
