@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, only:[:index, :show, :new, :destroy]
   resources :products, only:[:show, :new]
   resources :confirmations, only: :index
+  resources :categories, only: :index
   resources :sign_up do
       collection do
         get 'information-first'
