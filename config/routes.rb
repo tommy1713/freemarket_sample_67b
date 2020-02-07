@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "homes#index"
+  root to: "sign_up#information_first"
   resources :users, only:[:index, :show, :new, :destroy]
   resources :products, only:[:show, :new]
   resources :confirmations, only: :index
   resources :sign_up do
       collection do
-        get 'information-first'
-        get 'information-second'
+        get 'information_first'
+        get 'information_second'
         get 'done'
       end
     end

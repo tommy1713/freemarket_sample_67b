@@ -1,0 +1,28 @@
+.second-container
+  .second-container__top
+    %h1.logo
+      = image_tag 'furima-logo.svg'
+    %nav.progress-barsignup
+      %ol.clearfix
+        %li.through
+          会員情報
+        %li.active
+          .progres-status.active
+            %pseudo:after &gt;
+            %pseudo:after &gt;
+          メールアドレス再入力
+          .progres-status
+        %li.next
+          完了
+          .progres-status
+  .second-container__main
+    .second-container__main__section
+      %h2 メールアドレス確認
+      = form_for @user, url: sign_up_index_path,method: :post do |f|
+        .form_contents
+          .form-group
+            %label{for: "email"} メールアドレス
+            = f.email_field :email, placeholder: 'PC・携帯どちらでも可',class: "form-email"
+            %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+            = f.submit '次へ進む',class: "next-submit"
+            %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
