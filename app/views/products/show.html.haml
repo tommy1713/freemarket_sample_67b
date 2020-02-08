@@ -87,7 +87,7 @@
             %td.estimated__content
               = @product.estimated_date_i18n
       .buy--btn
-        = link_to "購入する", "#", class: "b-btn"
+        = link_to "購入する", confirmations_path, class: "b-btn"
       .under--btn
         .under--btn__favorite
           = icon("fa","star", class: "star-btn")
