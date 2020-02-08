@@ -86,7 +86,6 @@
               発送日の目安
             %td.estimated__content
               = @product.estimated_date_i18n
-      
       .buy--btn
         = link_to "購入する", "#", class: "b-btn"
       .under--btn
@@ -110,8 +109,10 @@
             コメントする
     .move--btn
       .move--btn__forward
-        = link_to "< 前の商品", "#", class:"f--name"
+        - if @product.previous.present?
+          = link_to "< 前の商品", product_path(@product.previous), class:"f--name"
       .move--btn__backward
-        = link_to "後ろの商品 >", "#",class:"b--name"
+        - if @product.next.present?
+          = link_to "後ろの商品 >", product_path(@product.next), class:"b--name"
     .back--category
       = link_to "#{@product.category}をもっと見る", "#", class:"c--name"
