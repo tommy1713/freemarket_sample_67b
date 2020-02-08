@@ -28,7 +28,6 @@
   .contents--main {
     padding: 40px;
     .contents--top {
-      height: 1400px;
       width: 700px;
       margin: 0 auto;
       background-color: white;
@@ -148,14 +147,17 @@
         }
       }
       .buy--btn {
-        width: 200px;
-        height: 40px;
+        display: block;
+        margin: 25px auto;
+        width: 90%;
+        height: 53px;
         border: 1px solid #3ccace;
-        border-radius: 100px;
         background-color: #3ccace;
-        line-height: 40px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
         text-align: center;
-        margin: 20px auto;
+        line-height: 53px;
         .b-btn {
           color: white;
         }
@@ -269,6 +271,36 @@
       margin: 10px auto;
       .c--name {
         color: #3ccace;
+      }
+    }
+    .edit_destroy_btn{
+      margin: 24px auto;
+      background: #fff;
+      padding: 8px 16px 8px 16px;
+      a{
+        text-decoration: none;
+        .edit--btn{
+          display: block;
+          margin: 25px auto;
+          width: 90%;
+          height: 53px;
+          border: 1px solid #3ccace;
+          background-color: #3ccace;
+          color: white;
+          font-size: 14px;
+          cursor: pointer;
+        }
+        .destroy--btn{
+          display: block;
+          margin: 25px auto;
+          width: 90%;
+          height: 53px;
+          border: 1px solid #7c7e7e;
+          background-color: #7c7e7e;
+          color: white;
+          font-size: 14px;
+          cursor: pointer;
+        }
       }
     }
   }
