@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController, with: :render_404
+  before_action :set_product
 
   def show 
     @product = Product.find(params[:id])
@@ -12,12 +13,11 @@ class ProductsController < ApplicationController, with: :render_404
     product = Product.find(params[:id])
     product.destroy
     @users = User.all
-    def render_404(e = nil)
-      if e
-        logger.error e 
-        logger.error e.backtrace.join("\n") 
-      end
-      render template: 'errors/error404', status: 404, layout: 'application', content_type: 'text/html'
+    if @product.destroy
+      render template: "user/:id"
+    else
+      logger.error e 
+      logger.error e.backtrace.join("\n") 
     end
   end
 
