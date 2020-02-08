@@ -1,4 +1,5 @@
 = render "homes/header"
+= render "homes/purchasebtn"
 .products--clums
   %ul
     %li
@@ -49,7 +50,7 @@
             %th.nickname__title
               出品者
             %td.nickname__content
-              田中
+              = @product.user.nickname
           %tr.category
             %th.category__title
               カテゴリー
@@ -86,7 +87,7 @@
             %td.estimated__content
               = @product.estimated_date_i18n
       .buy--btn
-        = link_to "購入する", "#", class: "b-btn"
+        = link_to "購入する", confirmations_path, class: "b-btn"
       .under--btn
         .under--btn__favorite
           = icon("fa","star", class: "star-btn")
@@ -108,8 +109,10 @@
             コメントする
     .move--btn
       .move--btn__forward
-        = link_to "< 前の商品", "#", class:"f--name"
+        - if @product.previous.present?
+          = link_to "< 前の商品", product_path(@product.previous), class:"f--name"
       .move--btn__backward
-        = link_to "後ろの商品 >", "#",class:"b--name"
+        - if @product.next.present?
+          = link_to "後ろの商品 >", product_path(@product.next), class:"b--name"
     .back--category
       = link_to "#{@product.category}をもっと見る", "#", class:"c--name"
