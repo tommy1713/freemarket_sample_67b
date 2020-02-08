@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController, with: :render_404
+class ProductsController < ApplicationController
   before_action :set_product
 
   def show 
@@ -17,6 +17,9 @@ class ProductsController < ApplicationController, with: :render_404
       logger.error e 
       logger.error e.backtrace.join("\n") 
     end
+  end
+  
+  def edit
   end
 
   private
