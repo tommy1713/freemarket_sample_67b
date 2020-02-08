@@ -16,6 +16,8 @@
 |postage|integer|null: false|
 |situation|integer|null: false|
 |favorite|integer|null: false|
+|image|string|null: false|
+|stock|integer|null: false|
 
 ### Association
 - has_many :images
@@ -65,6 +67,11 @@
 |l_name_kana|string|null: false|
 |birthday|integer|null: false|
 |tel_number|integer|null: false|
+<!-- 以下はdevise導入時分 -->
+|reset_password_token|string||
+|reset_password_sent_at|datetime||
+|encrypted_password|string|null:false,||remember_created_at|datetime||
+||timestamps|null: false|
 
 ### Association
 - has_many :products

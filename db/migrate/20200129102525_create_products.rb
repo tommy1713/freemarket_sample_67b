@@ -15,6 +15,8 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer :situation, null: false
       t.integer :favorite, null: false
       t.timestamps
+      t.references :image, null: false
+      t.integer :stock, null: false
     end
   end
 end
