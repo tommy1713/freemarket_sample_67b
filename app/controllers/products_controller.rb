@@ -2,7 +2,6 @@ class ProductsController < ApplicationController, with: :render_404
   before_action :set_product
 
   def show 
-    @product = Product.find(params[:id])
     @parents = Category.where(ancestry: nil)
   end
 
@@ -10,7 +9,6 @@ class ProductsController < ApplicationController, with: :render_404
   end
 
   def destroy
-    product = Product.find(params[:id])
     product.destroy
     @users = User.all
     if @product.destroy
