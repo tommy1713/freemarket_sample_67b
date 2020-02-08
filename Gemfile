@@ -80,5 +80,7 @@ gem 'mini_magick'
 gem 'ancestry'
 gem 'payjp'
 gem 'dotenv-rails'
-
+gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.1.1'
+gem 'data-confirm-modal'
 
