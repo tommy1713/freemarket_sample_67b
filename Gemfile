@@ -80,5 +80,4 @@ gem 'mini_magick'
 gem 'ancestry'
 gem 'payjp'
 gem 'dotenv-rails'
-
-
+gem 'pry-rails'

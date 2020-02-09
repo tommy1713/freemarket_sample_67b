@@ -1,0 +1,8 @@
+- if user.errors.any?
+  - unless user.valid?
+    - if errors = user.errors.full_messages_for(column.to_sym)
+      %ul
+        - errors.each do |error|
+          %li=error
+
+= render partial: 'error-messages', locals: {user: @user, column: "nickname","email","last_name","first_name","first_name_kana","last_name_kana","birthdate_year","birthdate_mouth","birthdate_day"} 

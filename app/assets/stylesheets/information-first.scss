@@ -106,7 +106,7 @@
                 vertical-align: top;
               }
               .input-nickname{
-                width: 90%;
+                width: 100%;
                 margin: 8px 0 0;
                 height: 50px;
                 padding: 10px 16px 8px;
@@ -120,7 +120,7 @@
             .form-group{
               margin: 24px 0 0;
               .input-email{
-                width: 90%;
+                width: 100%;
                 margin: 8px 0 0;
                 height: 50px;
                 padding: 10px 16px 8px;
@@ -132,7 +132,7 @@
               }
             }
               .input-password{
-                width: 90%;
+                width: 100%;
                 margin: 8px  0;
                 height: 50px;
                 padding: 10px 16px 8px;
@@ -180,106 +180,7 @@
                     cursor: pointer;
                   }
                 }              
-              .text-left{
-                font-size: 16px;
-                font-weight: bold;
-              }
-              .l-single-text{
-                margin: 8px;
-                padding: 0;
-                line-height: 1.5;
-                font-size: 14px;
-              }
-              .form-half{
-                margin-right: 8px;
-                width: calc(50% - 6px);
-                margin: 8px 0 0;
-                border-radius: 4px;
-                border: 1px solid #ccc;
-                height: 48px;
-                padding: 10px 16px 8px;
-                background: #fff;
-                line-height: 1.5;
-                font-size: 16px;
-                height: 50px;
-              }
-            .birthday-select{
               
-              .select-wrap{
-                width: 76px;
-                display: inline-block;
-                .icon-arrow-bottom{
-                  right: 12px;
-                  position: absolute;
-                  top: 50%;
-                  z-index: 2;
-                  color: #888;
-                  font-size: 8px;
-                  transform: translate(0, -50%);
-                }
-                .select-default{
-                  padding: 0 10px;
-                  width: 100%;
-                  position: relative;
-                  z-index: 2;
-                  height: 48px;
-                  border-radius: 4px;
-                  border: 1px solid #ccc;
-                  background: 0;
-                  font-size: 16px;
-                  line-height: 1.5;
-                  cursor: pointer;
-                }
-              }
-              span{
-                margin: 0 2px;
-              }
-              .select-wrap-mouth{
-                width: 76px;
-                display: inline-block;
-                margin: 8px 0 0;
-                position: relative;
-                background: #fff;
-                .select-default{
-                  padding: 0 10px;
-                  width: 100%;
-                  position: relative;
-                  z-index: 2;
-                  height: 48px;
-                  border-radius: 4px;
-                  border: 1px solid #ccc;
-                  background: 0;
-                  font-size: 16px;
-                  line-height: 1.5;
-                  cursor: pointer;
-                }
-              }
-              .select-wrap-day{
-                width: 76px;
-                display: inline-block;
-                margin: 8px 0 0;
-                position: relative;
-                background: #fff;
-                .select-default{
-                  padding: 0 10px;
-                  width: 100%;
-                  position: relative;
-                  z-index: 2;
-                  height: 48px;
-                  border-radius: 4px;
-                  border: 1px solid #ccc;
-                  background: 0;
-                  font-size: 16px;
-                  line-height: 1.5;
-                  cursor: pointer;
-                }
-              }
-            }
-            .form-info-text{
-              margin: 8px 0 0;
-              line-height: 1.5;
-              color: #888;
-            }
           } 
           .single_content{
             max-width: 343px;

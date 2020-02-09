@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_05_081055) do
+ActiveRecord::Schema.define(version: 2020_02_05_080908) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -35,20 +35,6 @@ ActiveRecord::Schema.define(version: 2020_02_05_081055) do
     t.index ["product_id"], name: "index_images_on_product_id"
   end
 
-  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "state", null: false
-    t.string "condition", null: false
-    t.integer "price", null: false
-    t.integer "level", default: 0
-    t.integer "likes_count", default: 0
-    t.integer "root_category_id"
-    t.integer "buyer_id"
-    t.integer "seller_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.string "name", null: false
@@ -70,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_02_05_081055) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", null: false
+    t.string "encrypted_password", default: "", null: false
     t.string "nickname", null: false
     t.string "last_name", null: false
     t.string "first_name", null: false
@@ -78,18 +65,6 @@ ActiveRecord::Schema.define(version: 2020_02_05_081055) do
     t.integer "birthdate_year", null: false
     t.integer "birthdate_mouth", null: false
     t.integer "birthdate_day", null: false
-    t.integer "phone_namber", null: false
-    t.string "address_last_name", null: false
-    t.string "address_first_name", null: false
-    t.string "address_last_name_kana", null: false
-    t.string "address_first_name_kana", null: false
-    t.string "address_namber", null: false
-    t.integer "address_prefecture", default: 0, null: false
-    t.string "address_name", null: false
-    t.string "address_block", null: false
-    t.string "address_building"
-    t.integer "address_phone_namber"
-    t.text "introduce"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
