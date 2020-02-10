@@ -1,5 +1,5 @@
-class ProductsController < ApplicationController, with: :render_404
-  before_action :set_product
+class ProductsController < ApplicationController
+  # before_action :set_product
 
   def show 
     @parents = Category.where(ancestry: nil)
@@ -33,8 +33,8 @@ class ProductsController < ApplicationController, with: :render_404
     end
   end
 
-  private
-  def set_product
-    @product = Product.find(params[:id])
-  end
+  # private
+  # def set_product
+  #   @product = Product.find(params[:id])
+  # end
 end
