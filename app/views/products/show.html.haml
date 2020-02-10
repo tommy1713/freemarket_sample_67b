@@ -1,4 +1,5 @@
 = render "homes/header"
+= render "homes/purchasebtn"
 .products--clums
   %ul
     %li
@@ -49,7 +50,7 @@
             %th.nickname__title
               出品者
             %td.nickname__content
-              田中
+              = @product.user.nickname
           %tr.category
             %th.category__title
               カテゴリー
@@ -85,8 +86,7 @@
               発送日の目安
             %td.estimated__content
               = @product.estimated_date_i18n
-      .buy--btn
-        = link_to "購入する", "#", class: "b-btn"
+     
       .under--btn
         .under--btn__favorite
           = icon("fa","star", class: "star-btn")
@@ -94,6 +94,18 @@
         .under--btn__report
           = icon("fa","flag", class: "flag-btn")
           = link_to "不適切な商品の通報", "#", class: "r-btn"
+      .edit_deleate
+        -# - if user_signed_in? && current_user.id == product.user_id
+        .edit_destroy_btn
+          = link_to "/products/1/edit", class:"submit--btn" do
+            %button.edit--btn
+              商品の編集
+          = link_to "#", class:"submit--btn", method: :delete, data:{confirm: '本当に商品を削除してよろしいですか？', cancel: "やめる", commit: "削除する"}, title: "削除の確認" do
+            %button.destroy--btn
+              この商品を削除する
+        -# - else
+        -#   .buy--btn
+        -#     = link_to "購入する", confirmations_path, class: "b-btn"
     .contents--under
       .form
         = form_for "#" do |f|
@@ -108,8 +120,10 @@
             コメントする
     .move--btn
       .move--btn__forward
-        = link_to "< 前の商品", "#", class:"f--name"
+        - if @product.previous.present?
+          = link_to "< 前の商品", product_path(@product.previous), class:"f--name"
       .move--btn__backward
-        = link_to "後ろの商品 >", "#",class:"b--name"
+        - if @product.next.present?
+          = link_to "後ろの商品 >", product_path(@product.next), class:"b--name"
     .back--category
       = link_to "#{@product.category}をもっと見る", "#", class:"c--name"

@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_02_05_080908) do
+
+ActiveRecord::Schema.define(version: 2020_02_05_081055) do
+
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -32,8 +36,8 @@ ActiveRecord::Schema.define(version: 2020_02_05_080908) do
     t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_images_on_product_id"
   end
+
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -51,12 +55,61 @@ ActiveRecord::Schema.define(version: 2020_02_05_080908) do
     t.integer "favorite", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "image_id", null: false
+    t.integer "stock", null: false
+    t.index ["image_id"], name: "index_products_on_image_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
+    t.string "email", null: false
+    t.string "nickname", null: false
+    t.string "last_name", null: false
+    t.string "first_name", null: false
+    t.string "last_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.integer "birthdate_year", null: false
+    t.integer "birthdate_mouth", null: false
+    t.integer "birthdate_day", null: false
+    t.integer "phone_namber", null: false
+    t.string "address_last_name", null: false
+    t.string "address_first_name", null: false
+    t.string "address_last_name_kana", null: false
+    t.string "address_first_name_kana", null: false
+    t.string "address_namber", null: false
+    t.integer "address_prefecture", default: 0, null: false
+    t.string "address_name", null: false
+    t.string "address_block", null: false
+    t.string "address_building"
+    t.integer "address_phone_namber"
+    t.text "introduce"
+
+ActiveRecord::Schema.define(version: 0) do
+
+
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "nickname", null: false
+    t.string "last_name", null: false
+    t.string "first_name", null: false
+    t.string "last_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.integer "birthdate_year", null: false
+    t.integer "birthdate_mouth", null: false
+    t.integer "birthdate_day", null: false
+    t.integer "phone_namber", null: false
+    t.string "address_last_name", null: false
+    t.string "address_first_name", null: false
+    t.string "address_last_name_kana", null: false
+    t.string "address_first_name_kana", null: false
+    t.string "address_namber", null: false
+    t.integer "address_prefecture", default: 0, null: false
+    t.string "address_name", null: false
+    t.string "address_block", null: false
+    t.string "address_building"
+    t.integer "address_phone_namber"
+    t.text "introduce"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -66,4 +119,5 @@ ActiveRecord::Schema.define(version: 2020_02_05_080908) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "products", "users"
 end
