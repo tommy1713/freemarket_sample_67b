@@ -7,15 +7,15 @@
     %li
       >
     %li
-      = link_to "#{@product.category}", "#", class:"mc--link"
+      = link_to "#{@product.category.parent.parent.name}", "#", class:"mc--link"
     %li
       >
     %li
-      = link_to "子カテゴリー", "#", class:"cc--link"
+      = link_to "#{@product.category.parent.name}", "#", class:"cc--link"
     %li
       >
     %li
-      = link_to "孫カテゴリー", "#", class:"gc--link"
+      = link_to "#{@product.category.name}", "#", class:"gc--link"
     %li
       >
     %li.clums--name
@@ -55,7 +55,11 @@
             %th.category__title
               カテゴリー
             %td.category__content
-              = @product.category
+              = @product.category.parent.parent.name
+              %br
+              = @product.category.parent.name
+              %br
+              = @product.category.name
           %tr.brand
             %th.brand__title
               ブランド

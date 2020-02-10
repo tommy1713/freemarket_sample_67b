@@ -1,15 +1,16 @@
 class ProductsController < ApplicationController
-  # before_action :set_product
+  before_action :set_product
 
   def show 
-    @parents = Category.where(ancestry: nil)
+    @parents = Category.all.order("id ASC").limit(13)
+    @parent = Category.find(params[:id])
   end
 
   def new
     @product = Product.new
     @category_parent_array = ["---"]
     Category.where(ancestry: nil).each do |parent|
-       @category_parent_array << parent.name
+      @category_parent_array << parent.name
     end
   end
  
@@ -33,8 +34,8 @@ class ProductsController < ApplicationController
     end
   end
 
-  # private
-  # def set_product
-  #   @product = Product.find(params[:id])
-  # end
+  private
+  def set_product
+    @product = Product.find(params[:id])
+  end
 end

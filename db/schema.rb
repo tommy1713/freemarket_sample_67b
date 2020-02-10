@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_05_081055) do
+ActiveRecord::Schema.define(version: 2020_02_05_080908) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2020_02_05_081055) do
     t.bigint "user_id"
     t.string "name", null: false
     t.text "detail", null: false
-    t.integer "category", null: false
+    t.bigint "category_id", null: false
     t.string "brand"
     t.string "size"
     t.integer "price", null: false
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2020_02_05_081055) do
     t.datetime "updated_at", null: false
     t.bigint "image_id", null: false
     t.integer "stock", null: false
+    t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["image_id"], name: "index_products_on_image_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
@@ -93,12 +94,6 @@ ActiveRecord::Schema.define(version: 2020_02_05_081055) do
     t.string "address_building"
     t.integer "address_phone_namber"
     t.text "introduce"
-
-ActiveRecord::Schema.define(version: 0) do
-
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -108,4 +103,6 @@ ActiveRecord::Schema.define(version: 0) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "products", "categories"
+  add_foreign_key "products", "users"
 end
