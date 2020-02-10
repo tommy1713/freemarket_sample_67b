@@ -36,8 +36,17 @@ class ProductsController < ApplicationController
   def edit
   end
 
+  def update
+    @product.update(product_params)
+  end
+
   private
   def set_product
     @product = Product.find(params[:id])
   end
+
+  def product_params
+    params.permit(:name, :detail, :category, :brand, :size, :prise, :status, :shipping_area, :estimated_date, :postage, :situation, :favorite, :image, :stock)
+  end
+
 end
