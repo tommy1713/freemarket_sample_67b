@@ -598,3 +598,27 @@
   -khtml-opacity: 0.8;
   opacity:0.8;
 }
+
+.a__btn{
+  width: 180px;
+}
+
+.g__btn{
+  width: 180px;
+}
+
+
+.g__btn:hover{
+  cursor:pointer;
+  filter: alpha(opacity=60);
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity:0.5;
+}
+.a__btn:hover{
+  cursor:pointer;
+  filter: alpha(opacity=60);
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity:0.5;
+}
