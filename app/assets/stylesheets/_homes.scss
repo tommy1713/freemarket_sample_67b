@@ -34,6 +34,7 @@
           width: calc(100% - 26px);
           height: 36px;
           padding: 0 0 0 5px;
+          border: 1px solid #ccc;
           }
           .btn-search{
             width: 40px;
@@ -185,7 +186,7 @@
   &__visual{
     width: 100%;
     height: 560px;
-    background-image: url(/assets/visual.jpg);
+    background-image: image-url("visual.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
@@ -290,7 +291,7 @@
     }
   }
   &__middle{
-    background-image: url(/assets/middle.jpg);
+    background-image: image-url("middle.jpg");
     background-position: bottom right;
     height: 400px;
     background-size: cover;
@@ -494,7 +495,7 @@
 
 // Appbanner
 .appbanner{
-  background-image: url(/assets/ap.jpg);
+  background-image: image-url("ap.jpg");
   padding: 100px 40px;
   position: relative;
   background-size: cover;
@@ -596,4 +597,28 @@
   -moz-opacity:0.8;
   -khtml-opacity: 0.8;
   opacity:0.8;
+}
+
+.a__btn{
+  width: 180px;
+}
+
+.g__btn{
+  width: 180px;
+}
+
+
+.g__btn:hover{
+  cursor:pointer;
+  filter: alpha(opacity=60);
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity:0.5;
+}
+.a__btn:hover{
+  cursor:pointer;
+  filter: alpha(opacity=60);
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity:0.5;
 }

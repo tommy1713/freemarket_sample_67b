@@ -1,0 +1,8 @@
+= render "users/header-mini"
+= render "form"
+= form_for @product do |f|
+  .btn__content
+    .form__btn
+      = f.submit "変更する", class: 'sell--btn'
+      .back--btn
+        = link_to "もどる", product_path(params[:id]), class:"b--btn"

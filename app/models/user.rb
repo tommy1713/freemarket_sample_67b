@@ -18,4 +18,6 @@ class User < ApplicationRecord
         validates :birthdate_year,          presence: true, on: :validates_information_first
         validates :birthdate_mouth,         presence: true, on: :validates_information_first
         validates :birthdate_day,           presence: true, on: :validates_information_first
+  has_many :cards
+  has_many :products
 end

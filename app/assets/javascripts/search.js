@@ -49,5 +49,10 @@ $(function() {
         $(".grand_child_category").remove();
       });
     });
-  });  
   });
+
+  $(".catbtn").on("mouseover", function() {
+    $(".child_category").remove();
+    $(".grand_child_category").remove();
+  });
+});

@@ -1,6 +1,5 @@
 .products--clums {
   height: 55px;
-  width: 100%;
   padding: 0 60px;
   border-top: 1px solid #eeeeee;
   display: block;
@@ -29,7 +28,6 @@
   .contents--main {
     padding: 40px;
     .contents--top {
-      height: 1400px;
       width: 700px;
       margin: 0 auto;
       background-color: white;
@@ -47,7 +45,7 @@
         width: 560px;
         margin: 0 auto;
         &__big {
-          height: 400px;
+          height: 360px;
           width: 100%;
           padding: 20px 0;
         }
@@ -74,6 +72,7 @@
       }
       .information {
         font-size: 15px;
+        padding: 10px 0;
         table {
           width: 620px;
           margin: 20px auto;
@@ -115,18 +114,51 @@
             width: 75%;
             border: 1px solid #dedede;
             padding: 8px;
+            word-break: break-all;
+          }
+        }
+      }
+      .two--btn {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 40px;
+        .edit--btn {
+          width: 250px;
+          height: 40px;
+          background-color: #3ccace;
+          text-align: center;
+          line-height: 40px;
+          border: 1px solid #3ccace;
+          border-radius: 100px;
+          .e-btn {
+            color: white;
+          }
+        }
+        .destroy--btn {
+          width: 250px;
+          height: 40px;
+          background-color: #3ccace;
+          text-align: center;
+          line-height: 40px;
+          border: 1px solid #3ccace;
+          border-radius: 100px;
+          .d-btn {
+            color: white;
           }
         }
       }
       .buy--btn {
-        width: 200px;
-        height: 40px;
+        display: block;
+        margin: 25px auto;
+        width: 90%;
+        height: 53px;
         border: 1px solid #3ccace;
-        border-radius: 100px;
         background-color: #3ccace;
-        line-height: 40px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
         text-align: center;
-        margin: 20px auto;
+        line-height: 53px;
         .b-btn {
           color: white;
         }
@@ -180,12 +212,13 @@
       .form {
         width: 650px;
         height: 275px;
-        margin: 0 auto;
+        margin: 10px auto;
         position: relative;
         .textbox {
           display: block;
           width: 650px;
           height: 100px;
+          border: 1px solid #888888;
         }
         .notificate {
           width: 645px;
@@ -241,6 +274,36 @@
         color: #3ccace;
       }
     }
+    .edit_destroy_btn{
+      margin: 24px auto;
+      background: #fff;
+      padding: 8px 16px 8px 16px;
+      a{
+        text-decoration: none;
+        .edit--btn{
+          display: block;
+          margin: 25px auto;
+          width: 90%;
+          height: 53px;
+          border: 1px solid #3ccace;
+          background-color: #3ccace;
+          color: white;
+          font-size: 14px;
+          cursor: pointer;
+        }
+        .destroy--btn{
+          display: block;
+          margin: 25px auto;
+          width: 90%;
+          height: 53px;
+          border: 1px solid #7c7e7e;
+          background-color: #7c7e7e;
+          color: white;
+          font-size: 14px;
+          cursor: pointer;
+        }
+      }
+    }
   }
   a {
     text-decoration: none;
@@ -255,7 +318,6 @@
     margin: 0 auto;
     width: 700px;
     background-color: white;
-    height: 2100px;
     .contents--title {
       text-align: center;
       font-size: 24px;
@@ -266,7 +328,6 @@
     }
     .images {
       border-top: 1px solid #eeeeee;
-      height: 300px;
       padding: 40px;
       .images--title {
         font-weight: bold;
@@ -281,6 +342,7 @@
         background-color: #f5f5f5;
         margin-top: 20px;
         position: relative;
+        display: block;
         &__file {
           display: none;
         }
@@ -305,30 +367,33 @@
         width: 620px;
         &__area {
           height: 40px;
-          width: 100%;
+          width: 610px;
           margin-top: 10px;
           padding-left: 10px;
+          border: 1px solid #888888;
         }
       }
     }
     .info {
       padding:0 40px 40px;
-      width: 700px;
+      width: 620px;
       .info--title {
         font-weight: bold;
       }
     } .info--box {
       width: 620px;
       height: 150px;
+      padding-bottom: 20px;
+      margin-top: 10px;
       &__area {
-        width: 100%;
+        width: 610px;
         height: 150px;
         padding:10px 0 0 10px;
+        border: 1px solid #888888;
       }
     }
     .sell--detail {
-      width: 100%;
-      height: 340px;
+      height: 350px;
       padding: 40px;
       border-top: 1px solid #eeeeee;
       .sell--detail--title {
@@ -348,7 +413,6 @@
             margin-bottom: 5px;
           }
           .category--box {
-            width: 320px;
             height: 48px;
           }
         }
@@ -360,9 +424,10 @@
           }
           .brand--box {
             &__area {
-              width: 400px;
+              width: 390px;
               height: 48px;
               padding-left: 10px;
+              border: 1px solid #888888;
             }
           }
         }
@@ -379,8 +444,7 @@
       }
     }
     .delivery--detail {
-      width: 100%;
-      height: 340px;
+      height: 350px;
       padding: 40px;
       border-top: 1px solid #eeeeee;
       .delivery--detail--title {
@@ -412,7 +476,7 @@
           }
           .shipping--area--box {
             &__area {
-              width: 400px;
+              width: 360px;
               height: 48px;
             }
           }
@@ -451,7 +515,6 @@
             float: left;
             font-weight: bold;
             width: 50%;
-            
           }
           .price--form {
             float: right;
@@ -464,7 +527,7 @@
             .price--box {
               float: right;
               &__area {
-                width: 180px;
+                width: 160px;
                 height: 50px;
                 text-align: right;
                 padding-right: 20px;
@@ -476,8 +539,8 @@
         }
         .fee {
           width: 400px;
-          height: 74px;
-          padding: 25px 0;
+          height: 60px;
+          padding: 10px 0;
           border-top: 1px solid #cccccc;
           .fee--title {
             font-weight: bold;
@@ -494,7 +557,7 @@
         .profit {
           width: 400px;
           height: 74px;
-          padding: 25px 0;
+          padding: 10px 0;
           border-top: 1px solid #cccccc;
           .profit--title {
             font-weight: bold;
@@ -511,8 +574,6 @@
       }
     }
     .under--box {
-      width: 700px;
-      height: 330px;
       padding: 40px;
       border-top: 1px solid #eeeeee;
       .notification {
@@ -544,6 +605,25 @@
       }
     }
   }
+  .form_optional {
+    background: #aaaaaa;
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: center;
+  }
+  .form_require {
+    background: #3ccace;
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: center;
+  }
+  
   select {
     background: transparent;
     z-index: 1;
@@ -555,6 +635,45 @@
   }
   select::-ms-expand {
     display: none;
+  }
+}
+
+.btn__content{
+  background-color: #f8f8f8;
+  width: 100%;
+  height: 150px;
+  .form__btn{
+    margin: 0 auto;
+    width: 700px;
+    background-color: white;
+    padding: 0 40px;
+    height: 100%;
+    .sell--btn{
+      width: 100%;
+      height: 50px;
+      background-color: #3ccace;
+      color: white;
+      border: 1px solid #3ccace;
+      font-size: 18px;
+      margin: 0 auto;
+      a{
+        text-decoration: none;
+        color: white;
+      }
+    }
+    .back--btn {
+      margin: 25px auto 0;
+      width: 280px;
+      height: 50px;
+      text-align: center;
+      border: 1px solid #aaaaaa;
+      line-height: 50px;
+      background-color: #aaaaaa;
+      a{
+        text-decoration: none;
+        color: white;
+      }
+    }
   }
 }
 

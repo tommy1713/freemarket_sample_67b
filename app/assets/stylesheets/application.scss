@@ -1,4 +1,6 @@
 @import "./reset";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "./login";
@@ -14,5 +16,6 @@
 @import "./categories";
 @import "./card";
 @import "./card.new";
-@import "./done"
+@import "./done";
+@import "./card.show";
 
