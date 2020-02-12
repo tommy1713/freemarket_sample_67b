@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: "users#login-user"
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions:      'users/sessions',
+ }
+  root to: "homes#index"
   resources :users, only:[:index, :show, :new, :destroy]
   resources :products, only:[:show, :new]
   resources :confirmations, only: :index
   resources :sign_up do
-      collection do
-        get 'information_first'
-        get 'information_second'
-        get 'done'
-      end
+    collection do
+      get 'information_first'
+      get 'information_second'
+      get 'done'
     end
+  end
+
   resources "users",only: :logout, path: '' do
     collection do
       get 'logout'

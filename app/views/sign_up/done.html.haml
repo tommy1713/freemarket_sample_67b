@@ -1,1 +1,28 @@
-hello
+.information-container
+  .information-container__top
+    %h1.logo
+      = image_tag 'furima-logo.svg'
+    %nav.progress-barsignup
+      %ol.clearfix
+        %li.active
+          会員情報
+          .progres-status.active
+            %pseudo:after &gt;
+            %pseudo:after &gt;
+        %li
+          電話番号認証
+          .progres-status
+        %li
+          完了
+          .progres-status
+  .information-container__main
+    .information-container__main__section
+      %h2 会員登録完了しました
+      .registration-form
+        .form_contents
+          .form-group
+            %p ありがとうございました 
+            %br/
+            %p 会員登録が完了しました。
+            .btn-red
+              = link_to 'トップページに戻る', root_path, class: "top-jamp"
