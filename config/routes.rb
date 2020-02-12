@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions:      'users/sessions',
+ }
   root to: "homes#index"
   resources :users, only:[:index, :show, :new, :destroy]
 
@@ -14,12 +17,13 @@ Rails.application.routes.draw do
   resources :confirmations, only: :index
   resources :categories, only: :index
   resources :sign_up do
-      collection do
-        get 'information-first'
-        get 'information-second'
-        get 'done'
-      end
+    collection do
+      get 'information_first'
+      get 'information_second'
+      get 'done'
     end
+  end
+
   resources "users",only: :logout, path: '' do
     collection do
       get 'logout'

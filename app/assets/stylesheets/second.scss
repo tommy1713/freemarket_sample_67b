@@ -1,0 +1,208 @@
+.second-container{
+  padding: 0 0 220px;
+  &__top{
+    height: 128px;
+    text-align: center;
+    .logo{
+      font-size: 14px;
+      margin: 40px 0 0;
+      display: inline-block;
+    }
+    nav{
+      padding: 40px 0 0 44px;
+      border: 0;
+      display: inline-block;
+      vertical-align: top;
+      font-size: 0;
+      text-align: center;
+      .active{
+        font-weight: 600;
+        color: #ea352d;
+        min-width: 60px;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        font-size: 12px;
+        .progress-status.active{
+          width: 12px;
+          height: 12px;
+          margin: 8px auto 0;
+          background: #ea352d;
+          border-radius: 50%;
+        }
+      }
+      .through{
+        min-width: 60px;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        font-size: 12px;
+        color:  #ea352d;
+        .progress-status{
+          width: 12px;
+          height: 12px;
+          margin: 8px auto 0;
+          background:  #ea352d;
+          border-radius: 50%;
+        }
+      }
+      .next{
+        margin-left: 40px;
+        min-width: 60px;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        font-size: 12px;
+        color: #888;
+        .progress-status{
+          width: 12px;
+          height: 12px;
+          margin: 8px auto 0;
+          background: #ccc;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  .second-container__main{
+    display: block;
+    &__section{
+      width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      h2{
+        font-size: 22px;
+        padding: 32px;
+        text-align: center;
+        font-weight: bold;
+      }
+      .new_user{
+        padding: 24px 16px 40px;
+        border-top: 1px solid #f5f5f5;
+        .form_contents{
+          max-width: 343px;
+          margin: 0 auto;
+          .text-left{
+            font-size: 16px;
+            font-weight: bold;
+          }
+          .l-single-text{
+            margin: 8px;
+            padding: 0;
+            line-height: 1.5;
+            font-size: 14px;
+          }
+          .form-half{
+            margin-right: 8px;
+            width: calc(50% - 6px);
+            margin: 8px 0 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            height: 48px;
+            padding: 10px 16px 8px;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            height: 50px;
+          }
+        .birthday-select{
+          
+          .select-wrap{
+            width: 76px;
+            display: inline-block;
+            .icon-arrow-bottom{
+              right: 12px;
+              position: absolute;
+              top: 50%;
+              z-index: 2;
+              color: #888;
+              font-size: 8px;
+              transform: translate(0, -50%);
+            }
+            .select-default{
+              padding: 0 10px;
+              width: 100%;
+              position: relative;
+              z-index: 2;
+              height: 48px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: 0;
+              font-size: 16px;
+              line-height: 1.5;
+              cursor: pointer;
+            }
+          }
+          span{
+            margin: 0 2px;
+          }
+          .select-wrap-mouth{
+            width: 76px;
+            display: inline-block;
+            margin: 8px 0 0;
+            position: relative;
+            background: #fff;
+            .select-default{
+              padding: 0 10px;
+              width: 100%;
+              position: relative;
+              z-index: 2;
+              height: 48px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: 0;
+              font-size: 16px;
+              line-height: 1.5;
+              cursor: pointer;
+            }
+          }
+          .select-wrap-day{
+            width: 76px;
+            display: inline-block;
+            margin: 8px 0 0;
+            position: relative;
+            background: #fff;
+            .select-default{
+              padding: 0 10px;
+              width: 100%;
+              position: relative;
+              z-index: 2;
+              height: 48px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: 0;
+              font-size: 16px;
+              line-height: 1.5;
+              cursor: pointer;
+            }
+          }
+        }
+        .form-info-text{
+          margin: 8px 0 0;
+          line-height: 1.5;
+          color: #888;
+        }
+            p{
+              margin: 8px;
+              line-height: 1.5;
+              font-size: 12px;
+            }
+            .next-submit{
+              margin: 24px 24px 24px 0;
+              background: #ea352d;
+              border: #ea352d;
+              color: #fff;
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              transition: all ease-out .3s;
+              cursor: pointer;
+              text-align: center;
+            }
+          }
+        }  
+      }
+    }
+  }
+
