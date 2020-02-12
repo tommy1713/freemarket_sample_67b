@@ -8,11 +8,11 @@
   .form_space {
     margin-bottom: 20px;
   }
-  .customer-card__content--number.form_space {
+  &--number.form_space {
     margin: 8px 0 0;
     font-size: 16px;
   }
-  .customer-card__content--expired.form_space {
+  &--expired.form_space {
     margin: 8px 0 0;
     font-size: 16px;
   }
