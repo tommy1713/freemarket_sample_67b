@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :confirmations, only: :index
-  resources :categories, only: :index
+  resources :categories, only:[:index, :show]
   resources :sign_up do
       collection do
         get 'information-first'

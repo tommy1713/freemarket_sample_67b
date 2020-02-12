@@ -103,6 +103,10 @@
           = link_to "#", class:"submit--btn", method: :delete, data:{confirm: '本当に商品を削除してよろしいですか？', cancel: "やめる", commit: "削除する"}, title: "削除の確認" do
             %button.destroy--btn
               この商品を削除する
+            %dialog#dialog
+              .dialog-content
+                
+
         -# - else
         -#   .buy--btn
         -#     = link_to "購入する", confirmations_path, class: "b-btn"
