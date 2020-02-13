@@ -23,10 +23,10 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    product.destroy
+    @product.destroy
     @users = User.all
     if @product.destroy
-      render template: "user/:id"
+      redirect_to root_path
     else
       logger.error e 
       logger.error e.backtrace.join("\n") 

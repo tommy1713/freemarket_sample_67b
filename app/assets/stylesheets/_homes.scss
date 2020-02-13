@@ -583,6 +583,7 @@
   right: 32px;
   position: fixed;
   padding: 15px;
+  z-index: 999;
   &__text{
     color: #fff;
     display: block;
