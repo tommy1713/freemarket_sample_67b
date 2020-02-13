@@ -183,6 +183,9 @@
   br{
     box-sizing: border-box;
   }
+  a{
+    text-decoration: none;
+  }
   &__visual{
     width: 100%;
     height: 560px;
@@ -580,6 +583,7 @@
   right: 32px;
   position: fixed;
   padding: 15px;
+  z-index: 999;
   &__text{
     color: #fff;
     display: block;
