@@ -20,7 +20,7 @@
         %figure
           = image_tag "noimage_thumb.png", size: "40x40"
       %h2.bold
-        username
+        = current_user.nickname
       .mypage-number
         %div.kk
           評価
@@ -33,8 +33,7 @@
         %li.active
           %h3 お知らせ
         %li
-          %h3
-            やることリスト
+          %h3 やることリスト
       .tab-content
         %ul.mypage-item-list
           %li.mypage-item-not-found

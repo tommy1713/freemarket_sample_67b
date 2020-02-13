@@ -83,6 +83,6 @@ gem 'payjp'
 gem 'dotenv-rails'
 gem 'pry-rails'
 gem 'bootstrap-sass'
-gem 'bootstrap', '~> 4.1.1'
+gem 'bootstrap'
 gem 'data-confirm-modal'
 

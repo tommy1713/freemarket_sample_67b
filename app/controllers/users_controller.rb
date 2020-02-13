@@ -6,9 +6,12 @@ class UsersController < ApplicationController
   def new
   end
   def show
+
     @user = User.find(params[:id])
     @parent = Category.where(ancestry: nil)
+
   end
+
 
   def destroy
   end
