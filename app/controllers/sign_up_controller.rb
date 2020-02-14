@@ -1,6 +1,6 @@
 class SignUpController < ApplicationController
-  before_action :validates_information_first, only: :information_second
-  before_action :validates_information_second, only: :create
+  # before_action :validates_information_first, only: :information_second
+  # before_action :validates_information_second, only: :create
 
   def index
   end

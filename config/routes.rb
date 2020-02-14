@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions:      'users/sessions',
@@ -27,6 +30,7 @@ Rails.application.routes.draw do
   resources "users",only: :logout, path: '' do
     collection do
       get 'logout'
+      get 'login_user'
     end
 
   end 

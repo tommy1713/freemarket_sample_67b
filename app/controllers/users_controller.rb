@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   def logout
     @parents = Category.where(ancestry: nil)
   end
-
+  def login_user
+  end
 
 end
