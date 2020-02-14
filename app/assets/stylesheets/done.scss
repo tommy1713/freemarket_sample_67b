@@ -89,8 +89,12 @@
             p{
               text-align: center;
             }
-            
+            .p2{
+              margin-left: 15px;
+            }
+
             .btn-red{
+              margin-top: 10px;
               line-height: 48px;
               width: 100%;
               background: #ea352d;
@@ -100,7 +104,7 @@
                 background: #ea352d;
                 border: 1px solid #ea352d;
                 color: #fff;
-                margin-left: 100px;
+                margin-left: 105px;
                 font-size: 14px;
                 transition: all ease-out .3s;
                 cursor: pointer;
