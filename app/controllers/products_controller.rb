@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product
 
   def show 
-    @parents = Category.where(ancestry: nil)
+    @parent = Category.where(ancestry: nil)
   end
 
   def new
@@ -23,10 +23,10 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    product.destroy
+    @product.destroy
     @users = User.all
     if @product.destroy
-      render template: "user/:id"
+      redirect_to root_path
     else
       logger.error e 
       logger.error e.backtrace.join("\n") 
@@ -38,6 +38,7 @@ class ProductsController < ApplicationController
 
   def update
     @product.update(product_params)
+    redirect_to product_path(params[:id])
   end
 
   private
@@ -46,7 +47,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.permit(:name, :detail, :category, :brand, :size, :prise, :status, :shipping_area, :estimated_date, :postage, :situation, :favorite, :image, :stock)
+    params.require(:product).permit(:name, :detail, :category, :brand, :size, :prise, :status, :shipping_area, :estimated_date, :postage, :situation, :favorite, :image, :stock)
   end
 
 end

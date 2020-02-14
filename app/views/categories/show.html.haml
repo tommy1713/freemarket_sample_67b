@@ -1,0 +1,48 @@
+= render "homes/header"
+.category__contents
+  .category__contents__content
+    .category__name
+      %h2 #{@parents.name}の商品一覧
+    .item__info
+      .item__info__box
+        = link_to root_path do
+          .item__info__box__photo
+            = image_tag "inu2.jpeg", size: "160x160"
+          .item__info__box__body
+            .item__info__box__body__name
+              aaaaaaa
+            .item__info__box__body__num
+              .item__info__box__body__num__price
+                ¥2200
+              .item__info__box__body__num__heart
+                = icon('far', 'heart', class: 'heart__icon')
+                %span 3
+    %ul.pagers
+      %li.pagers__num
+        %ul
+          %li.pager__cell 
+            = link_to root_path do
+              1
+          %li.pager__cell
+            = link_to root_path do
+              2
+          %li.pager__cell
+            = link_to root_path do
+              3
+          %li.pager__cell
+            = link_to root_path do
+              4
+          %li.pager__cell
+            = link_to root_path do
+              5
+      %li.pagers__next
+        %ul
+          %li.pager__cell
+            = link_to root_path do
+              = icon('fas', 'angle-right', class: 'right__icon')
+          %li.pager__cell
+            = link_to root_path do
+              = icon('fas', 'angle-double-right', class: 'double__icon')
+
+
+

@@ -1,0 +1,40 @@
+.customer-card__content {
+  position: relative;
+  padding: 30px 0;
+  max-width: 572px;
+  margin: 0 auto;
+  font-size: 1.2em;
+  border-bottom: 1px solid #eee;
+  .form_space {
+    margin-bottom: 20px;
+  }
+  &--number.form_space {
+    margin: 8px 0 0;
+    font-size: 16px;
+  }
+  &--expired.form_space {
+    margin: 8px 0 0;
+    font-size: 16px;
+  }
+  .delete__button {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  padding: 4px 6px;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #ea352d;
+  color: #ea352d;
+    
+  }
+  a {
+    text-decoration: none;
+  }
+}
+.how__not__regist {
+  display: block;
+  margin: 40px;
+  text-align: right;
+  color: #0099e8;
+  text-decoration: none;
+}

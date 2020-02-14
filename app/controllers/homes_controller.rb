@@ -4,7 +4,7 @@ class HomesController < ApplicationController
   def index
     @product = Product.all
     @image = Image.all
-    @parents = Category.where(ancestry: nil)
+    @parent = Category.where(ancestry: nil)
   end
 
 

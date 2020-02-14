@@ -4,6 +4,9 @@
   border-top: 1px solid #eeeeee;
   display: block;
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  a{
+    text-decoration: none;
+  }
   ul {
     display: flex;
     margin-left: 140px;
@@ -278,36 +281,154 @@
       margin: 24px auto;
       background: #fff;
       padding: 8px 16px 8px 16px;
-      a{
-        text-decoration: none;
-        .edit--btn{
-          display: block;
-          margin: 25px auto;
-          width: 90%;
-          height: 53px;
-          border: 1px solid #3ccace;
-          background-color: #3ccace;
-          color: white;
-          font-size: 14px;
-          cursor: pointer;
-        }
-        .destroy--btn{
-          display: block;
-          margin: 25px auto;
-          width: 90%;
-          height: 53px;
-          border: 1px solid #7c7e7e;
-          background-color: #7c7e7e;
-          color: white;
-          font-size: 14px;
-          cursor: pointer;
+      
+      .edit--btn{
+        display: block;
+        margin: 25px auto;
+        width: 90%;
+        height: 53px;
+        border: 1px solid #3ccace;
+        background-color: #3ccace;
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      #destroy--btn{
+        display: block;
+        margin: 25px auto;
+        width: 90%;
+        height: 53px;
+        border: 1px solid #7c7e7e;
+        background-color: #7c7e7e;
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      
+      .dialog{
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+        display: none;
+        &-content{
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+          margin: 50px auto;
+          background-color: #fff;
+          background-clip: padding-box;
+          border: 1px solid rgba(0, 0, 0, 0.2);
+          border-radius: 6px;
+          outline: 0;
+          width: 400px;
+          &__head{
+            padding: 15px;
+            border-bottom: 1px solid #e5e5e5;
+            display: flex;
+            justify-content: space-between;
+            color: #000;
+            .dislog-content__head:before{
+              display: table;
+              content: " ";
+              box-sizing: border-box;
+            }
+            .close{
+              margin-top: -2px;
+              padding: 0;
+              cursor: pointer;
+              background: transparent;
+              border: 0;
+              -webkit-appearance: none;
+              float: right;
+              font-size: 21px;
+              font-weight: bold;
+              line-height: 1;
+              color: #000;
+              text-shadow: 0 1px 0 #fff;
+              opacity: 0.2;
+            }
+            &__title{
+              margin: 0;
+              line-height: 1.428571429;
+              font-size: 14px;
+            }
+            .dislog-content__head:after{
+              clear: both;
+              display: table;
+              content: " ";
+              box-sizing: border-box;
+            }
+          }
+          &__body{
+            position: relative;
+            padding: 15px;
+            color: #000;
+            p{
+              margin: 0 0 10px;
+            }
+          }
+          &__foot{
+            padding: 15px;
+            text-align: right;
+            border-top: 1px solid #e5e5e5;
+            .dialog-content__foot:before{
+              display: table;
+              content: " ";
+              box-sizing: border-box;
+            }
+            .submit--btn{
+              .btn__cancel{
+                color: #333;
+                background-color: #fff;
+                border-color: #ccc;
+                display: inline-block;
+                margin-bottom: 0;
+                font-weight: normal;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                touch-action: manipulation;
+                cursor: pointer;
+                background-image: none;
+                border: 1px solid transparent;
+                padding: 6px 12px;
+                font-size: 14px;
+                line-height: 1.428571429;
+                border-radius: 4px;
+              }
+              .btn__deleate{
+                margin-bottom: 0;
+                margin-left: 5px;
+                color: #fff;
+                background-color: #d9534f;
+                border-color: #d43f3a;
+                display: inline-block;
+                font-weight: normal;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                touch-action: manipulation;
+                cursor: pointer;
+                background-image: none;
+                border: 1px solid transparent;
+                padding: 6px 12px;
+                font-size: 14px;
+                line-height: 1.428571429;
+                border-radius: 4px;
+              }
+            }
+            .dialog-content__foot:after{
+              clear: both;
+              display: table;
+              content: " ";
+            }
+          }
         }
       }
-    }
-  }
-  a {
-    text-decoration: none;
-  }
+      }
+  } 
 }
 
 .contents--background {
