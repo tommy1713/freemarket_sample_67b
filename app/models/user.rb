@@ -6,10 +6,10 @@ class User < ApplicationRecord
 
          VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-        validates :nickname,                presence: true, length: {maximum: 20},on: :validates_information_first
+        validates :nickname,                presence: true, length: {maximum: 12},on: :validates_information_first
         validates :email,                   presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }, on: :validates_information_second
-        validates :password,                presence: true, length: {minimum: 7, maximum: 128}, on: :validates_information_first
-        validates :password_confirmation,   presence: true, length: {minimum: 7, maximum: 128}, on: :validates_information_first
+        validates :password,                presence: true, length: {minimum: 7, maximum: 12}, on: :validates_information_first
+        validates :password_confirmation,   presence: true, length: {minimum: 7, maximum: 12}, on: :validates_information_first
         validates :last_name,               presence: true, on: :validates_information_first
         validates :first_name,              presence: true, on: :validates_information_first
         validates :first_name,              presence: true, on: :validates_information_first
