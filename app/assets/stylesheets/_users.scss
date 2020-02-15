@@ -194,3 +194,18 @@
     color: #333333;
   }
 }
+.breadcrumbs{
+  padding: 0 60px;
+  .breadcrumbs-list{
+    max-width: 1040px;
+    margin: 0 auto;
+    cursor: pointer;
+    a{
+      color: hsl(182, 60%, 52%);
+      margin: 0 10px;
+    }
+    .current{
+      margin-left: 10px;
+    }
+  }
+}

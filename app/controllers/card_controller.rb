@@ -1,7 +1,7 @@
 class CardController < ApplicationController
   require "payjp"
   def index
-    @parents = Category.where(ancestry: nil)
+    @parent = Category.where(ancestry: nil)
   end
 
   def new
