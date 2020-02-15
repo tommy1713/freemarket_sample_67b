@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-
+  before_action
   def show 
     @parent = Category.where(ancestry: nil)
   end
