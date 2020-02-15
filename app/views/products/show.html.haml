@@ -95,7 +95,7 @@
           = icon("fa","flag", class: "flag-btn")
           = link_to "不適切な商品の通報", "#", class: "r-btn"
       .edit_deleate
-        - if user_signed_in? && current_user.id == product.user_id
+        - if user_signed_in? && current_user.id == @product.user_id
           .edit_destroy_btn
             = link_to edit_product_path(params[:id]), class:"submit--btn" do
               %button.edit--btn

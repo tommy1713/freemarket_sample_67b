@@ -439,7 +439,7 @@
     margin: 0 auto;
     width: 700px;
     background-color: white;
-    .contents--title {
+    .sell-form__header {
       text-align: center;
       font-size: 24px;
       font-weight: bold;
@@ -447,16 +447,16 @@
       height: 90px;
       line-height: 90px;
     }
-    .images {
+    .sell-form-container {
       border-top: 1px solid #eeeeee;
       padding: 40px;
-      .images--title {
+      &__label {
         font-weight: bold;
       }
       .images--info {
         font-size: 12px;
       }
-      .images--box {
+      .dropzone-container {
         height: 140px;
         width: 620px;
         border: 1px dashed #cccccc;
@@ -464,16 +464,55 @@
         margin-top: 20px;
         position: relative;
         display: block;
-        &__file {
-          display: none;
+        #preview{
+          display: flex;
+          height: 100%;
+          .img_view{
+            height: 100%;
+            width: 20%;
+            z-index: 30;
+            background-color: white;
+            border: double 1px #7c7e7e;
+            box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+            img{
+              width: 100%;
+              height: 80%;
+              vertical-align: bottom;
+              border-bottom: double 1px #7c7e7e;
+            }
+            .btn_wrapper{
+              color: #3ccace;
+              text-align: center;
+              .btn{
+                display: inline;
+                cursor: pointer;
+              }
+            }
+          }
+          .dropzone-box {
+            display: none;
+          }
         }
-        &__text {
+        .dropzone-area {
+          top: 0;
+          right: 0;
           position: absolute;
-          top: 35%;
+          height: 100%;
           width: 100%;
           line-height: 1.5;
           text-align: center;
           font-size: 14px;
+          cursor: pointer;
+          .input_area{
+            height: 100%;
+            p{
+              text-align: center;
+              font-size: 10px;
+            }
+            .upload-image{
+              display: none;
+            }
+          }
         }
       }
     }
