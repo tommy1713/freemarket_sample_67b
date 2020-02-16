@@ -29,7 +29,7 @@ class PurchaseController < ApplicationController
   redirect_to done_product_purchase_index_path(product_id: @product.id) #完了画面に移動
   end
   def done
-    @parents = Category.where(ancestry: nil)
+    @parent = Category.where(ancestry: nil)
   end
 
   private
