@@ -1,12 +1,12 @@
 .buy__model {
   width: 100%;
   background: #f5f5f5;
-  .buy__model__content {
+  &__content {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     padding-bottom: 30px;
-    .buy__model__content__product__price {
+    &__product__price {
       display: flex;
       margin-left: 45%;
     }
