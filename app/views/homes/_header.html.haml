@@ -30,14 +30,14 @@
       %ul.header__inner-nav__listright
         - if user_signed_in?
           %li.header__inner-nav__listright__login
-            = link_to "/users/sign_out" do
+            = link_to logout_users_path do
               ログアウト
           %li.header__inner-nav__listright__new
-            = link_to "/users/:id" do
+            = link_to "/users/#{current_user.id}" do
               マイページ
         - else
           %li.header__inner-nav__listright__login
-            = link_to "" do
+            = link_to new_user_session_path do
               ログイン
           %li.header__inner-nav__listright__new
             = link_to sign_up_index_path do
