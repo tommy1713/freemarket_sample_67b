@@ -115,5 +115,3 @@ class SignUpController < ApplicationController
     end
   end
 
-
-# e.g. birthdate_day: user_params[:birthdate_day]

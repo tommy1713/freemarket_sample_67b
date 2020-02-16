@@ -1,20 +1,26 @@
-= form_for @product do |f|
+= form_for @product, url: new_product_path do |f|
   .contents--background
     .sell--contents
-      .contents--title
-        商品の情報を入力
-      .images
-        .images--title
+      %h2.sell-form__header
+        商品情報を入力
+      .sell-form-container
+        %label.sell-form-container__label
           出品画像
-          %span.form_require
-            必須
+        %span.sell-form-container__require
+          必須
         .images--info
-          最大10枚までアップロードできます
-        %label.images--box
-          = f.file_field :images, class:"images--box__file", id:"file"
-          %pre.images--box__text
-            ドラッグ＆ドロップ
-            またはクリックしてファイルをアップロード
+          最大5枚までアップロードできます
+        = f.fields_for :images do |image|
+          .dropzone-container.clearfix
+            #preview
+            .dropzone-area
+              = image.label :image, class: "dropzone-box", for: "upload-image" do
+                %p
+                  ドラッグ＆ドロップ
+                  %br
+                  またはクリックしてファイルをアップロード
+                .input_area
+                  = image.file_field :image, multiple: true, name: 'product_images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
       .products--name
         .products--name--title
           商品名

@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
   def show
     @user = User.find(params[:id])
-    @parents = Category.where(ancestry: nil)
+    @parent = Category.where(ancestry: nil)
   end
 
 
@@ -15,8 +15,9 @@ class UsersController < ApplicationController
   end
 
   def logout
-    @parents = Category.where(ancestry: nil)
+    @parent = Category.where(ancestry: nil)
   end
-
+  def login_user
+  end
 
 end

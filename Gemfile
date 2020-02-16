@@ -43,6 +43,7 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -51,6 +52,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'spring-commands-rspec'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
@@ -59,7 +61,12 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
+  gem 'rspec-rails', '~> 3.7'
+  gem 'rails-controller-testing'
   gem 'chromedriver-helper'
+  gem 'factory_bot_rails'
+  gem 'database_cleaner'
+  gem 'faker', "~> 2.8"
 end
 
 group :production do
@@ -84,4 +91,4 @@ gem 'pry-rails'
 gem 'bootstrap-sass'
 gem 'bootstrap'
 gem 'data-confirm-modal'
-
+gem "gretel"

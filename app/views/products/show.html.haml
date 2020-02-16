@@ -97,12 +97,25 @@
       .edit_deleate
         - if user_signed_in? && current_user.id == @product.user_id
           .edit_destroy_btn
-            = link_to "/products/1/edit", class:"submit--btn" do
+            = link_to edit_product_path(params[:id]), class:"submit--btn" do
               %button.edit--btn
                 商品の編集
-            = link_to "#", class:"submit--btn", method: :delete, data:{confirm: '本当に商品を削除してよろしいですか？', cancel: "やめる", commit: "削除する"}, title: "削除の確認" do
-              %button.destroy--btn
+            = link_to "#", class:"submit--btn" do
+              %button#destroy--btn
                 この商品を削除する
+              #dialog.dialog
+                .dialog-content
+                  .dialog-content__head
+                    %h5.dislog-content__head__title
+                      削除の確認
+                    %button{type: 'button', id: 'close', data:{dismiss: 'modal'}, aria:{hidden: :true}} ×
+                  .dialog-content__body
+                    %p 本当に削除してよろしいですか
+                  .dialog-content__foot
+                    = link_to "#", class:"submit--btn" do
+                      %button{class: 'btn__cancel', data: {dismiss: 'modal'}, aria: {hidden: :true}}　やめる
+                    = link_to "#", class:"submit--btn", method: :delete do
+                      %button{class: 'btn__deleate'} 削除する
         - else
           .buy--btn
             = link_to "購入する", purchase_index_path(product_id: @product.id), class: "b-btn"
