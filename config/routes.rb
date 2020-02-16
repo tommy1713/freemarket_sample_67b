@@ -51,4 +51,19 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
+
+  resources :purchase, only: [:index] do
+    collection do
+      post 'pay', to: 'purchase#pay'
+      get 'done', to: 'purchase#done'
+    end
+  end
+
+  resources :products, shallow: true do
+    resources :purchase do
+      post :pay, on: :collection
+      get :done, on: :collection
+    end
+end
+
 end
