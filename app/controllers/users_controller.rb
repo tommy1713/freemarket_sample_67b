@@ -5,14 +5,15 @@ class UsersController < ApplicationController
 
   def new
   end
+
+  def destroy
+  end
+
   def show
     @user = User.find(params[:id])
     @parent = Category.where(ancestry: nil)
   end
 
-
-  def destroy
-  end
 
   def logout
     @parent = Category.where(ancestry: nil)

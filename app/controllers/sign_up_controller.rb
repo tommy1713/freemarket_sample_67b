@@ -88,13 +88,15 @@ class SignUpController < ApplicationController
     )
     if @user.save
       session[:id] = @user.id
+      sign_in(:user, @user)
       redirect_to done_sign_up_index_path
     else
       render :information_first
     end
   end
+  
   def done
-    sign_in User.find(1) unless user_signed_in?
+    sign_in User.find(:id) unless user_signed_in?
   end
 
   private

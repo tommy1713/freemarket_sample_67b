@@ -23,7 +23,7 @@
             .text-form__group__robo__recaptcha
               .text-form__group__robo__recapcha__inner
                 .text-form__group__robo__recapcha__inner__mid
-                  %iframe{:frameborder => "0", :height => "78", :name => "a-d9witjyalc3m", :role => "presentation", :sandbox => "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox", :scrolling => "no", :src => "https://www.google.com/recaptcha/api2/anchor?ar=2&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=TYDIjJAqCk6g335bFk3AjlC3&size=normal&cb=r534mle9hkrv", :width => "304"}
+                  -# %iframe{:frameborder => "0", :height => "78", :name => "a-d9witjyalc3m", :role => "presentation", :sandbox => "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox", :scrolling => "no", :src => "https://www.google.com/recaptcha/api2/anchor?ar=2&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=TYDIjJAqCk6g335bFk3AjlC3&size=normal&cb=r534mle9hkrv", :width => "304"}
           .login-btn
-            = link_to 'ログイン', 'homes#index', class: "top-jamp"
+            = f.submit 'ログイン', class: "top-jamp"
           = link_to "パスワードをお忘れの方","#"
