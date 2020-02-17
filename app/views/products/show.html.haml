@@ -99,7 +99,7 @@
                       %button{class: 'btn__deleate'} 削除する
         - else
           .buy--btn
-            = link_to "購入する", confirmations_path, class: "b-btn"
+            = link_to "購入する", purchase_index_path(product_id: @product.id), class: "b-btn"
     .contents--under
       .comments
         - if @comments

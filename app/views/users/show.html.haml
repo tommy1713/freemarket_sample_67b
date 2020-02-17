@@ -13,7 +13,7 @@
         %figure
           = image_tag "noimage_thumb.png", size: "40x40"
       %h2.bold
-        -# = current_user.nickname
+        = @user.nickname
       .mypage-number
         %div.kk
           評価
@@ -47,4 +47,3 @@
           -# = image_tag "logo-white.png"
           .mypage-item-not-found
             取引中の商品はありません
-
