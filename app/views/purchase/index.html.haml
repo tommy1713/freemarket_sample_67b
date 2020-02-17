@@ -75,7 +75,7 @@
                     %br
                     福岡県＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
                     %br
-                    田中　明彦
+                    田中明彦
               .content__buy
                 = form_tag(pay_product_purchase_index_path(product_id: @product.id), method: :post) do
                   %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_8bb25b4f2f2fe97adef4f943"}
