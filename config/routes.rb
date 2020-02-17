@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :users, only:[:index, :show, :new, :destroy]
 
   resources :products, only:[:show, :new, :destroy, :edit, :update] do
+    resources :comments, only: :create do
+  end
 
       collection do
         get 'get_category_children', defaults: { format: 'json' }
