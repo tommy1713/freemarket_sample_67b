@@ -20,4 +20,5 @@ class User < ApplicationRecord
         validates :birthdate_day,           presence: true, on: :validates_information_first
   has_many :cards
   has_many :products
+  has_many :comments
 end

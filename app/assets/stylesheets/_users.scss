@@ -31,13 +31,12 @@
   }
 }
 .mypage-main {
- 
   height: 1355px;
   margin: 40px auto 0;
-  width: 1020px;
-  padding: 0 0 40px;
+  max-width: 1020px;
+  padding: 0 60px;
   font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
-  margin:40px 210px 0px;
+  display: flex;
   &__side-menu{
     float: left;
     width: 280px;

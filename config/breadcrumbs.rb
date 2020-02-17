@@ -33,10 +33,17 @@ crumb :card do
   parent :mypage
 end
 
+crumb :cardinfo do
+  link "クレジットカード情報入力", new_card_path
+  parent :card
+end
+
 crumb :logout do
   link "ログアウト", logout_users_path
   parent :mypage
 end
+
+
 
 
 

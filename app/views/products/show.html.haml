@@ -1,25 +1,6 @@
 = render "homes/header"
 = render "homes/purchasebtn"
-.products--clums
-  %ul
-    %li
-      = link_to "FURIMA", root_path, class:"top--link"
-    %li
-      >
-    %li
-      = link_to "#{@product.category}", "#", class:"mc--link"
-    %li
-      >
-    %li
-      = link_to "子カテゴリー", "#", class:"cc--link"
-    %li
-      >
-    %li
-      = link_to "孫カテゴリー", "#", class:"gc--link"
-    %li
-      >
-    %li.clums--name
-      = @product.name
+
 .detail--contents
   .contents--main
     .contents--top
@@ -120,17 +101,28 @@
           .buy--btn
             = link_to "購入する", purchase_index_path(product_id: @product.id), class: "b-btn"
     .contents--under
+      .comments
+        - if @comments
+          - @comments.each do |comment|
+            .comments__text__user
+              %strong
+                .comment__user
+                  = link_to comment.user.nickname, "/users/#{comment.user_id}"
+                .comment__massage__text
+                  = comment.text
       .form
-        = form_for "#" do |f|
-          = f.text_area :content, class: 'textbox'
-        .notificate
-          相手のことを考え丁寧なコメントを心がけましょう。
-          %br
-          不快な言葉遣いなどは利用制限や退会処分となることがあります
-        .comments  
-          %button.comment--btn
-            = icon("fa", "comment", class:"submit--btn")
-            コメントする
+        = form_with(model: [@product, @comment], id: "new_comment") do |f|
+          = f.text_area :text, class: 'textbox', rows: "2"
+          .notificate
+            相手のことを考え丁寧なコメントを心がけましょう。
+            %br
+            不快な言葉遣いなどは利用制限や退会処分となることがあります 
+        - if current_user
+          = f.submit "コメントする", class: "form__submit"
+        - else
+          = link_to login_user_users_path do
+            %button.comment--btn
+              新規登録/ログインが必要です
     .move--btn
       .move--btn__forward
         - if @product.previous.present?

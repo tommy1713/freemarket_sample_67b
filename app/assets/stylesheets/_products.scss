@@ -207,14 +207,50 @@
     }
     .contents--under {
       width: 700px;
-      height: 320px;
+      height: 100%;
       margin: 20px auto;
       background-color: white;
       padding: 20px;
-      
+      .comments{
+        height: 100%;
+        padding: 20px 60px;
+        .comments__text__user{
+          height: 100%;
+          margin-bottom: 30px;
+          .comment__user{
+            
+            a{
+              color: #3ccace;
+              font-weight: bold;
+              font-size: 30px;
+            }
+          }
+          .comment__massage__text{
+            display: inline-block;
+            position: relative; 
+            margin: 0 0 0 40px;
+            padding: 20px;
+            width: 500px;
+            border-radius: 12px;
+            background: #edf1ee;
+            word-wrap: break-word;
+          }
+          .comment__massage__text:after{
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 3px; 
+            left: -19px;
+            border: 8px solid transparent;
+            border-right: 18px solid #edf1ee;
+            -webkit-transform: rotate(35deg);
+            transform: rotate(35deg);
+          }
+        }
+      }
       .form {
         width: 650px;
-        height: 275px;
+        height: 255px;
         margin: 10px auto;
         position: relative;
         .textbox {
@@ -232,23 +268,39 @@
           line-height: 27px;
           margin: 10px 0;
         }
-        .comments {
+        input {
+          color: white;
+          background-color: #3ccace;
           position: absolute;
           bottom: 0;
           right: 20%;
-          .comment--btn {
-            width: 390px;
-            height: 53px;
-            border: 1px solid #3ccace;
-            background-color: #3ccace;
-            border-radius: 100px;
-            color: white;
-            font-size: 18px;
-            cursor: pointer;
-            .submit--btn {
-              color: white;
-            }
-          }
+          width: 390px;
+          height: 53px;
+          border: 1px solid #3ccace;
+          background-color: #3ccace;
+          border-radius: 100px;
+          color: white;
+          cursor: pointer;
+          font-size: 18px;
+          padding: 10px;
+          text-align: center;
+        }
+        .comment--btn{
+          color: white;
+          background-color: #969494;
+          position: absolute;
+          bottom: 0;
+          right: 20%;
+          width: 390px;
+          height: 53px;
+          border: 1px solid #969494;
+          background-color: #969494;
+          border-radius: 100px;
+          color: rgb(158, 35, 35);
+          cursor: pointer;
+          font-size: 18px;
+          padding: 10px;
+          text-align: center;
         }
       }
     }
