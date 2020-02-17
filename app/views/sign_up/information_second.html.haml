@@ -2,19 +2,17 @@
   .second-container__top
     %h1.logo
       = image_tag 'furima-logo.svg'
-    %nav.progress-barsignup
+    %nav.progress-bar.signup-bar
       %ol.clearfix
-        %li.through
-          会員情報
         %li.active
-          .progres-status.active
-            %pseudo:after &gt;
-            %pseudo:after &gt;
+          会員情報
+          .progress-status1
+        %li.first
           氏名、生年月日
-          .progres-status
-        %li.next
+          .progress-status2
+        %li.second
           完了
-          .progres-status
+          .progress-status3
   .second-container__main
     .second-container__main__section
       %h2 会員情報入力２
