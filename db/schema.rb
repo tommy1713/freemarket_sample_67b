@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2020_02_15_110401) do
-
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -88,9 +86,6 @@ ActiveRecord::Schema.define(version: 2020_02_15_110401) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-
   add_foreign_key "products", "categories"
-  add_foreign_key "favorites", "products"
-  add_foreign_key "favorites", "users"
   add_foreign_key "products", "users"
 end
