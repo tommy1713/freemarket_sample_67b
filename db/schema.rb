@@ -35,16 +35,6 @@ ActiveRecord::Schema.define(version: 2020_02_15_110401) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_favorites_on_product_id"
-    t.index ["user_id", "product_id"], name: "index_favorites_on_user_id_and_product_id", unique: true
-    t.index ["user_id"], name: "index_favorites_on_user_id"
-  end
-
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id", null: false
     t.string "image", null: false
@@ -86,18 +76,6 @@ ActiveRecord::Schema.define(version: 2020_02_15_110401) do
     t.integer "birthdate_year", null: false
     t.integer "birthdate_mouth", null: false
     t.integer "birthdate_day", null: false
-    t.integer "phone_namber", null: false
-    t.string "address_last_name", null: false
-    t.string "address_first_name", null: false
-    t.string "address_last_name_kana", null: false
-    t.string "address_first_name_kana", null: false
-    t.string "address_namber", null: false
-    t.integer "address_prefecture", default: 0, null: false
-    t.string "address_name", null: false
-    t.string "address_block", null: false
-    t.string "address_building"
-    t.integer "address_phone_namber"
-    t.text "introduce"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -107,7 +85,5 @@ ActiveRecord::Schema.define(version: 2020_02_15_110401) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "favorites", "products"
-  add_foreign_key "favorites", "users"
   add_foreign_key "products", "users"
 end
