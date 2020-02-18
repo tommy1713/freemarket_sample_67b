@@ -26,9 +26,13 @@ class PurchaseController < ApplicationController
     customer: card.customer_id, #顧客ID
     currency: 'jpy', #日本円
   )
+  @product_buyer= Product.find(params[:product_id])
+  @product_buyer.update( buyer_id: current_user.id)
   redirect_to done_product_purchase_index_path(product_id: @product.id) #完了画面に移動
   end
   def done
+    @product_buyer= Product.find(params[:product_id])
+    @product_buyer.update( buyer_id: current_user.id)
     @parent = Category.where(ancestry: nil)
   end
 
