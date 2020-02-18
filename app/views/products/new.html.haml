@@ -41,7 +41,7 @@
                 必須
             .category--box
               .select--wrap__box
-                = f.select :category_id, @category_parent_array, {}, {class: 'select--wrap__box--select', id: 'parent_category', name: ''}
+                = f.select :category_id, @category_parent_array, {:prompt => "---"}, {class: 'select--wrap__box--select', id: 'parent_category', name: ''}
           .brand
             .brand--title
               ブランド
