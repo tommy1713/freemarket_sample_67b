@@ -8,16 +8,16 @@ class Product < ApplicationRecord
   belongs_to :user
 
   has_many :images
-  accepts_nested_attributes_for :images, allow_destroy: true
-  validates :price, numericality: :only_integer, presence: true
-  validates :detail, length: {maximum: 1000 }, presence: true
-  validates :name, length: {maximum: 40 }, presence: true
-  validates :category_id, presence: true
-  validates :status, presence: true
-  validates :shipping_area, presence: true
-  validates :estimated_date, presence: true
-  validates :postage, presence: true
-  validates :image_id, presence: true
+  # accepts_nested_attributes_for :images, allow_destroy: true
+  # validates :price, numericality: :only_integer, presence: true
+  # validates :detail, length: {maximum: 1000 }, presence: true
+  # validates :name, length: {maximum: 40 }, presence: true
+  # validates :category_id, presence: true
+  # validates :status, presence: true
+  # validates :shipping_area, presence: true
+  # validates :estimated_date, presence: true
+  # validates :postage, presence: true
+  # validates :image_id, presence: true
   has_many :comments
   
   def previous

@@ -55,8 +55,7 @@ ActiveRecord::Schema.define(version: 2020_02_15_110401) do
     t.integer "shipping_area", null: false
     t.integer "estimated_date", null: false
     t.integer "postage", null: false
-    t.integer "situation", null: false
-    t.integer "favorite", null: false
+    t.integer "favorite", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "image_id", null: false
