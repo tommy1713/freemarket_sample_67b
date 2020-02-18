@@ -317,7 +317,7 @@
     margin: 0 auto;
     width: 700px;
     background-color: white;
-    height: 2160px;
+    // height: 2160px;
     .contents--title {
       text-align: center;
       font-size: 24px;
@@ -348,11 +348,12 @@
         }
         &__text {
           position: absolute;
-          top: 35%;
+          top: 30%;
           width: 100%;
           line-height: 1.5;
           text-align: center;
           font-size: 14px;
+          border-style: none;
         }
       }
     }
@@ -393,7 +394,7 @@
       }
     }
     .sell--detail {
-      height: 350px;
+      
       padding: 40px;
       border-top: 1px solid #eeeeee;
       .sell--detail--title {
@@ -411,9 +412,6 @@
           .category--title {
             font-weight: bold;
             margin-bottom: 5px;
-          }
-          .category--box {
-            height: 48px;
           }
         }
         .brand {
@@ -582,15 +580,20 @@
         line-height: 1.5;
 
       }
-      .sell--btn {
+      .form__btn {
         width: 100%;
         height: 50px;
         background-color: #3ccace;
-        color: white;
         border: 1px solid #3ccace;
-        // border-radius: 100px;
+        text-align: center;
+        line-height: 49px;
         font-size: 18px;
         margin-top: 30px;
+        .sell--btn {
+          color: white;
+          background-color: #3ccace;
+          width: 100%;
+        }
       }
       .back--btn {
         margin: 25px auto 0;
@@ -633,9 +636,34 @@
     border-radius: 2px;
     width: 400px;
     height: 48px;
+    margin-bottom: 10px;
   }
   select::-ms-expand {
     display: none;
+  }
+}
+.content--row {
+  background-color: #f8f8f8;
+  .create--success {
+    margin: 0 auto;
+    width: 700px;
+    background-color: white;
+    &__content {
+      margin-top: 10px;
+      text-align: center;
+    }
+    .link--home {
+      margin: 25px auto 0;
+      width: 280px;
+      height: 50px;
+      text-align: center;
+      border: 1px solid #aaaaaa;
+      line-height: 50px;
+      background-color: #aaaaaa;
+      .h--btn {
+        color: white;
+      }
+    }
   }
 }
 

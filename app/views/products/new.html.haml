@@ -1,2 +1,119 @@
 = render "users/header-mini"
-= render "form"
+= form_for @product do |f| 
+  .contents--background
+    .sell--contents
+      .contents--title
+        商品の情報を入力
+      .images
+        .images--title
+          出品画像
+          %span.form_require
+            必須
+        .images--info
+          最大10枚までアップロードできます
+        %label.images--box
+          = f.file_field :image, class:"images--box__file", id:"file"
+          %pre.images--box__text
+            ドラッグ＆ドロップ
+            またはクリックしてファイルをアップロード
+      .products--name
+        .products--name--title
+          商品名
+          %span.form_require
+            必須
+        .name--box
+          = f.text_field :name, class:"name--box__area", placeholder:"商品名（必須 40字まで）"
+      .info
+        .info--title
+          商品の説明
+          %span.form_require
+            必須
+        .info--box
+          = f.text_area :detail, class:"info--box__area", placeholder:"商品の説明（必須 1,000字以内）（色、素材、重さ、定価、注意点など） \n例）2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"
+      .sell--detail.clearfix
+        .sell--detail--title
+          商品の詳細
+        .sell--detail--box
+          .category
+            .category--title
+              カテゴリー
+              %span.form_require
+                必須
+            .category--box
+              .select--wrap__box
+                = f.select :category_id, @category_parent_array, {}, {class: 'select--wrap__box--select', id: 'parent_category', name: ''}
+          .brand
+            .brand--title
+              ブランド
+              %span.form_optional
+                任意
+            .brand--box
+              = f.text_field :brand, class:"brand--box__area", placeholder:"例）シャネル"
+          .status
+            .status--title
+              商品の状態
+              %span.form_require
+                必須
+            .status--box
+              = f.select :status, Product.statuses.keys.map {|k| [I18n.t("enums.product.status.#{k}"), k]}, :prompt => "---"
+      .delivery--detail.clearfix
+        .delivery--detail--title
+          配送について
+        .delivery--detail--box
+          .postage
+            .postage--title
+              配送料の負担
+              %span.form_require
+                必須
+            .postage--box
+              = f.select :postage, Product.postages.keys.map {|k| [I18n.t("enums.product.postage.#{k}"), k]}, :prompt => "---"
+          .shipping--area
+            .shipping--area--title
+              発送元の地域
+              %span.form_require
+                必須
+            .shipping--area--box
+              = f.select :shipping_area, Product.shipping_areas.keys.map {|k| [I18n.t("enums.product.shipping_area.#{k}"), k]}, :prompt => "---"
+          .estimated--date
+            .estimated--date--title
+              発送までの日数
+              %span.form_require
+                必須
+            .estimated--date--box
+              = f.select :estimated_date, Product.estimated_dates.keys.map {|k| [I18n.t("enums.product.estimated_date.#{k}"), k]}, :prompt => "---"
+      .sell--price.clearfix
+        .sell--price--title
+          販売価格(300 ~ 9,999,999)
+        %ul.sell--price--box
+          %li.products--price.clearfix
+            .price--title
+              価格
+              %span.form_require
+                必須
+            .price--form
+              .price--unit
+                ¥
+              .price--box
+                = f.text_field :price, class:"price--box__area", placeholder:"例）300"
+          %li.fee.clearfix
+            .fee--title
+              手数料
+            .fee--box
+              #{"-"}
+          %li.profit.clearfix
+            .profit--title
+              販売利益
+            .profit--box
+              #{"-"}
+      .under--box
+        .notification
+          禁止されている出品、行為をご確認ください。
+          %br
+          またブランド品でシリアルナンバーがある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+          %br 
+          また、出品をもちまして加盟店規約に同意いたことになります。
+        .btn__content
+          .form__btn
+            = f.submit "出品する", class:'sell--btn'
+          .back--btn
+            = link_to "もどる", root_path, class:"b--btn"

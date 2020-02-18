@@ -83,4 +83,5 @@ gem 'dotenv-rails'
 gem 'bootstrap-sass'
 gem 'bootstrap', '~> 4.1.1'
 gem 'data-confirm-modal'
+gem 'pry-rails'
 
