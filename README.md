@@ -104,3 +104,13 @@
 ### Association
 - belongs_to :user
 
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false,foreign_key:true|
+|product_id|string|null: false|
+|text|text|null: false|
+
+### Association
+- belongs_to :user
+- belongs_to :product

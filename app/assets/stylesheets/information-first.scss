@@ -31,15 +31,14 @@
             border-radius: 50%;
           }
         }
-        li{
-          margin: 0 40px 0 0;
+        .next{
           min-width: 60px;
           position: relative;
           z-index: 1;
           display: inline-block;
           font-size: 12px;
           color: #888;
-          .progress-status{
+          .progress-status.next{
             width: 12px;
             height: 12px;
             margin: 8px auto 0;
@@ -77,7 +76,7 @@
           text-align: center;
           font-weight: bold;
         }
-        &__form{
+        .new_user{
           padding: 24px 16px 40px;
           border-top: 1px solid #f5f5f5;
           input{
@@ -86,7 +85,7 @@
             font-family: inherit;
             -webkit-appearance: none;
           }
-          &__contents{
+          .form_contents{
             max-width: 343px;
             margin: 0 auto;
             .form-group{
@@ -106,7 +105,7 @@
                 vertical-align: top;
               }
               .input-nickname{
-                width: 90%;
+                width: 100%;
                 margin: 8px 0 0;
                 height: 50px;
                 padding: 10px 16px 8px;
@@ -120,7 +119,7 @@
             .form-group{
               margin: 24px 0 0;
               .input-email{
-                width: 90%;
+                width: 100%;
                 margin: 8px 0 0;
                 height: 50px;
                 padding: 10px 16px 8px;
@@ -132,8 +131,8 @@
               }
             }
               .input-password{
-                width: 90%;
-                margin: 8px 0 0;
+                width: 100%;
+                margin: 8px  0;
                 height: 50px;
                 padding: 10px 16px 8px;
                 border-radius: 4px;
@@ -180,110 +179,9 @@
                     cursor: pointer;
                   }
                 }              
-              .text-left{
-                font-size: 16px;
-                font-weight: bold;
-              }
-              .l-single-text{
-                margin: 8px;
-                padding: 0;
-                line-height: 1.5;
-                font-size: 14px;
-              }
-
               
-              .input-default.half{
-                margin-right: 8px;
-                width: calc(41% - 6px);
-                margin: 8px 0 0;
-                border-radius: 4px;
-                border: 1px solid #ccc;
-                height: 48px;
-                padding: 10px 16px 8px;
-                background: #fff;
-                line-height: 1.5;
-                font-size: 16px;
-                height: 50px;
-              }
-            .birthday-select{
-              
-              .select-wrap{
-                width: 76px;
-                display: inline-block;
-                .icon-arrow-bottom{
-                  right: 12px;
-                  position: absolute;
-                  top: 50%;
-                  z-index: 2;
-                  color: #888;
-                  font-size: 8px;
-                  transform: translate(0, -50%);
-                }
-                .select-default{
-                  padding: 0 10px;
-                  width: 100%;
-                  position: relative;
-                  z-index: 2;
-                  height: 48px;
-                  border-radius: 4px;
-                  border: 1px solid #ccc;
-                  background: 0;
-                  font-size: 16px;
-                  line-height: 1.5;
-                  cursor: pointer;
-                }
-              }
-              span{
-                margin: 0 2px;
-              }
-              .select-wrap-mouth{
-                width: 76px;
-                display: inline-block;
-                margin: 8px 0 0;
-                position: relative;
-                background: #fff;
-                .select-default{
-                  padding: 0 10px;
-                  width: 100%;
-                  position: relative;
-                  z-index: 2;
-                  height: 48px;
-                  border-radius: 4px;
-                  border: 1px solid #ccc;
-                  background: 0;
-                  font-size: 16px;
-                  line-height: 1.5;
-                  cursor: pointer;
-                }
-              }
-              .select-wrap-day{
-                width: 76px;
-                display: inline-block;
-                margin: 8px 0 0;
-                position: relative;
-                background: #fff;
-                .select-default{
-                  padding: 0 10px;
-                  width: 100%;
-                  position: relative;
-                  z-index: 2;
-                  height: 48px;
-                  border-radius: 4px;
-                  border: 1px solid #ccc;
-                  background: 0;
-                  font-size: 16px;
-                  line-height: 1.5;
-                  cursor: pointer;
-                }
-              }
-            }
-            .form-info-text{
-              margin: 8px 0 0;
-              line-height: 1.5;
-              color: #888;
-            }
           } 
-          .single-content{
+          .single_content{
             max-width: 343px;
             margin: 0 auto;
             .form-group{
@@ -299,48 +197,55 @@
                   text-decoration: none;
                 }
               }
-              .btn-red{
-               margin: 24px 0 0;
-               background: #ea352d;
-               border: 1px solid #ea352d;
-               color: #fff;
-               width: 100%;
-               line-height: 48px;
-               font-size: 14px;
-               transition: all ease-out .3s;
-               cursor: pointer;
-               text-align: center; 
-              }
-              .text-right{
+                .btn-red{
                 margin: 24px 0 0;
-                text-align: right;
-                .myinfo{
-                  color: #0099e8;
-                  text-decoration: none;
+                background: #ea352d;
+                border: 1px solid #ea352d;
+                color: #fff;
+                width: 100%;
+                line-height: 48px;
+                font-size: 14px;
+                transition: all ease-out .3s;
+                cursor: pointer;
+                text-align: center; 
+                  .next-submit{
+                    background: #ea352d;
+                    border: 1px solid #ea352d;
+                    color: #fff;
+                    font-size: 14px;
+                  }
+                }
+                .text-right{
+                  margin: 24px 0 0;
+                  text-align: right;
+                  .myinfo{
+                    color: #0099e8;
+                    text-decoration: none;
+                  }
+                }
+              }
+              .form-group{
+                margin: 24px 0 0;
+                .protected{
+                  color: #888888;
+                  font-size: 12px;
+                  line-height: 1.5;
+                  margin: 0;
+                  padding: 0;
+                  background: #f5f5f5;
+                  .pvirivacy-link{
+                    color: #0099e8;
+                    text-decoration: none;
+                  }
+                  .service{
+                    color: #0099e8;
+                    text-decoration: none;
+                  }
                 }
               }
             }
-            .form-group{
-              margin: 24px 0 0;
-              .protected{
-                color: #888888;
-                font-size: 12px;
-                line-height: 1.5;
-                margin: 0;
-                padding: 0;
-                background: #f5f5f5;
-                .pvirivacy-link{
-                  color: #0099e8;
-                  text-decoration: none;
-                }
-                .service{
-                  color: #0099e8;
-                  text-decoration: none;
-                }
-              }
-            }
+          
         }
       }
     }
   }
-}

@@ -1,14 +1,7 @@
 = render "homes/header"
 = render "homes/purchasebtn"
-.bread-crumbs
-  %ul
-    %li.itemscope
-      = link_to "メルカリ", "#"
-      %i.icon-arrow-right
-        %li 
-          >
-    %li.last-child
-      マイページ
+- breadcrumb :mypage
+= render "layouts/breadcrumbs"
 
 
 .mypage-main
@@ -20,7 +13,7 @@
         %figure
           = image_tag "noimage_thumb.png", size: "40x40"
       %h2.bold
-        username
+        = @user.nickname
       .mypage-number
         %div.kk
           評価
@@ -33,8 +26,7 @@
         %li.active
           %h3 お知らせ
         %li
-          %h3
-            やることリスト
+          %h3 やることリスト
       .tab-content
         %ul.mypage-item-list
           %li.mypage-item-not-found
@@ -55,4 +47,3 @@
           -# = image_tag "logo-white.png"
           .mypage-item-not-found
             取引中の商品はありません
-

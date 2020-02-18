@@ -34,6 +34,7 @@
           width: calc(100% - 26px);
           height: 36px;
           padding: 0 0 0 5px;
+          border: 1px solid #ccc;
           }
           .btn-search{
             width: 40px;
@@ -181,6 +182,9 @@
   background: #f8f8f8;
   br{
     box-sizing: border-box;
+  }
+  a{
+    text-decoration: none;
   }
   &__visual{
     width: 100%;
@@ -579,6 +583,7 @@
   right: 32px;
   position: fixed;
   padding: 15px;
+  z-index: 999;
   &__text{
     color: #fff;
     display: block;
@@ -596,4 +601,28 @@
   -moz-opacity:0.8;
   -khtml-opacity: 0.8;
   opacity:0.8;
+}
+
+.a__btn{
+  width: 180px;
+}
+
+.g__btn{
+  width: 180px;
+}
+
+
+.g__btn:hover{
+  cursor:pointer;
+  filter: alpha(opacity=60);
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity:0.5;
+}
+.a__btn:hover{
+  cursor:pointer;
+  filter: alpha(opacity=60);
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity:0.5;
 }

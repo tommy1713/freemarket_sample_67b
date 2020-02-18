@@ -1,9 +1,12 @@
 class ProductsController < ApplicationController
+
   before_action :set_product, except: [:new, :get_category_children, :get_category_grandchildren, :create]
   before_action :set_parent, only: [:new, :create]
   def show 
     @parents = Category.all.order("id ASC").limit(13)
-    @parent = Category.find(params[:id])
+    @parent = Category.where(ancestry: nil)
+    @comment = Comment.new
+    @comments = @product.comments.includes(:user)
   end
 
   def new
@@ -20,7 +23,6 @@ class ProductsController < ApplicationController
   end
 
   def create
-    binding.pry
     @product = Product.new(product_params)
     if @product.save!
       redirect_to root_path
@@ -30,14 +32,22 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    product.destroy
+    @product.destroy
     @users = User.all
     if @product.destroy
-      render template: "user/:id"
+      redirect_to root_path
     else
       logger.error e 
       logger.error e.backtrace.join("\n") 
     end
+  end
+  
+  def edit
+  end
+
+  def update
+    @product.update(product_params)
+    redirect_to product_path(params[:id])
   end
 
   private
@@ -45,12 +55,14 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+
   def set_parent
     @category_parent_array = Category.where(ancestry: nil).pluck(:name)
   end
 
+  
   def product_params
-    params.require(:product).permit(:name, :detail, :category_id, :brand, :status, :postage, :shipping_area, :estimated_date, :price)
+    params.require(:product).permit(:name, :detail, :category_id, :brand, :size, :prise, :status, :shipping_area, :estimated_date, :postage, :situation, :favorite, :image, :stock)
   end
 
 end

@@ -1,4 +1,4 @@
-body {
+.content {
   background-color: rgba(250, 249, 249, 0.938);
 }
 .bread-crumbs {
@@ -31,13 +31,12 @@ body {
   }
 }
 .mypage-main {
- 
   height: 1355px;
   margin: 40px auto 0;
-  width: 1020px;
-  padding: 0 0 40px;
+  max-width: 1020px;
+  padding: 0 60px;
   font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
-  margin:40px 210px 0px;
+  display: flex;
   &__side-menu{
     float: left;
     width: 280px;
@@ -53,7 +52,13 @@ body {
         color: #333;
         border: 0;
         border-top: 1px solid #eee;
-        
+        .fa {
+          position: absolute;
+          top: 50ox;
+          top: 35%;
+          right: 20px;
+          color: #ccc;
+        }
       }
       h3{
         margin: 32px 0 0;
@@ -98,6 +103,7 @@ body {
       border: 0;
       background: #eee;
       font-size: 0;
+      margin-bottom: auto;
       .active {
         background: #fff;
         font-size: 16px;
@@ -112,7 +118,7 @@ body {
         position: relative;
         color: #333;
         h3 {
-          padding: 25px;
+          padding: 10px;
           font-size: 16px;
         }
       }
@@ -154,6 +160,7 @@ body {
       border: 0;
       background: #eee;
       font-size: 0;
+      margin-bottom: auto;
       .active {
         background: #fff;
         font-size: 16px;
@@ -168,7 +175,7 @@ body {
         position: relative;
         color: #333;
         h3 {
-          padding: 25px;
+          padding: 10px;
           font-size: 16px;
           }
         }
@@ -184,5 +191,20 @@ body {
   a {
     text-decoration: none;
     color: #333333;
+  }
+}
+.breadcrumbs{
+  padding: 0 60px;
+  .breadcrumbs-list{
+    max-width: 1040px;
+    margin: 0 auto;
+    cursor: pointer;
+    a{
+      color: hsl(182, 60%, 52%);
+      margin: 0 10px;
+    }
+    .current{
+      margin-left: 10px;
+    }
   }
 }
