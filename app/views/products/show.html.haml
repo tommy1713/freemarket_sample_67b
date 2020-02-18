@@ -119,16 +119,16 @@
               %br
               不快な言葉遣いなどは利用制限や退会処分となることがあります 
             = f.submit "コメントする", class: "form__submit"
-        -# - else
-        -#   = form_with(model: [@product, @comment], id: "new_comment") do |f|
-        -#     = f.text_area :text, class: 'textbox', rows: "2"
-        -#     .notificate
-        -#       相手のことを考え丁寧なコメントを心がけましょう。
-        -#       %br
-        -#       不快な言葉遣いなどは利用制限や退会処分となることがあります 
-        -#     = link_to login_user_users_path do
-        -#       %button.comment--btn
-        -#         新規登録/ログインが必要です
+        - else
+          = form_with(model: [@product, @comment], id: "new_comment") do |f|
+            = f.text_area :text, class: 'textbox', rows: "2"
+            .notificate
+              相手のことを考え丁寧なコメントを心がけましょう。
+              %br
+              不快な言葉遣いなどは利用制限や退会処分となることがあります 
+            = link_to login_user_users_path do
+              %button.comment--btn
+                新規登録/ログインが必要です
     .move--btn
       .move--btn__forward
         - if @product.previous.present?
