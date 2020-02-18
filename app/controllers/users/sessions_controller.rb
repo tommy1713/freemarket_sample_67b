@@ -25,3 +25,20 @@ class Users::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
 end
+# class SessionsController < ApplicationController
+
+#   def new
+#   end
+
+#   def create
+#     if @user.login
+#       session[:id] = @user.id
+#       redirect_to homes_path
+#     else
+#       render :login_user
+#     end
+#   end
+
+#   def destroy
+#   end
+# end

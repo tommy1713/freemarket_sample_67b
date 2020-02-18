@@ -1,0 +1,66 @@
+.information-container
+  .information-container__top
+    %h1.logo
+      = image_tag 'furima-logo.svg'
+    %nav.progress-barsignup
+      %ol.clearfix
+        %li.active
+          会員情報
+          .progres-status.active
+            %pseudo:after &gt;
+            %pseudo:after &gt;
+        %li.next
+          氏名、生年月日
+          .progres-status.next
+            %pseudo:after &gt;
+            %pseudo:after &gt;
+        %li
+          完了
+          .progres-status
+  .information-container__main
+    .information-container__main__section
+      
+      %h2 会員情報入力
+      = form_for @user, url: information_second_sign_up_index_path,method: :get do |f|
+        .form_contents
+          .form-group
+            %label{for: "nickname"} ニックネーム
+            %span.form-require 必須
+            = f.text_field :nickname, placeholder: '例) メルカリ太郎',class: "input-nickname"
+          .form-group
+            %label{for: "email"} メールアドレス
+            %span.form-require 必須
+            = f.email_field :email, placeholder: 'PC・携帯どちらでも可',class: "input-email"
+          .form-group
+            %label{for: "password"} パスワード
+            %span.form-require 必須
+            = f.password_field :password, placeholder: '7文字以上',class:"input-password"
+            %label{for: "password"} パスワード ※確認用
+            %span.form-require 必須
+            = f.password_field :password_confirmation, placeholder: '7文字以上',class:"input-password"
+            %p.form-info-text
+              ※ 英字と数字の両方を含めて設定してください
+            .form-password-toggle
+              .check-box-default
+                %input#reveal_password{type: "checkbox"}/
+                %i.icon-check
+                %label.check-box-label{for: "reveal_password"} パスワードを表示する
+        .single_content
+          .form-group
+            %p.l-single-text.text-center
+              「次へ進む」のボタンを押すことにより、
+              = link_to "#", class: "rule" do
+                利用規約
+              に同意したものとみなします
+            %button.btn-default.btn-red
+              = f.submit '次へ進む',class: "next-submit"
+          .form-group.text-right
+            = link_to "本人情報の入力について","#", class: "myinfo" 
+            本人情報の登録について
+            %i.icon-arrow-right
+          .form-group.recaptcha_term
+            %p.protected
+              This site is protected by reCAPTCHA and the Google
+              = link_to "Privacy Policy", "#", class: "privacy-link"
+              and
+              = link_to "Terms of Service", "#", class: "service"

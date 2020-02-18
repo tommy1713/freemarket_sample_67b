@@ -1,23 +1,11 @@
 = render "homes/header"
 = render "homes/purchasebtn"
-.bread-crumbs
-  %ul
-    %li.itemscope
-      = link_to "メルカリ", "#"
-      %i.icon-arrow-right
-        %li 
-          >
-    %li.last-childs
-      = link_to "マイページ", "#"
-      %i.icon-arrow-right
-        %li 
-          >
-    %li.last-child
-      ログアウト
+- breadcrumb :logout
+= render "layouts/breadcrumbs"
 .mypage-main
   = render "mypage-side-menu"
-  .l-containner
-    .l-content
+  .mypage-main__right-contents
+    .l--content
       .l-chapter-container
         .l-single-inner
           .l-single-content

@@ -1,11 +1,13 @@
 class CardController < ApplicationController
   require "payjp"
   def index
-    
+    @parent = Category.where(ancestry: nil)
   end
+
   def new
-    # card = Card.where(user_id: current_user.id)
-    # redirect_to action: "show" if card.exists?
+    @parent = Category.where(ancestry: nil)
+    card = Card.where(user_id: current_user.id)
+    redirect_to action: "show" if card.exists?
   end
 
   def pay #payjpとCardのデータベース作成を実施します。
@@ -14,6 +16,7 @@ class CardController < ApplicationController
       redirect_to action: "new"
     else
       customer = Payjp::Customer.create(
+      description: '登録テスト', #なくてもOK
       card: params['payjp-token'],
       metadata: {user_id: current_user.id}
       ) #念の為metadataにuser_idを入れましたがなくてもOK
@@ -26,9 +29,10 @@ class CardController < ApplicationController
     end
   end
 
-  def destroy #PayjpとCardデータベースを削除します
-    card = Card.find_by(user_id: current_user.id)
+  def delete #PayjpとCardデータベースを削除します
+    card = Card.where(user_id: current_user.id).first
     if card.blank?
+    else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
@@ -38,14 +42,14 @@ class CardController < ApplicationController
   end
 
   def show #Cardのデータpayjpに送り情報を取り出します
-    # まだ実装途中なのでコメントアウトしてます
-    # card = Card.where(user_id: current_user.id).first
-    # if card.blank?
-    #   redirect_to action: "new" 
-    # else
-    #   Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-    #   customer = Payjp::Customer.retrieve(card.customer_id)
-    #   @default_card_information = customer.cards.retrieve(card.card_id)
-    # end
+    @parent = Category.where(ancestry: nil)
+    card = Card.where(user_id: current_user.id).first
+    if card.blank?
+      redirect_to action: "new" 
+    else
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @default_card_information = customer.cards.retrieve(card.card_id)
+    end
   end
 end

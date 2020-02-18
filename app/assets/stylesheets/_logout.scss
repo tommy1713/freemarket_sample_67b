@@ -26,12 +26,10 @@ bread-crumbs {
   }
   }
 }
-.l-containner {
-  margin: 40px auto 0;
-  width: 1020px;
-  .l-content {
+.mypage-main__right-contents {
+  .l--content {
     float: right;
-    width: 700px;
+    width: 100%;
     .l-chapter-container {
       margin: 0;
       background-color: #fff;
@@ -50,7 +48,7 @@ bread-crumbs {
             a {
               position: absolute;
               left: 115px;
-              top: 10px;
+              top: 15px;
               color: #fff;
             }
           }

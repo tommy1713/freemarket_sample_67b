@@ -18,8 +18,8 @@
           .displaynone.tree
             .category_list
               .parents_list
-                - @parents.each do |parent|
-                  = link_to "#{parent.name}", "category_path(parent)", class: "parent_category",id: "#{parent.id}"
+                - @parent.each do |parent|
+                  = link_to "#{parent.name}", category_path(parent.id), class: "parent_category",id: "#{parent.id}"
                   .children_list
                   .grand_children_list
         %li.header__inner-nav__listleft__brand
@@ -30,16 +30,16 @@
       %ul.header__inner-nav__listright
         - if user_signed_in?
           %li.header__inner-nav__listright__login
-            = link_to "/users/sign_out" do
-              ログアウト
+            = link_to 'ログアウト', destroy_user_session_path, method: :delete
+              
           %li.header__inner-nav__listright__new
-            = link_to "/users/:id" do
+            = link_to user_path(current_user.id) do
               マイページ
         - else
           %li.header__inner-nav__listright__login
-            = link_to "/users/new" do
-              ログイン
+            =link_to 'ログイン', new_user_session_path 
+              
           %li.header__inner-nav__listright__new
-            = link_to "/users" do
+            = link_to sign_up_index_path do
               新規会員登録
 
