@@ -6,6 +6,7 @@ class Product < ApplicationRecord
   enum shipping_area: [:hokkaido, :aomori, :iwate, :miyagi, :akita, :yamagata, :fukushima, :ibaraki, :tochigi, :gunnma, :saitama, :chiba, :tokyo, :kanagawa, :niigata, :toyama, :ishikawa, :fukui, :yamanashi, :nagano, :gihu, :shizuoka, :aichi, :mie, :shiga, :kyoto, :osaka, :hyogo, :nara, :wakayama, :tottori, :shimane, :okayama, :hiroshima, :yamaguchi, :tokushima, :kagawa, :ehime, :kouchi, :fukuoka, :saga, :nagasaki, :kumamoto, :ooita, :miyazaki, :kagoshima, :okinawa]
   belongs_to :category
   belongs_to :user
+  belongs_to :buyer, class_name: "User"
 
   has_many :images
   accepts_nested_attributes_for :images, allow_destroy: true
@@ -17,7 +18,6 @@ class Product < ApplicationRecord
   validates :shipping_area, presence: true
   validates :estimated_date, presence: true
   validates :postage, presence: true
-  validates :image_id, presence: true
   has_many :comments
   
   def previous

@@ -113,7 +113,7 @@
             = link_to "/products/2" do
               .product__lists__list__img
                 = image_tag "", size: "220x150"
-                - if product.stock == 0
+                - if product.buyer_id.present? 
                   %figcaption
                     .sold__out
                       %p SOLD
@@ -145,7 +145,7 @@
               = link_to "/products/1" do
                 .product__lists__list__img
                   = image_tag ""
-                  - if product.stock == 0
+                  - if product.buyer_id.present? 
                     %figcaption
                       .sold__out
                         %p SOLD
