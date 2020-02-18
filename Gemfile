@@ -91,4 +91,8 @@ gem 'pry-rails'
 gem 'bootstrap-sass'
 gem 'bootstrap'
 gem 'data-confirm-modal'
+
+
+
+
 gem "gretel"

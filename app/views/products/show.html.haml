@@ -1,6 +1,5 @@
 = render "homes/header"
 = render "homes/purchasebtn"
-
 .detail--contents
   .contents--main
     .contents--top
@@ -36,7 +35,11 @@
             %th.category__title
               カテゴリー
             %td.category__content
-              = @product.category
+              = @product.category.parent.parent.name
+              %br
+              = @product.category.parent.name
+              %br
+              = @product.category.name
           %tr.brand
             %th.brand__title
               ブランド
@@ -137,4 +140,4 @@
         - if @product.next.present?
           = link_to "後ろの商品 >", product_path(@product.next), class:"b--name"
     .back--category
-      = link_to "#{@product.category}をもっと見る", "#", class:"c--name"
+      = link_to "#{@product.category.parent.parent.name}をもっと見る", "#", class:"c--name"
