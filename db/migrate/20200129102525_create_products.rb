@@ -14,6 +14,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer :postage, null: false
       t.integer :favorite, null: false, default: 0
       t.timestamps
+      t.integer :buyer_id
     end
   end
 end
