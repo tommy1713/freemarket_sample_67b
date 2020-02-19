@@ -113,22 +113,7 @@
             = link_to "/products/2" do
               .product__lists__list__img
                 = image_tag "", size: "220x150"
-                -# - if product.stock == 0
-                -#   %figcaption
-                -#     .sold__out
-                -#       %p SOLD
-              -#   - else
-              -# .product__lists__list__body
-              -#   %h3.name
-              -#     = product.name
-              -#   .details
-              -#     %ul
-              -#       - price = product.price
-              -#       %li #{price} 円
-              -#       %li
-              -#         = icon('fas', 'star', class: 'staricon')
-              -#         0
-              -#     %p (税込)
+                
 
   .main__pickupbrand
     %h2.main__pickup-head
@@ -145,21 +130,4 @@
               = link_to "/products/1" do
                 .product__lists__list__img
                   = image_tag ""
-          -#         - if product.stock == 0
-          -#           %figcaption
-          -#             .sold__out
-          -#               %p SOLD
-          -#         - else
-
-          -#       .product__lists__list__body
-          -#         %h3.name
-          -#           = product.name
-          -#         .details
-          -#           %ul
-          -#             - price = product.price
-          -#             %li #{price} 円
-          -#             %li
-          -#               = icon('fas', 'star', class: 'staricon')
-          -#               0
-          -#           %p (税込)
-          -# - else
+          
