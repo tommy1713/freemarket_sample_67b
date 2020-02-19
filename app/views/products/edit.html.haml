@@ -11,24 +11,33 @@
             必須
         .images--info
           最大5枚までアップロードできます
-
-        = f.fields_for :images do |i|
-          .dropzone-container.clearfix
-            .images_show
-              - @images.each do |img|
-                .edit_image
-                  = image_tag img.image.url
-                  .btn_wrapper
-                    削除
-            #preview
-            .dropzone-area
-              = i.label :image, class: "dropzone-box", for: "upload-image" do
-                .input_area
-                  = i.file_field :image, multiple: true, name: 'product[images_attributes][][image]', id: "upload-image", class: "upload-image", 'data-image': 0
-                  %pre.dropzone-area__text
-                    ドラッグ&ドロップ
-                    またはクリックしてファイルをアップロード
-
+        .post__drop__box__container
+          .prev-content
+            //JSで挿入したhtmlと同じ形,each文でのプレビュー表示
+            - @product.images.each do |image|
+              .preview-box
+                .upper-box
+                  = image_tag image.image.url, width: "112", height: "112", alt: "preview"
+                .lower-box
+                  .update-box
+                    %label.edit-btn 編集
+                  .delete-box
+                    .delete-btn
+                      %span 削除
+          .label-content
+            //プレビューの数に合わせてforオプションを指定
+            = f.label :"images_attributes_#{@product.images.length}_image", class: "label-box", id: "label-box--#{@product.images.length}" do
+              %pre.label-box__text-visible 
+                ファイルをドラッグ＆ドロップ
+                またはクリックしてアップロード
+          .hidden-content
+            = f.fields_for :images do |i|
+              //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
+              = i.file_field :image, class: "hidden-field"
+              = i.check_box:_destroy, class: "hidden-checkbox"
+              //5つのfile_fieldを準備するに当たって、足りない分を表示
+            - @product.images.length.upto(4) do |i|
+              %input{name: "product[images_attributes][#{i}][image]", id: "product_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
       .products--name
         .products--name--title
           商品名
