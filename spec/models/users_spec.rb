@@ -10,7 +10,7 @@ describe User do
 
     
 
-    # 2. nicknameが空では登録できないことテストを通した結果failureになる
+    2. nicknameが空では登録できないことテストを通した結果failureになる
     it "is invalid without a nickname" do
       user = build(:user, nickname: nil)
       user.valid?
