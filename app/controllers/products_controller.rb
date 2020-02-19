@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
 
   before_action :set_product, except: [:new, :get_category_children, :get_category_grandchildren, :create]
   before_action :set_parent, only: [:new, :create, :edit, :update]
+
   def show 
     @parents = Category.all.order("id ASC").limit(13)
     @parent = Category.where(ancestry: nil)
@@ -43,6 +44,9 @@ class ProductsController < ApplicationController
   end
   
   def edit
+    @grandchildren = Category.find(@product.category_id)
+    @children = @grandchildren.parent
+    @parent = @grandchildren.parent.parent
   end
 
   def update

@@ -4,12 +4,15 @@
     .sell--contents
       .contents--title
         商品の情報を入力
+
       .sell-form-container
         .sell-form-container__label
+
           出品画像
           %span.form_require
             必須
         .images--info
+
           最大5枚までアップロードできます
         = f.fields_for :images do |image|
           .dropzone-container.clearfix
@@ -22,6 +25,7 @@
                   またはクリックしてファイルをアップロード
                 .input_area
                   = image.file_field :image, id: "upload-image", class: "upload-image", 'data-image': 0
+
       .products--name
         .products--name--title
           商品名
