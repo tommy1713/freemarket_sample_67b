@@ -7,7 +7,6 @@ $(document).on('turbolinks:load', function(){
   var input_area = $('.input_area');
   var preview = $('#preview');
   var preview2 = $('#preview2');
-
   $(document).on('change', 'input[type= "file"].upload-image',function(event) {
     var file = $(this).prop('files')[0];
     var reader = new FileReader();
@@ -27,12 +26,10 @@ $(document).on('turbolinks:load', function(){
         'display': 'none'
       })
     }
-
     if(images.length >= 6) {
       dropzone2.css({
         'display': 'block'
       })
-
       $.each(images, function(index, image) {
         image.attr('data-image', index);
         preview2.append(image);
@@ -41,7 +38,7 @@ $(document).on('turbolinks:load', function(){
         })
       })
       if(images.length == 4) {
-        dropzone2.find('p').replaceWith('<i class="fa fa-camera"></i>')
+        dropzone2.find('pre').replaceWith('<i class="fa fa-camera"></i>')
       }
     } else {
         $('#preview').empty();
@@ -54,7 +51,7 @@ $(document).on('turbolinks:load', function(){
         })
       }
       if(images.length == 4) {
-        dropzone.find('p').replaceWith('<i class="fa fa-camera"></i>')
+        dropzone.find('pre').replaceWith('<i class="fa fa-camera"></i>')
       }
     if(images.length == 5) {
       dropzone2.css({
@@ -62,7 +59,7 @@ $(document).on('turbolinks:load', function(){
       })
       return;
     }
-    var new_image = $(`<input multiple= "multiple" name="product_images[image][]" class="upload-image" data-image= ${images.length} type="file" id="upload-image">`);
+    var new_image = $(`<input multiple= "multiple" name="product[images_attributes][][image]" class="upload-image" data-image= ${images.length} type="file" id="upload-image">`);
     input_area.prepend(new_image);
   });
   $(document).on('click', '.delete', function() {
@@ -107,7 +104,7 @@ $(document).on('turbolinks:load', function(){
         dropzone2.find('p').replaceWith('<i class="fa fa-camera"></i>')
       }
       if(images.length == 8) {
-        dropzone2.find('i').replaceWith('<p>ドラッグ＆ドロップまたはクリックしてファイルをアップロード</p>')
+        dropzone2.find('i').replaceWith('<pre>ドラッグ＆ドロップ\nまたはクリックしてファイルをアップロード</pre>')
       }
     } else {
       dropzone.css({
@@ -127,7 +124,7 @@ $(document).on('turbolinks:load', function(){
       })
     }
     if(images.length == 3) {
-      dropzone.find('i').replaceWith('<p>ドラッグ＆ドロップまたはクリックしてファイルをアップロード</p>')
+      dropzone.find('i').replaceWith('<pre>ドラッグ＆ドロップ\nまたはクリックしてファイルをアップロード</pre>')
     }
   })
 });
