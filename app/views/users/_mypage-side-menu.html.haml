@@ -2,7 +2,7 @@
   %nav.mypage-main__side-menu__box
     %ul.side-menu-mypage
       %li.mypage-nav-list-item.active
-        = link_to "マイページ", "#"
+        = link_to "マイページ", user_path(current_user.id)
         %i.fa.fa-angle-right
       %li.mypage-nav-list-item
         お知らせ

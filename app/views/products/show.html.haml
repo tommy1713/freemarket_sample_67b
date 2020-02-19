@@ -97,9 +97,11 @@
                     %p 本当に削除してよろしいですか
                   .dialog-content__foot
                     = link_to "#", class:"submit--btn" do
-                      %button{class: 'btn__cancel', data: {dismiss: 'modal'}, aria: {hidden: :true}}　やめる
+                      %button{class: 'btn__cancel', data: {dismiss: 'modal'}, aria: {hidden: :true}} やめる
                     = link_to "#", class:"submit--btn", method: :delete do
                       %button{class: 'btn__deleate'} 削除する
+        - elsif @product.buyer_id.present? 
+          = link_to "売り切れました", "#",class:"disabled-button bold"
         - else
           .buy--btn
             = link_to "購入する", purchase_index_path(product_id: @product.id), class: "b-btn"
