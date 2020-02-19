@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    if @product.save
+    if @product.save!
       redirect_to root_path
     else
       render '/products/new'
@@ -44,9 +44,10 @@ class ProductsController < ApplicationController
   end
   
   def edit
-    @grandchildren = Category.find(@product.category_id)
-    @children = @grandchildren.parent
-    @parent = @grandchildren.parent.parent
+     # productに紐づいていいる孫カテゴリーの親である子カテゴリが属している子カテゴリーの一覧を配列で取得
+    @category_child_array = @product.category.parent.parent.children
+     # productに紐づいていいる孫カテゴリーが属している孫カテゴリーの一覧を配列で取得
+    @category_grandchild_array = @product.category.parent.children
   end
 
   def update
