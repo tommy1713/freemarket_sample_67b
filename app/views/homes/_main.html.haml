@@ -110,10 +110,26 @@
       .main__pickup-product__lists
         - @product.last(3).each do |product|
           .main__pickup-product__lists__list
-            = link_to "/products/2" do
+            = link_to product_path(product.id) do
               .product__lists__list__img
                 = image_tag "", size: "220x150"
-                
+                - if product.buyer_id.present? 
+                  %figcaption
+                    .sold__out
+                      %p SOLD
+                - else
+              .product__lists__list__body
+                %h3.name
+                  = product.name
+                .details
+                  %ul
+                    - price = product.price
+                    %li #{price} 円
+                    %li
+                      = icon('fas', 'star', class: 'staricon')
+                      0
+                  %p (税込)
+
 
   .main__pickupbrand
     %h2.main__pickup-head
@@ -127,7 +143,13 @@
         - @product.each do |product|
           - if product.brand.first(3).present?
             .main__pickup-product__lists__list
-              = link_to "/products/1" do
+              = link_to product_path(product.id) do
                 .product__lists__list__img
                   = image_tag ""
-          
+
+                  - if product.buyer_id.present? 
+                    %figcaption
+                      .sold__out
+                        %p SOLD
+                  - else
+
