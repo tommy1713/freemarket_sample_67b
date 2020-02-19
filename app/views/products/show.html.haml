@@ -11,7 +11,7 @@
             = image_tag img.image.url
           %ul.image__small
             - @images.each do |imge|
-              %li.image__small__1
+              %li.image__small__content
                 = image_tag imge.image.url
       .price
         ¥ #{@product.price}
