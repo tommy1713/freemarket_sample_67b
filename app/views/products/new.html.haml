@@ -12,16 +12,20 @@
               必須
           .images--info
             最大5枚までアップロードできます
-          = f.fields_for :images do |i|
-            .dropzone-container.clearfix
-              #preview
-              .dropzone-area
-                = i.label :image, class: "dropzone-box", for: "upload-image" do
-                  .input_area
-                    = i.file_field :image, multiple: true, name: 'product[images_attributes][][image]', id: "upload-image", class: "upload-image", 'data-image': 0
-                    %pre.dropzone-area__text
-                      ドラッグ&ドロップ
-                      またはクリックしてファイルをアップロード
+          .post__drop__box__container
+            .prev-content
+            .label-content
+              %label{for: "product_images_attributes_0_image", class: "label-box", id: "label-box--0"}
+                %pre.label-box__text-visible 
+                  ファイルをドラッグ＆ドロップ
+                  またはクリックしてアップロード
+            .hidden-content
+              = f.fields_for :images do |i|
+                = i.file_field :image, class: "hidden-field"
+                %input{class:"hidden-field", type: "file", name: "product[images_attributes][1][image]", id: "product_images_attributes_1_image" }
+                %input{class:"hidden-field", type: "file", name: "product[images_attributes][2][image]", id: "product_images_attributes_2_image" }
+                %input{class:"hidden-field", type: "file", name: "product[images_attributes][3][image]", id: "product_images_attributes_3_image" }
+                %input{class:"hidden-field", type: "file", name: "product[images_attributes][4][image]", id: "product_images_attributes_4_image" }
         .products--name
           .products--name--title
             商品名
