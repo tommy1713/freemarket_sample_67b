@@ -23,7 +23,7 @@ $(document).on('turbolinks:load', function(){
     grandchildSelectHtml = `<div class='category--box__added' id= 'grandchildren_wrapper'>
                               <div class='select--wrap__box'>
                                 <select class="select--wrap__box--select" id="grandchild_category" name="product[category_id]">
-                                  <option value="---" data-category="---">---</option>
+                                  <option value="---" data-category="---"selected>---</option>
                                   ${insertHTML}
                                 </select>
                               </div>
@@ -43,6 +43,8 @@ $(document).on('turbolinks:load', function(){
       .done(function(children){
         $('#children_wrapper').remove(); //親が変更された時、子以下を削除する
         $('#grandchildren_wrapper').remove();
+        $('#grandchildren').remove();
+        $('#children').remove();
         var insertHTML = '';
         children.forEach(function(child){
           insertHTML += appendOption(child);
@@ -55,6 +57,8 @@ $(document).on('turbolinks:load', function(){
     }else{
       $('#children_wrapper').remove(); //親カテゴリーが初期値になった時、子以下を削除する
       $('#grandchildren_wrapper').remove();
+      $('#grandchildren').remove();
+      $('#children').remove();
     }
   });
   $('.category').on('change', '#child_category', function(){
@@ -69,6 +73,7 @@ $(document).on('turbolinks:load', function(){
       .done(function(grandchildren){
         if (grandchildren.length != 0) {
           $('#grandchildren_wrapper').remove(); //子が変更された時、孫以下を削除するする
+          $('#grandchildren').remove();
           var insertHTML = '';
           grandchildren.forEach(function(grandchild){
             insertHTML += appendOption(grandchild);
@@ -81,6 +86,7 @@ $(document).on('turbolinks:load', function(){
       })
     }else{
       $('#grandchildren_wrapper').remove(); //子カテゴリーが初期値になった時、孫以下を削除する
+      $('#grandchildren').remove();
     }
   });
 });

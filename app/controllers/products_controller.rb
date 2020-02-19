@@ -45,7 +45,13 @@ class ProductsController < ApplicationController
   end
   
   def edit
+
     @images = Image.where(product_id: @product.id)
+
+     # productに紐づいていいる孫カテゴリーの親である子カテゴリが属している子カテゴリーの一覧を配列で取得
+    @category_child_array = @product.category.parent.parent.children
+     # productに紐づいていいる孫カテゴリーが属している孫カテゴリーの一覧を配列で取得
+    @category_grandchild_array = @product.category.parent.children
   end
 
   def update

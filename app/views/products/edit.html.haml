@@ -11,6 +11,7 @@
             必須
         .images--info
           最大5枚までアップロードできます
+
         = f.fields_for :images do |i|
           .dropzone-container.clearfix
             .images_show
@@ -27,6 +28,7 @@
                   %pre.dropzone-area__text
                     ドラッグ&ドロップ
                     またはクリックしてファイルをアップロード
+
       .products--name
         .products--name--title
           商品名
@@ -52,7 +54,11 @@
                 必須
             .category--box
               .select--wrap__box
-                = f.select :category_id, @category_parent_array, {:prompt => "---"}, {class: 'select--wrap__box--select', id: 'parent_category', name: ''}
+                = f.select :category_id, options_for_select(@category_parent_array.map{|c|[c, {}]}, @product.category.parent.parent.name), {}, {class: '', id: 'parent_category', name:''}
+              .category--box#children
+                = f.select :category_id, options_for_select(@category_child_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @product.category.parent.id), {}, {class: 'select--wrap__box--select', id: 'child_category', name:''}
+              .category--box#grandchildren
+                = f.select :category_id, options_for_select(@category_grandchild_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @product.category.id), {}, {class: 'select--wrap__box--select', id: 'grandchild_category'}
           .brand
             .brand--title
               ブランド
