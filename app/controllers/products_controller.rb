@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   before_action :set_product, except: [:new, :get_category_children, :get_category_grandchildren, :create]
-  before_action :set_parent, only: [:new, :create]
+  before_action :set_parent, only: [:new, :create, :edit]
   def show 
     @parents = Category.all.order("id ASC").limit(13)
     @parent = Category.where(ancestry: nil)
@@ -43,6 +43,9 @@ class ProductsController < ApplicationController
   end
   
   def edit
+    @grandchildren = Category.find(@product.category.id)
+    @children = @grandchildren.parent
+    @parent = @grandchildren.parent.parent
   end
 
   def update
@@ -62,7 +65,7 @@ class ProductsController < ApplicationController
 
   
   def product_params
-    params.require(:product).permit(:name, :detail, :category_id, :brand, :size, :prise, :status, :shipping_area, :estimated_date, :postage, :favorite)
+    params.require(:product).permit(:name, :detail, :category_id, :brand, :size, :price, :status, :shipping_area, :estimated_date, :postage, images_attributes: [:src]).merge(user_id: current_user.id)
   end
 
 end
