@@ -4,18 +4,28 @@
     .sell--contents
       .contents--title
         商品の情報を入力
-      .images
-        .images--title
+
+      .sell-form-container
+        .sell-form-container__label
+
           出品画像
           %span.form_require
             必須
         .images--info
-          最大10枚までアップロードできます
-        %label.images--box
-          -# = f.file_field :image, class:"images--box__file", id:"file"
-          %pre.images--box__text
-            ドラッグ＆ドロップ
-            またはクリックしてファイルをアップロード
+
+          最大5枚までアップロードできます
+        = f.fields_for :images do |image|
+          .dropzone-container.clearfix
+            #preview
+            .dropzone-area
+              = image.label :image, class: "dropzone-box", for: "upload-image" do
+                %p
+                  ドラッグ＆ドロップ
+                  %br
+                  またはクリックしてファイルをアップロード
+                .input_area
+                  = image.file_field :image, id: "upload-image", class: "upload-image", 'data-image': 0
+
       .products--name
         .products--name--title
           商品名
@@ -115,5 +125,5 @@
         .btn__content
           .form__btn
             = f.submit "変更する", class: 'sell--btn'
-            .back--btn
-              = link_to "もどる", product_path(params[:id]), class:"b--btn"
+          .back--btn
+            = link_to "もどる", product_path(params[:id]), class:"b--btn"
