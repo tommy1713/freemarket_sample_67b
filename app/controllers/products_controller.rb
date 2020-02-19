@@ -43,7 +43,7 @@ class ProductsController < ApplicationController
   end
   
   def edit
-    @grandchildren = Category.find(@product.category.id)
+    @grandchildren = Category.find(@product.category_id)
     @children = @grandchildren.parent
     @parent = @grandchildren.parent.parent
   end
