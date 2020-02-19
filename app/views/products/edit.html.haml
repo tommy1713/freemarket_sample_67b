@@ -4,28 +4,29 @@
     .sell--contents
       .contents--title
         商品の情報を入力
-
       .sell-form-container
         .sell-form-container__label
-
           出品画像
           %span.form_require
             必須
         .images--info
-
           最大5枚までアップロードできます
-        = f.fields_for :images do |image|
+        = f.fields_for :images do |i|
           .dropzone-container.clearfix
+            .images_show
+              - @images.each do |img|
+                .edit_image
+                  = image_tag img.image.url
+                  .btn_wrapper
+                    削除
             #preview
             .dropzone-area
-              = image.label :image, class: "dropzone-box", for: "upload-image" do
-                %p
-                  ドラッグ＆ドロップ
-                  %br
-                  またはクリックしてファイルをアップロード
+              = i.label :image, class: "dropzone-box", for: "upload-image" do
                 .input_area
-                  = image.file_field :image, id: "upload-image", class: "upload-image", 'data-image': 0
-
+                  = i.file_field :image, multiple: true, name: 'product[images_attributes][][image]', id: "upload-image", class: "upload-image", 'data-image': 0
+                  %pre.dropzone-area__text
+                    ドラッグ&ドロップ
+                    またはクリックしてファイルをアップロード
       .products--name
         .products--name--title
           商品名

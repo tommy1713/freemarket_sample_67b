@@ -5,16 +5,14 @@
     .contents--top
       .name
         = @product.name
-      .image
-        .image__big
-          = image_tag "inu2.jpeg"
-        %ul.image__small
-          %li.image__small__1
-            = image_tag "inu2.jpeg"
-          %li.image__small__2
-            = image_tag "inu2.jpeg"
-          %li.image__small__3
-            = image_tag "inu2.jpeg"
+      - @images.first(1).each do |img|
+        .image
+          .image__big
+            = image_tag img.image.url
+          %ul.image__small
+            - @images.each do |imge|
+              %li.image__small__1
+                = image_tag imge.image.url
       .price
         ¥ #{@product.price}
         .price__detail

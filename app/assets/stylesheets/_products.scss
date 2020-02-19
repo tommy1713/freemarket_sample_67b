@@ -51,6 +51,10 @@
           height: 360px;
           width: 100%;
           padding: 20px 0;
+          img{
+            height: 100%;
+            border: 3px solid black;
+          }
         }
         &__small {
           list-style: none;
@@ -60,6 +64,7 @@
             height: 100px;
             width: 180px;
             margin: 0 10px 0 0;
+            border: 2px solid black;
           }
         }
       }
@@ -533,6 +538,28 @@
         margin-top: 20px;
         position: relative;
         display: block;
+        .images_show{
+          display: flex;
+          .edit_image{
+            width: 120px;
+            height: 140px;
+            background-color: white;
+            border: double 1px #7c7e7e;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+            img{
+              width: 100%;
+              height: 80%;
+              vertical-align: bottom;
+              border-bottom: double 1px #7c7e7e;
+            }
+            .btn_wrapper{
+              color: #3ccace;
+              text-align: center;
+              cursor: pointer;
+              margin: 0 auto;
+            }
+          }
+        }
         #preview{
           display: flex;
           height: 100%;
@@ -590,6 +617,7 @@
             }
           }
         }
+        
       }
     }
     .products--name {

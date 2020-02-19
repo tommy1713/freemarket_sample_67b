@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
     @parent = Category.where(ancestry: nil)
     @comment = Comment.new
     @comments = @product.comments.includes(:user)
+    @images = Image.where(product_id: @product.id)
   end
 
   def new
@@ -25,7 +26,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    if @product.save
+    if @product.save!
       redirect_to root_path
     else
       render '/products/new'
@@ -44,9 +45,7 @@ class ProductsController < ApplicationController
   end
   
   def edit
-    @grandchildren = Category.find(@product.category_id)
-    @children = @grandchildren.parent
-    @parent = @grandchildren.parent.parent
+    @images = Image.where(product_id: @product.id)
   end
 
   def update
