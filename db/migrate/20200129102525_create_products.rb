@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.references :user, foreign_key: true
       t.string :name, null: false
       t.text :detail, null: false
-      t.integer :category_id
+      t.references :category, null: false, foreign_key: true
       t.string :brand
       t.string :size
       t.integer :price, null: false
@@ -12,11 +12,9 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer :shipping_area, null: false
       t.integer :estimated_date, null: false
       t.integer :postage, null: false
-      t.integer :situation, null: false
       t.integer :favorite, null: false
       t.timestamps
-      t.references :image, null: false
-      t.integer :stock, null: false
+      t.integer :buyer_id
     end
   end
 end

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root to: "homes#index"
   resources :users, only:[:index, :show, :new, :destroy]
 
+
   resources :products, only:[:show, :new, :destroy, :edit, :update] do
     resources :comments, only: :create do
   end
