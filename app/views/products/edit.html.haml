@@ -4,28 +4,23 @@
     .sell--contents
       .contents--title
         商品の情報を入力
-
       .sell-form-container
         .sell-form-container__label
-
           出品画像
           %span.form_require
             必須
         .images--info
-
           最大5枚までアップロードできます
-        = f.fields_for :images do |image|
-          .dropzone-container.clearfix
-            #preview
-            .dropzone-area
-              = image.label :image, class: "dropzone-box", for: "upload-image" do
-                %p
-                  ドラッグ＆ドロップ
-                  %br
-                  またはクリックしてファイルをアップロード
-                .input_area
-                  = image.file_field :image, id: "upload-image", class: "upload-image", 'data-image': 0
-
+          = f.fields_for :images do |i|
+            .dropzone-container.clearfix
+              #preview
+              .dropzone-area
+                = i.label :image, class: "dropzone-box", for: "upload-image" do
+                  .input_area
+                    = i.file_field :image, multiple: true, name: 'product[images_attributes][][image]', id: "upload-image", class: "upload-image", 'data-image': 0
+                    %pre.dropzone-area__text
+                      ドラッグ&ドロップ
+                      またはクリックしてファイルをアップロード
       .products--name
         .products--name--title
           商品名
@@ -51,7 +46,12 @@
                 必須
             .category--box
               .select--wrap__box
-                = f.select :category_id, @category_parent_array, {:prompt => "---"}, {class: 'select--wrap__box--select', id: 'parent_category', name: ''}
+                = f.select :category_id, options_for_select(@category_parent_array.map{|c|[c, {}]}, @product.category.parent.parent.name), {}, {class: 'select', id: 'parent_category'}
+              .form_group#children
+                = f.select :category_id, options_for_select(@category_child_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @product.category.parent.id), {}, {class: 'select', id: 'child_category'}
+              .form_group#grandchildren
+                = f.select :category_id, options_for_select(@category_grandchild_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @product.category.id), {}, {class: 'select', id: 'grandchild_category'}
+              = f.text_field :category_id, id: 'grand_child_result_id', type: 'hidden'
           .brand
             .brand--title
               ブランド

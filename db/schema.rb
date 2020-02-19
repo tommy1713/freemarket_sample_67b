@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2020_02_15_110401) do
     t.integer "favorite", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "buyer_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end

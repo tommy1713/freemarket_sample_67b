@@ -23,7 +23,7 @@ $(document).on('turbolinks:load', function(){
     grandchildSelectHtml = `<div class='category--box__added' id= 'grandchildren_wrapper'>
                               <div class='select--wrap__box'>
                                 <select class="select--wrap__box--select" id="grandchild_category" name="product[category_id]">
-                                  <option value="---" data-category="---">---</option>
+                                  <option value="---" data-category="---"selected>---</option>
                                   ${insertHTML}
                                 </select>
                               </div>
