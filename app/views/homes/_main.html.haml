@@ -112,7 +112,8 @@
           .main__pickup-product__lists__list
             = link_to product_path(product.id) do
               .product__lists__list__img
-                = image_tag "", size: "220x150"
+                - product.images.each do |img|
+                  = image_tag img.image.url
                 - if product.buyer_id.present? 
                   %figcaption
                     .sold__out
@@ -145,7 +146,8 @@
             .main__pickup-product__lists__list
               = link_to product_path(product.id) do
                 .product__lists__list__img
-                  = image_tag ""
+                  - product.images.each do |img|
+                    = image_tag img.image.url
                   - if product.buyer_id.present? 
                     %figcaption
                       .sold__out
