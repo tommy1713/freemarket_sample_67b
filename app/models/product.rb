@@ -11,7 +11,7 @@ class Product < ApplicationRecord
   has_many :images, dependent: :destroy
 
   accepts_nested_attributes_for :images, allow_destroy: true
-  validates :price, numericality: :only_integer, presence: true
+  validates :price, numericality: { only_integer: true,greater_than: 299, less_than: 10000000}
   validates :detail, length: {maximum: 1000 }, presence: true
   validates :name, length: {maximum: 40 }, presence: true
   validates :category_id, presence: true
@@ -19,6 +19,7 @@ class Product < ApplicationRecord
   validates :shipping_area, presence: true
   validates :estimated_date, presence: true
   validates :postage, presence: true
+  validates :images, presence: true
   
   def previous
     user.products.order('created_at desc, id desc').where('created_at <= ? and id < ?', created_at, id).first
