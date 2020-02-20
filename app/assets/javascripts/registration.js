@@ -39,7 +39,7 @@ $(document).on('turbolinks:load', function () {
     $('#select_birth_day').empty();
     // 日が入るセレクトボックスにデフォルト値の'--'を入れる
     $("<option>", {
-      text: '--'
+      text: ''
     }).appendTo('#select_birth_day');
     // ２月の日にち、すなわちmonths[1]を28にセットし直す
     mouths[1] = 28;
