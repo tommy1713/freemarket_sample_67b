@@ -50,15 +50,15 @@
             .birthday-select
               .select-wrap
                 %i.icon-arrow-bottom
-                = f.select :birthdate_year,["--"], {},{class: "select-default", id:"select_birth_year"}
+                = f.select :birthdate_year,[""], {},{class: "select-default", id:"select_birth_year"}
               %span 年
               .select-wrap-mouth
                 %i.icon-arrow-bottom
-                = f.select :birthdate_mouth, ["--"], {},{class: "select-default", id:"select_birth_mouth"}
+                = f.select :birthdate_mouth, [""], {},{class: "select-default", id:"select_birth_mouth"}
               %span 月
               .select-wrap-day
                 %i.icon-arrow-bottom
-                = f.select :birthdate_day, ["--"], {},{class: "select-default", id:"select_birth_day"}
+                = f.select :birthdate_day, [""], {},{class: "select-default", id:"select_birth_day"}
               %span 日
               %ul.has-error-text
                 %li#birthday-error.has-error 生年月日を入力してください

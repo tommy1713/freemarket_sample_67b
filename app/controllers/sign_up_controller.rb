@@ -23,11 +23,7 @@ class SignUpController < ApplicationController
   end
 
   def information_third
-    d = user_params[:birthdate_day]
-    if d == "--"
-      @user = User.new
-      render '/sign_up/information_second'
-    end
+    
     session[:last_name] = user_params[:last_name]
     session[:first_name] = user_params[:first_name]
     session[:last_name_kana] = user_params[:last_name_kana]
