@@ -8,6 +8,8 @@ class CategoriesController < ApplicationController
   def show
     @parents = Category.find(params[:id])
     @parent = Category.where(ancestry: nil)
+    @product = Product.includes(@images)
+    @images = Image.all
   end
 
 end
