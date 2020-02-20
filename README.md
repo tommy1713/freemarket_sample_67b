@@ -6,7 +6,7 @@
 |user_id|references|null: false, foreign_key: true|
 |name|string|null: false|
 |detail|text|null: false|
-|category|integer|null: false|
+|category|references|null: false, foreign_key: true|
 |brand|string|
 |size|string|
 |price|integer|null: false|
@@ -14,10 +14,8 @@
 |shipping_area|integer|null: false|
 |estimated_date|integer|null: false|
 |postage|integer|null: false|
-|situation|integer|null: false|
 |favorite|integer|null: false|
-|image|string|null: false|
-|stock|integer|null: false|
+|buyer_id|integer|
 
 ### Association
 - has_many :images

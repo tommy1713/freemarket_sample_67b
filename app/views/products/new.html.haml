@@ -128,4 +128,9 @@
             .back--btn
               = link_to "もどる", root_path, class:"b--btn"
 - else
-  = render "users/login_user"
+  = render "users/header-mini"
+  .no--signed--in
+    .text
+      商品出品はログイン後に行なってください
+    .login
+      = link_to 'ログイン', new_user_session_path, class: "login__btn"
