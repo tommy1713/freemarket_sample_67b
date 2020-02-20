@@ -102,7 +102,11 @@
           = link_to "売り切れました", "#",class:"disabled-button bold"
         - else
           .buy--btn
-            = link_to "購入する", purchase_index_path(product_id: @product.id), class: "b-btn"
+            - if user_signed_in?
+              = link_to "購入する", purchase_index_path(product_id: @product.id), class: "b-btn"
+            - else
+              = link_to "購入は新規登録/ログインが必要です", new_user_session_path, class: "l-btn"
+            .log
     .contents--under
       .comments
         - if @comments
