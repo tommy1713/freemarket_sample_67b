@@ -5,6 +5,7 @@ class PurchaseController < ApplicationController
   def index
     @parents = Category.where(ancestry: nil)
     card = Card.find_by(user_id: current_user.id)
+    @images = Image.where(product_id: @product.id)
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
       #登録された情報がない場合にカード登録画面に移動

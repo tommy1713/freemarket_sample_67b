@@ -140,16 +140,25 @@
           %h3.main__pickup-product__head__title
             アーカイバ
       .main__pickup-product__lists
-        - @product.each do |product|
-          - if product.brand.first(3).present?
+        - @product.first(3).each do |product|
+          - if product.brand.present?
             .main__pickup-product__lists__list
               = link_to product_path(product.id) do
                 .product__lists__list__img
                   = image_tag ""
-
                   - if product.buyer_id.present? 
                     %figcaption
                       .sold__out
                         %p SOLD
                   - else
-
+                .product__lists__list__body
+                  %h3.name
+                    = product.name
+                  .details
+                    %ul
+                      - price = product.price
+                      %li #{price} 円
+                      %li
+                        = icon('fas', 'star', class: 'staricon')
+                        0
+                    %p (税込)
