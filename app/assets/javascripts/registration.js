@@ -43,7 +43,7 @@ $(document).on('turbolinks:load', function () {
     }).appendTo('#select_birth_day');
     // ２月の日にち、すなわちmonths[1]を28にセットし直す
     mouths[1] = 28;
-    //　年と月に入力されている情報を取得する
+    // 年と月に入力されている情報を取得する
     var year = $('#select_birth_year').val();
     var mouth = $("#select_birth_mouth").val();
     // yearとmonth共に数字が入力されている、すなわち共に'--'でないときに実行
