@@ -12,10 +12,9 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer :shipping_area, null: false
       t.integer :estimated_date, null: false
       t.integer :postage, null: false
-      t.integer :situation, null: false
-      t.integer :favorite, null: false
+      t.integer :favorite, null: false, default: 0
       t.timestamps
-      t.integer :stock, null: false
+      t.integer :buyer_id
     end
   end
 end

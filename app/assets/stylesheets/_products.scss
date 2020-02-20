@@ -51,16 +51,25 @@
           height: 360px;
           width: 100%;
           padding: 20px 0;
+          img{
+            height: 100%;
+            border: 3px solid black;
+          }
         }
         &__small {
           list-style: none;
           display: flex;
           justify-content: space-between;
-          li img {
-            height: 100px;
-            width: 180px;
-            margin: 0 10px 0 0;
+          &__content {
+            width: 20%;
+            img {
+              height: 100px;
+              width: 100%;
+              margin: 0 10px 0 0;
+              border: 2px solid #eee;
+            }
           }
+          
         }
       }
       .price {
@@ -150,6 +159,17 @@
           }
         }
       }
+      .disabled-button{
+        text-align: center;
+        margin: 16px 0 0;
+        background: #888888;
+        color: #fff;
+        display: block;
+        width: 100%;
+        font-size: 24px;
+        line-height: 60px;
+        cursor: not-allowed;
+      }
       .buy--btn {
         display: block;
         margin: 25px auto;
@@ -163,6 +183,9 @@
         text-align: center;
         line-height: 53px;
         .b-btn {
+          color: white;
+        }
+        .l-btn {
           color: white;
         }
       }
@@ -491,6 +514,12 @@
     margin: 0 auto;
     width: 700px;
     background-color: white;
+    .contents--title {
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+      padding: 20px 0;
+    }
     .sell-form__header {
       text-align: center;
       font-size: 24px;
@@ -508,65 +537,90 @@
       .images--info {
         font-size: 12px;
       }
-      .dropzone-container {
-        height: 140px;
-        width: 620px;
-        border: 1px dashed #cccccc;
-        background-color: #f5f5f5;
-        margin-top: 20px;
-        position: relative;
+      .post__drop__box__container{
         display: block;
-        #preview{
+        margin: 16px auto 0;
+        display: flex;
+        flex-wrap: wrap;
+      
+        //プレビュー表示欄のCSS
+        .prev-content {
           display: flex;
-          height: 100%;
-          .img_view{
-            height: 100%;
-            width: 20%;
-            z-index: 30;
-            background-color: white;
-            border: double 1px #7c7e7e;
-            box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
-            img{
+          .preview-box {
+            height: 162px;
+            width: 112px;
+            margin: 0 15px 10px 0;
+            .upper-box {
+              height: 112px;
               width: 100%;
-              height: 80%;
-              vertical-align: bottom;
-              border-bottom: double 1px #7c7e7e;
+              img{
+                width: 112px;
+                height: 112px;
+                border: 1px solid #eee;
+              }
             }
-            .btn_wrapper{
-              color: #3ccace;
+            .lower-box {
+              display: flex;
               text-align: center;
-              .btn{
-                display: inline;
+              .update-box {
+                color: #00b0ff;
+                width: 50%;
+                height: 50px;
+                line-height: 50px;
+                border: 1px solid #eee;
+                background: #f5f5f5;
+                cursor: pointer;
+              }
+              .delete-box {
+                color: #00b0ff;
+                width: 50%;
+                height: 50px;
+                line-height: 50px;
+                border: 1px solid #eee;
+                background: #f5f5f5;
                 cursor: pointer;
               }
             }
           }
-          .dropzone-box {
-            display: none;
+        }
+      
+        //投稿クリックエリアのCSS
+        .label-content{
+          margin-bottom: 10px;
+          width: 620px;
+          .label-box {
+            display: block;
+            border: 1px dashed #ccc;
+            position: relative;
+            background: #f5f5f5;
+            width: 100%;
+            height: 162px;
+            cursor: pointer;
+            &__text-visible {
+              position: absolute;
+              top: 50%;
+              left: 16px;
+              right: 16px;
+              text-align: center;
+              font-size: 14px;
+              line-height: 1.5;
+              font-weight: bold;
+              -webkit-transform: translate(0, -50%);
+              transform: translate(0, -50%);
+              pointer-events: none;
+              white-space: pre-wrap;
+              word-wrap: break-word;
+            }
           }
         }
-        .dropzone-area {
-          top: 0;
-          right: 0;
-          position: absolute;
-          height: 100%;
-          width: 100%;
-          line-height: 1.5;
-          text-align: center;
-          font-size: 14px;
-          border-style: none;
-          cursor: pointer;
-          p{
-            position: absolute;
-            z-index: 10;
-            top: 28%;
-            left: 26%;
+      
+        //file_fieldのcss
+        .hidden-content {
+          .hidden-field {
+            display: none;
           }
-          .input_area{
-            height: 100%;
-            .upload-image{
-              display: none;
-            }
+          .hidden-checkbox {
+            display: none;
           }
         }
       }
@@ -608,9 +662,9 @@
       }
     }
     .sell--detail {
-      
       padding: 40px;
       border-top: 1px solid #eeeeee;
+      height: 100%;
       .sell--detail--title {
         font-weight: bold;
         width: 200px;
@@ -797,7 +851,6 @@
         width: 100%;
         height: 50px;
         background-color: #3ccace;
-        border: 1px solid #3ccace;
         text-align: center;
         line-height: 49px;
         font-size: 18px;
@@ -854,68 +907,57 @@
   select::-ms-expand {
     display: none;
   }
-}
-.content--row {
-  background-color: #f8f8f8;
-  .create--success {
-    margin: 0 auto;
-    width: 700px;
-    background-color: white;
-    &__content {
-      margin-top: 10px;
-      text-align: center;
-    }
-    .link--home {
-      margin: 25px auto 0;
-      width: 280px;
-      height: 50px;
-      text-align: center;
-      border: 1px solid #aaaaaa;
-      line-height: 50px;
-      background-color: #aaaaaa;
-      .h--btn {
-        color: white;
+  .clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .content--row {
+    background-color: #f8f8f8;
+    .create--success {
+      margin: 0 auto;
+      width: 700px;
+      background-color: white;
+      &__content {
+        margin-top: 10px;
+        text-align: center;
       }
+      .link--home {
+        margin: 25px auto 0;
+        width: 280px;
+        height: 50px;
+        text-align: center;
+        border: 1px solid #aaaaaa;
+        line-height: 50px;
+        background-color: #aaaaaa;
+        .h--btn {
+          color: white;
+        }
+      }
+    }
+  }
+}
+.no--signed--in {
+  padding: 50px 0;
+  .text {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .login {
+    width: 300px;
+    height: 50px;
+    margin: 0 auto;
+    background-color: #3ccace;
+    text-align: center;
+    line-height: 50px;
+    &__btn {
+      color: #fff;
+      text-decoration: none;
     }
   }
 }
 
-.btn__content{
-  background-color: #f8f8f8;
-  width: 100%;
-  height: 150px;
-  .form__btn{
-    margin: 0 auto;
-    width: 700px;
-    background-color: white;
-    padding: 0 40px;
-    height: 100%;
-    .sell--btn{
-      width: 100%;
-      height: 50px;
-      background-color: #3ccace;
-      color: white;
-      border: 1px solid #3ccace;
-      font-size: 18px;
-      margin: 0 auto;
-      a{
-        text-decoration: none;
-        color: white;
-      }
-    }
-    .back--btn {
-      margin: 25px auto 0;
-      width: 280px;
-      height: 50px;
-      text-align: center;
-      border: 1px solid #aaaaaa;
-      line-height: 50px;
-      background-color: #aaaaaa;
-      a{
-        text-decoration: none;
-        color: white;
-      }
-    }
-  }
-}
+
 

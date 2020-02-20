@@ -9,7 +9,8 @@
         .conf-main__content__item__inner
           .item__box
             %h3.item__box-image
-              = image_tag "", size: "80x80"
+              - @images.first(1).each do |img|
+                = image_tag img.image.url
             .item__box-detail
               %p.item__box-detail__name
                 = @product.name
@@ -86,4 +87,3 @@
                     = image_tag "app-store.svg", size: "135x40"
                   = link_to "#" do
                     = image_tag "google-play.svg", size: "135x40"
-  .conf-footer

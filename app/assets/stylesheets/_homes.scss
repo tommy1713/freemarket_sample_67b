@@ -73,7 +73,7 @@
           padding: 0;
           line-height: 38px;
           a.catbtn{
-            background-image: url(icon_category.png);
+            background-image: image-url("icon_category.png");
           }
         }
         &__brand{
@@ -81,7 +81,7 @@
           line-height: 38px;
           padding: 0 0 0 16px;
           a{
-            background-image: url(icon_brand.png);
+            background-image: image-url("icon_brand.png");
           }
         }
       }

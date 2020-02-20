@@ -5,16 +5,14 @@
     .contents--top
       .name
         = @product.name
-      .image
-        .image__big
-          = image_tag "inu2.jpeg"
-        %ul.image__small
-          %li.image__small__1
-            = image_tag "inu2.jpeg"
-          %li.image__small__2
-            = image_tag "inu2.jpeg"
-          %li.image__small__3
-            = image_tag "inu2.jpeg"
+      - @images.first(1).each do |img|
+        .image
+          .image__big
+            = image_tag img.image.url
+          %ul.image__small
+            - @images.each do |imge|
+              %li.image__small__content
+                = image_tag imge.image.url
       .price
         ¥ #{@product.price}
         .price__detail
@@ -97,12 +95,18 @@
                     %p 本当に削除してよろしいですか
                   .dialog-content__foot
                     = link_to "#", class:"submit--btn" do
-                      %button{class: 'btn__cancel', data: {dismiss: 'modal'}, aria: {hidden: :true}}　やめる
+                      %button{class: 'btn__cancel', data: {dismiss: 'modal'}, aria: {hidden: :true}} やめる
                     = link_to "#", class:"submit--btn", method: :delete do
                       %button{class: 'btn__deleate'} 削除する
+        - elsif @product.buyer_id.present? 
+          = link_to "売り切れました", "#",class:"disabled-button bold"
         - else
           .buy--btn
-            = link_to "購入する", purchase_index_path(product_id: @product.id), class: "b-btn"
+            - if user_signed_in?
+              = link_to "購入する", purchase_index_path(product_id: @product.id), class: "b-btn"
+            - else
+              = link_to "購入は新規登録/ログインが必要です", new_user_session_path, class: "l-btn"
+            .log
     .contents--under
       .comments
         - if @comments

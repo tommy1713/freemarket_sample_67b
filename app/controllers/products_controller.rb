@@ -1,17 +1,19 @@
 class ProductsController < ApplicationController
 
   before_action :set_product, except: [:new, :get_category_children, :get_category_grandchildren, :create]
-  before_action :set_parent, only: [:new, :create]
+  before_action :set_parent, only: [:new, :create, :edit, :update]
+
   def show 
     @parents = Category.all.order("id ASC").limit(13)
     @parent = Category.where(ancestry: nil)
     @comment = Comment.new
     @comments = @product.comments.includes(:user)
+    @images = Image.where(product_id: @product.id)
   end
 
   def new
     @product = Product.new
-    @product.images.new
+    @images = @product.images.build
   end
  
   def get_category_children
@@ -24,9 +26,10 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    if @product.save!
+    if @product.save
       redirect_to root_path
     else
+      flash.now[:alert] = '必須項目を入力してください。'
       redirect_to new_product_path
     end
   end
@@ -43,10 +46,14 @@ class ProductsController < ApplicationController
   end
   
   def edit
+     # productに紐づいていいる孫カテゴリーの親である子カテゴリが属している子カテゴリーの一覧を配列で取得
+    @category_child_array = @product.category.parent.parent.children
+     # productに紐づいていいる孫カテゴリーが属している孫カテゴリーの一覧を配列で取得
+    @category_grandchild_array = @product.category.parent.children
   end
 
   def update
-    @product.update(product_params)
+    @product.update(product_update_params)
     redirect_to product_path(params[:id])
   end
 
@@ -62,7 +69,10 @@ class ProductsController < ApplicationController
 
   
   def product_params
-    params.require(:product).permit(:name, :detail, :category_id, :brand, :size, :prise, :status, :shipping_area, :estimated_date, :postage, :situation, :favorite, :image, :stock)
+    params.require(:product).permit(:name, :detail, :category_id, :brand, :size, :price, :status, :shipping_area, :estimated_date, :postage, images_attributes: [:image]).merge(user_id: current_user.id)
   end
 
+  def product_update_params
+    params.require(:product).permit(:name, :detail, :category_id, :brand, :size, :price, :status, :shipping_area, :estimated_date, :postage, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
+  end
 end
