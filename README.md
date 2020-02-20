@@ -77,38 +77,15 @@
 - has_many :credit_cards
 - has_many :comments
 
-## addressテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null: false,foreign_key|
-|postal_code|integer|null: false|
-|prefectures|integer|null: false|
-|city|string|null: false|
-|house_number|string|null: false|
-|building_name|string|
-
-### Association
-- belongs_to :user
 
 ## credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false,foreign_key:true|
 |customer_id|string|null: false|
-|card_number|integer|null: false|
-|effective_date|integer|null: false|
-|cvc|integer|null:false|
+|card_id|integer|null: false|
+
 
 ### Association
 - belongs_to :user
 
-## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false,foreign_key:true|
-|product_id|string|null: false|
-|text|text|null: false|
-
-### Association
-- belongs_to :user
-- belongs_to :product

@@ -185,6 +185,9 @@
         .b-btn {
           color: white;
         }
+        .l-btn {
+          color: white;
+        }
       }
       .under--btn {
         width: 100%;
@@ -805,6 +808,7 @@
           height: 60px;
           padding: 10px 0;
           border-top: 1px solid #cccccc;
+          line-height: 200%;
           .fee--title {
             font-weight: bold;
             width: 50%;
@@ -822,6 +826,7 @@
           height: 74px;
           padding: 10px 0;
           border-top: 1px solid #cccccc;
+          line-height: 200%;
           .profit--title {
             font-weight: bold;
             width: 50%;

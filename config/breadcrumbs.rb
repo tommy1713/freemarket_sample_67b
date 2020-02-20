@@ -23,7 +23,7 @@ end
 # end
 
 crumb :mypage do
-  link "マイページ", "/users/:id"
+  link "マイページ", user_path(current_user.id)
   parent :root
 end
 

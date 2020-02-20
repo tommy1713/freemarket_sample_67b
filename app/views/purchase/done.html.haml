@@ -1,12 +1,15 @@
-= render "homes/header"
+= render "users/header-mini"
 .buy__model
   .buy__model__content
     %h2 購入が完了しました！
-    %p
-      = @product.name
-      = image_tag "", size: "80x80" 
+    .buy__model__content__product
+      .buy__model__content__product__name
+        = @product.name
+      .buy__model__content__product__image
+        - @images.first(1).each do |img|
+          = image_tag img.image.url
       .buy__model__content__product__price
         %p ￥
         = @product.price
-      .gray-btn
-        = link_to "トップページに戻る", root_path
+    .gray-btn
+      = link_to "トップページに戻る", root_path
