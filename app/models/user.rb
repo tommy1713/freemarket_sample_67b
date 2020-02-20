@@ -16,10 +16,10 @@ class User < ApplicationRecord
   validates :password_confirmation,   presence: true, length: {minimum: 7, maximum: 12}                                               
 
 
-  validates :last_name,               presence: true, format: /\A[一-龥ぁ-ん]\z/                                                
-  validates :first_name,              presence: true, format: /\A[一-龥ぁ-ん]\z/                                  
-  validates :last_name_kana,          presence: true, format: /\A[ァ-ヶー－]+\z/                                                
-  validates :first_name_kana,         presence: true, format: /\A[ァ-ヶー－]+\z/                                    
+  validates :last_name,               presence: true, format: /\A[一-龥ぁ-ん]/                                                
+  validates :first_name,              presence: true, format: /\A[一-龥ぁ-ん]/                                  
+  validates :last_name_kana,          presence: true, format: /\A[ァ-ヶー－]+/                                                
+  validates :first_name_kana,         presence: true, format: /\A[ァ-ヶー－]+/                                    
   validates :birthdate_year,          presence: true                                                                                                                    
   validates :birthdate_mouth,         presence: true                                                                                                                     
   validates :birthdate_day,           presence: true                                                                                                                     
