@@ -28,7 +28,6 @@ class User < ApplicationRecord
   validates :prefectures,             presence: true                                                       
   validates :city,                    presence: true                                                   
   validates :house_number,            presence: true                                                       
-  validates :building_name,                                                                  
   validates :address_last_name,       presence: true, format: /\A[一-龥ぁ-ん]/                              
   validates :address_first_name,      presence: true, format: /\A[一-龥ぁ-ん]/                              
   validates :address_last_name_kana,  presence: true, format: /\A[ァ-ヶー－]+/                             
