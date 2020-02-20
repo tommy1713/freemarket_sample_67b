@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     collection do
       get 'information_first'
       get 'information_second'
+      get 'information_third'
       get 'done'
     end
   end

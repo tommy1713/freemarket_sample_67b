@@ -96,16 +96,22 @@
         .form_contents{
           max-width: 343px;
           margin: 0 auto;
-          .text-left{
-            font-size: 16px;
-            font-weight: bold;
-          }
-          .l-single-text{
-            margin: 8px;
-            padding: 0;
-            line-height: 1.5;
-            font-size: 14px;
-          }
+          .form-group{
+            margin: 0;
+            label{
+              font-weight: 600;
+              display: inline-block;
+              touch-action: manipulation;
+            }
+            .form-require{
+              background: #3ccace;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
           .form-half{
             margin-right: 8px;
             width: calc(50% - 6px);
@@ -119,78 +125,27 @@
             font-size: 16px;
             height: 50px;
           }
-        .birthday-select{
+        }
+       
           
-          .select-wrap{
-            width: 76px;
-            display: inline-block;
-            .icon-arrow-bottom{
-              right: 12px;
-              position: absolute;
-              top: 50%;
-              z-index: 2;
-              color: #888;
-              font-size: 8px;
-              transform: translate(0, -50%);
-            }
-            .select-default{
-              padding: 0 10px;
-              width: 100%;
-              position: relative;
-              z-index: 2;
-              height: 48px;
-              border-radius: 4px;
-              border: 1px solid #ccc;
-              background: 0;
-              font-size: 16px;
-              line-height: 1.5;
-              cursor: pointer;
-            }
-          }
-          span{
-            margin: 0 2px;
-          }
-          .select-wrap-mouth{
-            width: 76px;
-            display: inline-block;
+        .form-group{
+          margin: 24px 0 0;
+          .address_form{
+            width: 100%;
             margin: 8px 0 0;
-            position: relative;
+            height: 50px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
             background: #fff;
-            .select-default{
-              padding: 0 10px;
-              width: 100%;
-              position: relative;
-              z-index: 2;
-              height: 48px;
-              border-radius: 4px;
-              border: 1px solid #ccc;
-              background: 0;
-              font-size: 16px;
-              line-height: 1.5;
-              cursor: pointer;
-            }
-          }
-          .select-wrap-day{
-            width: 76px;
-            display: inline-block;
-            margin: 8px 0 0;
-            position: relative;
-            background: #fff;
-            .select-default{
-              padding: 0 10px;
-              width: 100%;
-              position: relative;
-              z-index: 2;
-              height: 48px;
-              border-radius: 4px;
-              border: 1px solid #ccc;
-              background: 0;
-              font-size: 16px;
-              line-height: 1.5;
-              cursor: pointer;
-            }
+            line-height: 1.5;
+            font-size: 16px;
           }
         }
+
+
+
+
         .form-info-text{
           margin: 8px 0 0;
           line-height: 1.5;
@@ -219,4 +174,3 @@
       }
     }
   }
-
