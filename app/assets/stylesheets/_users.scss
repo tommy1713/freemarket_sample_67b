@@ -72,7 +72,7 @@
   .mypage-user-icon {
     position: relative;
     padding: 40px;
-    background: url(mypg.jpeg);
+    background: image-url("mypg.jpeg");
     background-size: cover;
     text-align: center;
 
@@ -134,7 +134,7 @@
       background-color: #fff;
       
       .mypage-item-not-found {
-        background-image: url(logo.png);
+        background-image: image-url("logo.png");
         background-color: #80808014;
         padding: 160px 0 60px;
         background-repeat: no-repeat;
