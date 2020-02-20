@@ -106,19 +106,24 @@
     }
     .item__info{
       margin: 0 auto;
+      width: 800px;
       &__box{
         margin-left: 0;
         margin: 0 20px 20px 0;
         width: 160px;
         border: solid 1px rgb(172, 172, 172);
+        float: left;
         a{
           display: block;
           color: #333;
           .item__info__box__photo{
             width: 100%;
-            height: auto;
+            height: 120px;
             overflow: hidden;
             position: relative;
+            img{
+              height: 100%;
+            }
           }
           .item__info__box__body{
             position: relative;
@@ -164,6 +169,10 @@
         }
       }
     }
+    .item__info:after {
+      content: "\000A";
+      white-space: wrap;
+    }
     .pagers{
       position: relative;
       font-size: 0;
@@ -205,5 +214,10 @@
         }
       }
     }
+  }
+  .clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
   }
 }
