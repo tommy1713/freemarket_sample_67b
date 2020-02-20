@@ -434,6 +434,7 @@
                 z-index: auto;
                 height: 150px;
                 object-fit: cover;
+                border: solid 1px #a1a1a1 ;
               }
               .sold__out{
                 position: absolute;
@@ -467,6 +468,7 @@
               background-color: white;
               color: #333;
               padding: 16px;
+              border: solid 1px #a1a1a1 ;
               .name{
                 overflow: hidden;
                 line-height: 1.5;
