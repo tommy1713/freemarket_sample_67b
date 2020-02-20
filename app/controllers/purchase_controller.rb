@@ -34,6 +34,7 @@ class PurchaseController < ApplicationController
     @product_buyer= Product.find(params[:product_id])
     @product_buyer.update( buyer_id: current_user.id)
     @parent = Category.where(ancestry: nil)
+    @images = Image.where(product_id: @product.id)
   end
 
   private
